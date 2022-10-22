@@ -1,0 +1,138 @@
+{% extends 'doctors/base.html' %}
+
+{% block content %}
+
+<style>
+    h6 {
+        font-size: 16px;
+        font-weight: lighter;
+        color : black;
+    }
+    th, td {
+        text-align: left;
+        padding : 8px 8px;
+        background-color: #ffffff;
+        
+    }
+
+    #boxSearchDoctor {
+        width: 50%;
+        height: 30px;
+        padding: 20px 20px;
+        border: 1px solid black;
+        border-radius:20px;
+    }
+</style>
+
+<input id ="boxSearchDoctor" type="search" placeholder="Tìm kiếm bác sĩ">
+    <h3>Bác sĩ nổi bật : </h3>
+    <table>
+        <tr>
+            <td><a href="../detailDoctor"><img src="https://cdn.bookingcare.vn/fr/w200/2020/03/17/114430-bshung.jpg", alt="Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng", style="border-radius:50%;width:100px;height:80px"></a></td>
+            <td style="text-align:left;width: 90%;">
+                <a href="../detailDoctor"><h6>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h6></a>
+                <h8>Da liễu</h8>
+            </td>
+        </tr>
+    </table>
+    <hr color="#e2e1e1">
+
+    <table>
+        <tr>
+            <td><a href="../detailDoctor"><img src="https://cdn.bookingcare.vn/fr/w200/2020/01/03/090559-pgs-nguyen-thi-hoai-an.jpg", alt="Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An", style="border-radius:50%;width:100px;height:80px"></a></td>
+            <td style="text-align:left;width: 90%;">
+                <a href="../detailDoctor"><h6>Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An</h6></a>
+                <h8>Nhi khoa</h8>
+            </td>
+        </tr>
+    </table>
+    <hr color="#e2e1e1">
+
+    <table>
+        <tr>
+            <td><a href="../detailDoctor"><img src="https://cdn.bookingcare.vn/fr/w200/2022/08/26/092249-doctor-check.jpg", alt="Khám Tại Trung Tâm Tiêu hóa Doctor Check", style="border-radius:50%;width:100px;height:80px"></a></td>
+            <td style="text-align:left;width: 90%;">
+                <a href="../detailDoctor"><h6>Khám Tại Trung Tâm Tiêu hóa Doctor Check</h6></a>
+                <h8>Tiêu hóa</h8>
+            </td>
+        </tr>
+    </table>
+    <hr color="#e2e1e1">
+
+    <table>
+        <tr>
+            <td><a href="../detailDoctor"><img src="https://cdn.bookingcare.vn/fr/w200/2021/01/21/142313-bs-tran-huu-binh.jpg", alt="PGS, TS, Giảng viên cao cấp Trần Hữu Bình", style="border-radius:50%;width:100px;height:80px"></a></td>
+            <td style="text-align:left;width: 90%;">
+                <a href="../detailDoctor"><h6>PGS, TS, Giảng viên cao cấp Trần Hữu Bình</h6></a>
+                <h8>Sức khỏe tâm thần</h8>
+            </td>
+        </tr>
+    </table>
+    <hr color="#e2e1e1">
+
+    <table>
+        <tr>
+            <td><a href="../detailDoctor"><img src="https://cdn.bookingcare.vn/fr/w200/2021/01/14/160049-bs-hoai-huong.jpg", alt="Bác sĩ chuyên khoa II Trần Thị Hoài Hương", style="border-radius:50%;width:100px;height:80px"></a></td>
+            <td style="text-align:left;width: 90%;">
+                <a href="../detailDoctor"><h6>Bác sĩ chuyên khoa II Trần Thị Hoài Hương</h6></a>
+                <h8>Da liễu</h8>
+            </td>
+        </tr>
+    </table>
+    <hr color="#e2e1e1">
+
+    <table>
+        <tr>
+            <td><a href="../detailDoctor"><img src="https://cdn.bookingcare.vn/fr/w200/2021/06/15/152136-bs-tri.jpg", alt="Thạc sĩ, Bác sĩ Chuyên khoa II Dương Minh Trí", style="border-radius:50%;width:100px;height:80px"></a></td>
+            <td style="text-align:left;width: 90%;">
+                <a href="../detailDoctor"><h6>Thạc sĩ, Bác sĩ Chuyên khoa II Dương Minh Trí</h6></a>
+                <h8>Cơ Xương Khớp</h8>
+            </td>
+        </tr>
+    </table>
+    <hr color="#e2e1e1">
+
+    <table>
+        <tr>
+            <td><a href="../detailDoctor"><img src="https://cdn.bookingcare.vn/fr/w200/2019/12/31/155650-gs-ha-van-quyet.jpg", alt="Giáo sư, Tiến sĩ Hà Văn Quyết", style="border-radius:50%;width:100px;height:80px"></a></td>
+            <td style="text-align:left;width: 90%;">
+                <a href="../detailDoctor"><h6>Giáo sư, Tiến sĩ Hà Văn Quyết</h6></a>
+                <h8>Tiêu hóa</h8>
+            </td>
+        </tr>
+    </table>
+    <hr color="#e2e1e1">
+
+    <table>
+        <tr>
+            <td><a href="../detailDoctor"><img src="https://cdn.bookingcare.vn/fr/w200/2017/03/16/115950bs-dao-dinh-thi.jpg", alt="Tiến sĩ, Bác sĩ Đào Đình Thi", style="border-radius:50%;width:100px;height:80px"></a></td>
+            <td style="text-align:left;width: 90%;">
+                <a href="../detailDoctor"><h6>Tiến sĩ, Bác sĩ Đào Đình Thi</h6></a>
+                <h8>Tai Mũi Họng</h8>
+            </td>
+        </tr>
+    </table>
+    <hr color="#e2e1e1">
+
+    <table>
+        <tr>
+            <td><a href="../detailDoctor"><img src="https://cdn.bookingcare.vn/fr/w200/2019/11/14/103848anh-dai-dien-bs.jpg", alt="Bác sĩ Chuyên khoa I Nguyễn Trọng Tuân", style="border-radius:50%;width:100px;height:80px"></a></td>
+            <td style="text-align:left;width: 90%;">
+                <a href="../detailDoctor"><h6>Bác sĩ Chuyên khoa I Nguyễn Trọng Tuân</h6></a>
+                <h8>Sức khỏe tâm thần</h8>
+            </td>
+        </tr>
+    </table>
+    <hr color="#e2e1e1">
+
+    <table>
+        <tr>
+            <td><a href="../detailDoctor"><img src="https://cdn.bookingcare.vn/fr/w200/2022/06/14/103841-bs-tuan.png", alt="Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng", style="border-radius:50%;width:100px;height:80px"></a></td>
+            <td style="text-align:left;width: 90%;">
+                <a href="../detailDoctor"><h6>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h6></a>
+                <h8>Da liễu</h8>
+            </td>
+        </tr>
+    </table>
+
+{% endblock content %}
