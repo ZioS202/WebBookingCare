@@ -4,7 +4,9 @@
     <meta charset="UTF8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type=image/x-icon href="D:/bookingcare.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
+    <style></style>
     <title>Bác Sĩ</title>
     
     <style>
@@ -64,6 +66,13 @@
         hr {
             width: 100%;
         }
+        .footer{
+            padding: 0px 240px; 
+            display :flex;
+        }
+        .footerAddress{
+            margin: 0px 250px;
+        }
     </style>
 </head>
 
@@ -85,13 +94,38 @@
             <a href="http://localhost:8000/doctor/manageClinic">Quản lý lịch khám</a>
             <hr>
             <a href="http://localhost:8000/doctor/findDoctor/">Tìm kiếm bác sĩ</a>
-            <hr>
-            <a href="http://localhost:8000/doctor/historyDoctor/">Lịch sử khám bệnh</a>
           </div>
 
         <div class="content">
             {% block content%}
             {% endblock %}
+            
+        </div>
+        <hr style="border-width: 3px;border-style: inset;">
+        
+    </div>
+    <div class="footer">
+        <div >
+            <img height="40" width="160" src="https://bookingcare.vn/assets/icon/bookingcare-2020.svg" alt="BookingCareLogo">
+            <h4>Công ty Cổ phần Công nghệ BookingCare</h4>
+            <p>
+                28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội <br>
+                ĐKKD số: 0106790291. Sở KHĐT Hà Nội cấp ngày 16/03/2015
+            </p> 
+        </div>
+        <div class="footerAddress">
+            <h4>Trụ sở tại Hà Nội</h4>
+            <p>
+                28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội
+            </p> 
+            <h4>Văn phòng tại TP Hồ Chí Minh</h4>
+            <p>
+                Số 01, Hồ Bá Kiện, Phường 15, Quận 10
+            </p> 
+            <h4>Hỗ trợ khách hàng</h4>
+            <p>
+                support@bookingcare.vn (7h - 18h)
+            </p> 
         </div>
     </div>
 </body>

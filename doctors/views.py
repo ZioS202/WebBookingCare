@@ -12,8 +12,5 @@ def findDoctor(request):
 def detailDoctor(request):
     return render(request,'doctors/DetailDoctor.html')
 
-def historyDoctor(request):
-    return render(request, 'doctors/HistoryDoctor.html')
-
 def manageClinic(request):
     return render(request, 'doctors/manageClinic.html')

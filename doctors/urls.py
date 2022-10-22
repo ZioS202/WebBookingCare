@@ -5,6 +5,5 @@ urlpatterns = [
     path('manageClinic/',views.manageClinic, name='manageClinic'),
     path('findDoctor/',views.findDoctor, name='findDoctor'),
     path('detailDoctor/',views.detailDoctor, name= 'detailDoctor'),
-    path('historyDoctor/',views.historyDoctor, name= 'historyDoctor'),
     
 ]
