@@ -1,0 +1,218 @@
+{% extends 'homepage/base.html' %}
+{% load static %}
+{% block extra_head %}
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'homepage/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage/slick-1.8.1/slick/slick.css' %} "/>
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'homepage/slick-1.8.1/slick/slick-theme.css' %} "/> {% endcomment %}
+{% endblock extra_head %}
+{% block content %}
+    {% comment %} Banner {% endcomment %}
+    <section id='banner'>
+        <div id="banner__search">
+            <h1 id="banner__title">
+                Nền tảng y tế
+                <br>
+                <b>Chăm sóc sức khoẻ toàn diện</b>
+            </h1>
+            <div id="banner__search-form">
+                <div id="banner__search-form-input">
+                    <i class="search-icon" style='cursor: pointer;'></i>
+                    <input type="search" placeholder='Tìm kiếm'>
+                </div>
+                <div id="banner__search-form-dropdown"></div>
+            </div>
+            <div id="banner__shorcut-download">
+                <i class='google-play-badge'><a href="#">&af;</a></i>
+                <i class='app-store-badge'><a href="#">&af;</a></i>
+            </div>
+        </div>
+        <div id="banner__choices">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class='khamchuyenkhoa-icon banner__choices-img'></i>
+                        Khám
+                        <br>
+                        Chuyên khoa
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='khamtuxa-icon banner__choices-img'></i>
+                        Khám
+                        <br>
+                        từ xa
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='khamtongquat-icon banner__choices-img'></i>
+                        Khám
+                        <br>
+                        tổng quát
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='xetnghiemyhoc-icon banner__choices-img'></i>
+                        Xét nghiệm
+                        <br>
+                        y học
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='suckhoetinhthan-icon banner__choices-img'></i>
+                        Sức khoẻ
+                        <br>
+                        tinh thần
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='khamnhakhoa-icon banner__choices-img'></i>
+                        Khám
+                        <br>
+                        nha khoa
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='goiphauthuat-icon banner__choices-img'></i>
+                        Gói
+                        <br>
+                        phẫu thuật
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='sanphamyte-icon banner__choices-img'></i>
+                        Sản phẩm
+                        <br>
+                        y tế
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='suckhoedoanhnghiep-icon banner__choices-img'></i>
+                        Sức khoẻ
+                        <br>
+                        doanh nghiệp
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    {% comment %} Segments {% endcomment %}
+    <section class="segment background--gray">
+        <div class="segment__head">
+            <h2>Chuyên khoa phổ biến</h2>
+            <a href="#">Xem thêm</a>
+        </div>
+        <div class="segment__content segment__chuyenkhoa slick-4">
+            <a href="#">
+                <i class="segment__chuyenkhoa-img coxuongkhop-img"></i>
+                Cơ xương khớp
+            </a>
+            <a href="#">
+                <i class="segment__chuyenkhoa-img thankinh-img"></i>
+                Thần kinh
+            </a>
+            <a href="#">
+                <i class="segment__chuyenkhoa-img tieuhoa-img"></i>
+                Tiêu hoá
+            </a>
+            <a href="#">
+                <i class="segment__chuyenkhoa-img timmach-img"></i>
+                Tim mạch
+            </a>
+            <a href="#">
+                <i class="segment__chuyenkhoa-img taimuihong-img"></i>
+                Tai mũi họng
+            </a>
+            <a href="#">
+                <i class="segment__chuyenkhoa-img cotsong-img"></i>
+                Cột sống
+            </a>
+            <a href="#">
+                <i class="segment__chuyenkhoa-img yhoccotruyen-img"></i>
+                Y học cổ truyền
+            </a>
+            <a href="#">
+                <i class="segment__chuyenkhoa-img chamcuu-img"></i>
+                Châm cứu
+            </a>
+        </div>
+    </section>
+    <section class="segment background--white">
+        <div class="segment__head">
+            <h2>Cơ sở y tế nổi bật</h2>
+            <a href="#">Xem thêm</a>
+        </div>
+        <div class="segment__content"></div>
+    </section>
+    <section class="segment background--gray">
+        <div class="segment__head">
+            <h2>Bác sĩ nổi bật tuần qua</h2>
+            <a href="#">Xem thêm</a>
+        </div>
+        <div class="segment__content"></div>
+    </section>
+    <section class="segment background--white">
+        <div class="segment__head">
+            <h2>Truyền thông nói về BookingCare</h2>
+        </div>
+        <div class="segment__content segment__truyenthong">
+            <iframe width="50%" height="432" src="https://www.youtube.com/embed/7tiR7SI4CkI" title="BookingCare trên VTV1 ngày 21/02/2018 - Chương trình Cà phê khởi nghiệp" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <ul>
+                <li>
+                    <i class="segment__truyenthong-img suckhoedoisong-img"><a href="#">&af;</a></i>
+                </li>
+                <li>
+                    <i class="segment__truyenthong-img vtv1-img"><a href="#">&af;</a></i>
+                </li>
+                <li>
+                    <i class="segment__truyenthong-img ictnews-img "><a href="#">&af;</a></i>
+                </li>
+                <li>
+                    <i class="segment__truyenthong-img vnexpress-img"><a href="#">&af;</a></i>
+                </li>
+                <li>
+                    <i class="segment__truyenthong-img vtcnews-img"><a href="#">&af;</a></i>
+                </li>
+                <li>
+                    <i class="segment__truyenthong-img cuccntt-img"><a href="#">&af;</a></i>
+                </li>
+                <li>
+                    <i class="segment__truyenthong-img infonet-img"><a href="#">&af;</a></i>
+                </li>
+                <li>
+                    <i class="segment__truyenthong-img vtc-img"><a href="#">&af;</a></i>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="segment background--white">
+        <div class="segment-download">
+            <h2>Tải ứng dụng BookingCare</h2>
+            <ul>
+                <li>Đặt khám nhanh hơn</li>
+                <li>Nhận thông báo từ hệ thống</li>
+                <li>Nhận hướng dẫn đi khám chi tiết</li>
+            </ul>
+            <div class="badge-download">
+                <i class='google-play-badge'><a href="#">&af;</a></i>
+                <i class='app-store-badge'><a href="#">&af;</a></i>
+            </div>
+            <a href="#">Hoặc mở liên kết: <strong>https://bookingcare.vn/app</strong> </a>
+        </div>
+    </section>
+{% endblock content %}
+{% block extra_script %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{% static 'homepage/slick-1.8.1/slick/slick.min.js' %} "></script>
+<script type="text/javascript" src="{% static 'homepage/js/main.js' %} "></script>
+{% endblock extra_script %}

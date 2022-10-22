@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "bookings.apps.BookingsConfig",
+    "clinics.apps.ClinicsConfig",
+    "doctors.apps.DoctorsConfig",
+    "homepage.apps.HomepageConfig",
+    "notifications.apps.NotificationsConfig",
+    "patients.apps.PatientsConfig",
+    "specialists.apps.SpecialistsConfig",
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>[NT208.N11.ANTT] - Group04_Booking Care</title>
+        <link rel="stylesheet"
+              type="text/css"
+              href="{% static 'homepage/css/base.css' %}">
+        <link rel="stylesheet"
+              type="text/css"
+              href="{% static 'homepage/css/font.css' %}">
+        <link rel="icon"
+              type="image/png"
+              href="{% static 'homepage/images/favicon.png' %}"/>
+        {% block extra_head %}
+        {% endblock extra_head %}
+    </head>
+    <body>
+        <div id="main-wrapper">
+            <header>
+                <div id="main-title">
+                    <i class="list-icon"></i>
+                    <div class='bookingcare-logo'>
+                        <a href="{% url 'homepage' %}">&af;</a>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Chuyên khoa
+                                <span>Tìm bác sĩ theo chuyên khoa</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Cơ sở y tế
+                                <span>Chọn bệnh viện phòng khám</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Bác sĩ
+                                <span>Chọn bác sĩ giỏi</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="support-login-lang">
+                    <a href="#">
+                        <i class='support-icon' style='margin-right: 3px;'></i>
+                        Hỗ trợ
+                    </a>
+                    <i class="notify-icon"></i>
+                    <i class="lang-icon"></i>
+                    <i class="user-icon"></i>
+                </div>
+            </header>
+            <main>
+                {% block content %}
+                {% endblock content %}
+            </main>
+            <footer>
+                <div id='contact'>
+                    <div id='contact__one'>
+                        <div class='bookingcare-logo'>
+                            <a href="{% url 'homepage' %}">&af;</a>
+                        </div>
+                        <div id="company">
+                            <h4>
+                                Công ty Cổ phần Công nghệ BookingCare
+                            </h5>
+                            <p>
+                                <i class='location-icon'></i> 28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội
+                            </p>
+                            <p>
+                                <i class='checked-icon'></i> ĐKKD số: 0106790291. Sở KHĐT Hà Nội cấp ngày 16/03/2015
+                            </p>
+                        </div>
+                        <div id="licence">
+                            <i class="bo-cong-thuong-icon"><a href="#">&af;</a></i>
+                            <i class="bo-cong-thuong-icon"><a href="#">&af;</a></i>
+                        </div>
+                    </div>
+                    <div id='contact__two'>
+                        <ul>
+                            <li>
+                                <a href="#">Liên hệ hợp tác</a>
+                            </li>
+                            <li>
+                                <a href="#">Gói chuyển đổi số doanh nghiệp</a>
+                            </li>
+                            <li>
+                                <a href="#">Tuyển dụng</a>
+                            </li>
+                            <li>
+                                <a href="#">Câu hỏi thường gặp</a>
+                            </li>
+                            <li>
+                                <a href="#">Điều khoản sử dụng</a>
+                            </li>
+                            <li>
+                                <a href="#">Chính sách Bảo mật</a>
+                            </li>
+                            <li>
+                                <a href="#">Quy trình hỗ trợ giải quyết khiếu nại</a>
+                            </li>
+                            <li>
+                                <a href="#">Quy chế hoạt động</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id='contact__three'>
+                        <div>
+                            <h4>Trụ sở tại Hà Nội</h4>
+                            <p>28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội</p>
+                        </div>
+                        <div>
+                            <h4>Văn phòng tại TP Hồ Chí Minh</h4>
+                            <p>Số 01, Hồ Bá Kiện, Phường 15, Quận 10</p>
+                        </div>
+                        <div>
+                            <h4>Hỗ trợ khách hàng</h4>
+                            <p>support@bookingcare_124C41.vn (7h - 18h)</p>
+                        </div>
+                    </div>
+                </div>
+                <div >
+                    <hr>
+                    <p>
+                        <i class='phone-icon'></i>
+                        Tải ứng dụng BookingCare cho điện thoại hoặc máy tính bảng:
+                        <a href="#">&MediumSpace;Android</a> -
+                        <a href="#">iPhone/iPad</a> -
+                        <a href="#">Khác</a>
+                    </p>
+                </div>
+                <div id="copyright">
+                    <div>
+                        <i class="copyright-icon"></i> 2022 BookingCare - Group 124C41
+                    </div>
+                    <div>
+                        <i class='fb-icon' style='cursor: pointer; margin-right: 4px'><a href="#">&af;</a></i>
+                        <i class='ytb-icon' style='cursor: pointer;'><a href="#">&af;</a></i>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        {% comment %} Javascript {% endcomment %}
+        {% block extra_script %}
+        {% endblock extra_script %}
+    </body>
+</html>

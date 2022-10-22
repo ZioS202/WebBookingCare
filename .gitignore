@@ -1,2 +1,7 @@
 .venv/
 .vscode/
+*.pyc
+__pycache
+.DS_Store
+.git
+.prettierignore
