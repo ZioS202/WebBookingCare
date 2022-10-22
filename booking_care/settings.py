@@ -31,12 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
     "bookings.apps.BookingsConfig",
     "clinics.apps.ClinicsConfig",
     "doctors.apps.DoctorsConfig",
@@ -44,6 +38,12 @@ INSTALLED_APPS = [
     "notifications.apps.NotificationsConfig",
     "patients.apps.PatientsConfig",
     "specialists.apps.SpecialistsConfig",
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
 ]
 
 MIDDLEWARE = [
