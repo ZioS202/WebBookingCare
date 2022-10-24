@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="vi">
-<head>
-    <meta charset="UTF8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type=image/x-icon href="D:/bookingcare.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <title>Cơ xương khớp</title>
-    <style>
+    <head>
+        <meta charset="UTF8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type=image/x-icon href="D:/bookingcare.png">
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Cơ xương khớp</title>
+        <style>
         .abstract_scope
         {
             padding: 0;
@@ -317,306 +318,533 @@
             position: static;
             width: 24px;
         }
-    </style>
-</head>
-
-<body style="background-color:rgb(255, 255, 255)">
-    <div id="navbar" class="sticky">
-        <a href="https://bookingcare.vn/"><img class="active" height="40" width="160" src="https://bookingcare.vn/assets/icon/bookingcare-2020.svg" alt="BookingCare/"></a>
-        <a style="padding-top:25px;margin-left:1200px;" href="https://bookingcare.vn/hotro" >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
-                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
-            </svg>Hỗ trợ
-        </a>
-    </div>
-
-    <div class="header_image">
-        <img style="display:block;width:100%; height:300px;background-clip: border-box;background-position: center center;background-repeat: no-repeat;background-size: cover;" src="https://cdn.bookingcare.vn/fr/w1000/2022/09/07/103829-le-tan-dong-do.jpg">
-    </div>
-    <div class="infoClinic_andNavi">
-        <div class="infoClinic">
-            <img src="https://cdn.bookingcare.vn/fr/w300/2022/09/07/091211-logo-dong-do.jpg" style="height:120px;width:120px;display:inline-block;border-style: solid;border-color: #e6e6e6; border-width: 1px;">
-            <h3 style="display:inline-block;font-size: 18px;font-weight: bold;">Bệnh viện Đa khoa Đông Đô<br>
-                <i style="display:inline;font-size: 10px;position:static" class="bt-g bt-g-diadiem glyphicon glyphicon-map-marker"></i>
-                <span style="font-size:10px;font-weight:lighter"> Số 5 phố Xã Đàn - Đống Đa - Hà Nội</span>
-            </h3>
-            
+        </style>
+    </head>
+    <body style="background-color:rgb(255, 255, 255)">
+        <div id="navbar" class="sticky">
+            <a href="https://bookingcare.vn/">
+                <img class="active"
+                     height="40"
+                     width="160"
+                     src="https://bookingcare.vn/assets/icon/bookingcare-2020.svg"
+                     alt="BookingCare/">
+            </a>
+            <a style="padding-top:25px;
+                      margin-left:1200px;"
+               href="https://bookingcare.vn/hotro">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="16"
+                     height="16"
+                     fill="currentColor"
+                     class="bi bi-question-circle"
+                     viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                </svg>
+                Hỗ trợ
+            </a>
         </div>
-        <hr style="margin:0px;">
-        <div class="Navi">
-            <ul class="horizontal-list">
-                <li><a href="#datlichkham">ĐẶT LỊCH KHÁM</a></li>
-                <li><a href="#gioithieu">GIỚI THIỆU</a></li>
-                <li><a href="#themanh">THẾ MẠNH CHUYÊN MÔN</a></li>
-                <li><a href="#thietbi">TRANG THIẾT BỊ</a></li>
-                <li><a href="#vitri">VỊ TRÍ</a></li>
-            </ul>
+        <div class="header_image">
+            <img style="display:block;
+                        width:100%;
+                        height:300px;
+                        background-clip: border-box;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        background-size: cover;"
+                 src="https://cdn.bookingcare.vn/fr/w1000/2022/09/07/103829-le-tan-dong-do.jpg">
         </div>
-
-    </div>
-
-    <div class="specialist_scope">
-        <!--Select choose doctor to register-->
-        <div class="chooseDoctor_scope">
-            <!--Choose doctor scope-->
-            <div class="doctor_scope">
-                <div class="intro_BC">
-                    <div class="icon_bulb"></div>
-                    BookingCare là Nền tảng Y tế chăm sóc sức khỏe toàn diện hàng đầu Việt Nam kết nối người dùng với trên 150 bệnh viện - phòng khám uy tín, hơn 1,000 bác sĩ chuyên khoa giỏi và hàng nghìn dịch vụ, sản phẩm y tế chất lượng cao.
-                </div>
-                <div class="suggest_clinic">
-                    <p>Hãy đặt khám với Bệnh viện Đa khoa Đông Đô trên Nền tảng Y tế Chăm sóc sức khỏe toàn diện BookingCare:</p>
-                    <ul>
-                        <li>Được lựa chọn khám với các bác sĩ chuyên khoa giàu kinh nghiệm, dịch vụ y tế chất lượng</li>
-                        <li>Đặt hẹn trực tuyến & nhận hướng dẫn chi tiết trước khi đi khám (miễn phí)</li>
-                        <li>Giảm thiểu thời gian chờ đợi</li>
-                    </ul>
-                </div>
-                <!--Each doctor scope-->
-                <div class="eachDoctor" id="datlichkham">
-                    <!--Abstract doctor-->
-                    <div class="abstract_doctor">
-                        <div class="image_scope">
-                            <img class="image_doctor" src="https://cdn.bookingcare.vn/fr/w200/2016/08/29/120727gs-ts-nguyen-lan-viet.jpg" width="80px" height="80">
-                            <div style="margin-top:5px;font-size: 14px;text-align: left;padding-left:7px;">Xem thêm</div>
-                        </div>
-                        <div class="infoAbstract">
-                            <h2 style="color:#45c3d2;font-size:18px">Giáo sư, Tiến sĩ Nguyễn Lân Việt</h2>
-                            <p>
-                                Nguyên Viện trưởng Viện Tim Mạch Quốc Gia
-                                <br>
-                                Nguyên Hiệu trưởng trường Đại học Y Hà Nội
-                                <br>
-                                Chủ tịch Hội Tim mạch Việt Nam
-                                <br>
-                                Địa chỉ: Hà Nội
-                            </p>
-                        </div>
+        <div class="infoClinic_andNavi">
+            <div class="infoClinic">
+                <img src="https://cdn.bookingcare.vn/fr/w300/2022/09/07/091211-logo-dong-do.jpg"
+                     style="height:120px;
+                            width:120px;
+                            display:inline-block;
+                            border-style: solid;
+                            border-color: #e6e6e6;
+                            border-width: 1px;">
+                <h3 style="display:inline-block;font-size: 18px;font-weight: bold;">
+                    Bệnh viện Đa khoa Đông Đô
+                    <br>
+                    <i style="display:inline;font-size: 10px;position:static"
+                       class="bt-g bt-g-diadiem glyphicon glyphicon-map-marker"></i>
+                    <span style="font-size:10px;font-weight:lighter">Số 5 phố Xã Đàn - Đống Đa - Hà Nội</span>
+                </h3>
+            </div>
+            <hr style="margin:0px;">
+            <div class="Navi">
+                <ul class="horizontal-list">
+                    <li>
+                        <a href="#datlichkham">ĐẶT LỊCH KHÁM</a>
+                    </li>
+                    <li>
+                        <a href="#gioithieu">GIỚI THIỆU</a>
+                    </li>
+                    <li>
+                        <a href="#themanh">THẾ MẠNH CHUYÊN MÔN</a>
+                    </li>
+                    <li>
+                        <a href="#thietbi">TRANG THIẾT BỊ</a>
+                    </li>
+                    <li>
+                        <a href="#vitri">VỊ TRÍ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="specialist_scope">
+            <!--Select choose doctor to register-->
+            <div class="chooseDoctor_scope">
+                <!--Choose doctor scope-->
+                <div class="doctor_scope">
+                    <div class="intro_BC">
+                        <div class="icon_bulb"></div>
+                        BookingCare là Nền tảng Y tế chăm sóc sức khỏe toàn diện hàng đầu Việt Nam kết nối người dùng với trên 150 bệnh viện - phòng khám uy tín, hơn 1,000 bác sĩ chuyên khoa giỏi và hàng nghìn dịch vụ, sản phẩm y tế chất lượng cao.
                     </div>
-                    <!--End Abstract doctor-->
-                    <!--Register Info-->
-                    <div class="infoRegister">
-                        <div class="infoRegister_modifyScope">
-                            <div class="register_scope1">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static"><i style="position:static" class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám</h3>
-                            </div>
-                            <div class="register_scope2">
-                                <a style="display: block;overflow-x: visible;white-space: normal;padding: 10px;width: 200px;font-size: 14px;border-style: solid;display: block;margin-left: 15px;text-align: center;" href="#">Đăng ký khám (Chiều)</a>
-                                <p style="margin-left:10px;margin-top:10px;">Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ</p>
-                            </div>
-                            <div class="address"style="border-top: 1px solid #eee;padding-top: 10px;margin-top: 10px;">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #666;font-weight: bold; margin-top:10px;">Địa chỉ khám</h3>
-                                <p style="margin-bottom:0px;">Bệnh viện Đa khoa Đông Đô
-                                <br>
-                                Số 5 phố Xã Đàn - Đống Đa - Hà Nội</p>
-                            </div>
-                            <div class="cost">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #666;font-weight: bold;display:inline;">Giá khám:</h3>
-                                <span>500.000<sup>đ</sup></span>
-                            </div>
-                        </div>
+                    <div class="suggest_clinic">
+                        <p>Hãy đặt khám với Bệnh viện Đa khoa Đông Đô trên Nền tảng Y tế Chăm sóc sức khỏe toàn diện BookingCare:</p>
+                        <ul>
+                            <li>Được lựa chọn khám với các bác sĩ chuyên khoa giàu kinh nghiệm, dịch vụ y tế chất lượng</li>
+                            <li>Đặt hẹn trực tuyến & nhận hướng dẫn chi tiết trước khi đi khám (miễn phí)</li>
+                            <li>Giảm thiểu thời gian chờ đợi</li>
+                        </ul>
                     </div>
-                    <!--End Register Info-->
-                </div>
-                <!--End Each doctor scope-->
-
-
-                <!--Each doctor scope-->
-                <div class="eachDoctor">
-                    <!--Abstract doctor-->
-                    <div class="abstract_doctor">
-                        <div class="image_scope">
-                            <img class="image_doctor" src="https://cdn.bookingcare.vn/fr/w200/2019/12/31/161245-pgs-vu-thi-thanh-thuy.jpg" width="80px" height="80">
-                            <div style="margin-top:5px;font-size: 14px;text-align: left;padding-left:7px;">Xem thêm</div>
+                    <!--Each doctor scope-->
+                    <div class="eachDoctor" id="datlichkham">
+                        <!--Abstract doctor-->
+                        <div class="abstract_doctor">
+                            <div class="image_scope">
+                                <img class="image_doctor"
+                                     src="https://cdn.bookingcare.vn/fr/w200/2016/08/29/120727gs-ts-nguyen-lan-viet.jpg"
+                                     width="80px"
+                                     height="80">
+                                <div style="margin-top:5px;
+                                            font-size: 14px;
+                                            text-align: left;
+                                            padding-left:7px;">Xem thêm</div>
+                            </div>
+                            <div class="infoAbstract">
+                                <h2 style="color:#45c3d2;font-size:18px">Giáo sư, Tiến sĩ Nguyễn Lân Việt</h2>
+                                <p>
+                                    Nguyên Viện trưởng Viện Tim Mạch Quốc Gia
+                                    <br>
+                                    Nguyên Hiệu trưởng trường Đại học Y Hà Nội
+                                    <br>
+                                    Chủ tịch Hội Tim mạch Việt Nam
+                                    <br>
+                                    Địa chỉ: Hà Nội
+                                </p>
+                            </div>
                         </div>
-                        <div class="infoAbstract">
-                            <h2 style="color:#45c3d2;font-size:18px">Phó Giáo sư, Tiến sĩ Vũ Thị Thanh Thủy</h2>
-                            <p>
-                                Nguyên Trưởng khoa Cơ - Xương - Khớp, Bệnh viện Bạch Mai
-                                <br>
-                                Chủ tịch Hội loãng xương Hà Nội
-                                <br>
-                                Bác sĩ nhận bệnh nhân từ 18 tuổi trở lên
-                                <br>
-                                Địa chỉ: Hà Nội
-                            </p>
+                        <!--End Abstract doctor-->
+                        <!--Register Info-->
+                        <div class="infoRegister">
+                            <div class="infoRegister_modifyScope">
+                                <div class="register_scope1">
+                                    <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static">
+                                        <i style="position:static"
+                                           class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám
+                                    </h3>
+                                </div>
+                                <div class="register_scope2">
+                                    <a style="display: block;
+                                              overflow-x: visible;
+                                              white-space: normal;
+                                              padding: 10px;
+                                              width: 200px;
+                                              font-size: 14px;
+                                              border-style: solid;
+                                              display: block;
+                                              margin-left: 15px;
+                                              text-align: center;"
+                                       href="#">Đăng ký khám (Chiều)</a>
+                                    <p style="margin-left:10px;margin-top:10px;">Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ</p>
+                                </div>
+                                <div class="address"
+                                     style="border-top: 1px solid #eee;
+                                            padding-top: 10px;
+                                            margin-top: 10px;">
+                                    <h3 style="text-transform: uppercase;
+                                               font-size: 14px;
+                                               color: #666;
+                                               font-weight: bold;
+                                               margin-top:10px;">Địa chỉ khám</h3>
+                                    <p style="margin-bottom:0px;">
+                                        Bệnh viện Đa khoa Đông Đô
+                                        <br>
+                                        Số 5 phố Xã Đàn - Đống Đa - Hà Nội
+                                    </p>
+                                </div>
+                                <div class="cost">
+                                    <h3 style="text-transform: uppercase;
+                                               font-size: 14px;
+                                               color: #666;
+                                               font-weight: bold;
+                                               display:inline;">Giá khám:</h3>
+                                    <span>500.000<sup>đ</sup></span>
+                                </div>
+                            </div>
                         </div>
+                        <!--End Register Info-->
                     </div>
-                    <!--End Abstract doctor-->
-                    <!--Register Info-->
-                    <div class="infoRegister">
-                        <div class="infoRegister_modifyScope">
-                            <div class="register_scope1">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static"><i style="position:static" class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám</h3>
+                    <!--End Each doctor scope-->
+                    <!--Each doctor scope-->
+                    <div class="eachDoctor">
+                        <!--Abstract doctor-->
+                        <div class="abstract_doctor">
+                            <div class="image_scope">
+                                <img class="image_doctor"
+                                     src="https://cdn.bookingcare.vn/fr/w200/2019/12/31/161245-pgs-vu-thi-thanh-thuy.jpg"
+                                     width="80px"
+                                     height="80">
+                                <div style="margin-top:5px;
+                                            font-size: 14px;
+                                            text-align: left;
+                                            padding-left:7px;">Xem thêm</div>
                             </div>
-                            <div class="register_scope2">
-                                <a style="display: block;overflow-x: visible;white-space: normal;padding: 10px;width: 200px;font-size: 14px;border-style: solid;display: block;margin-left: 15px;text-align: center;" href="#">Đăng ký khám (Sáng)</a>
-                                <p style="margin-left:10px;margin-top:10px;">Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ</p>
-                            </div>
-                            <div class="address"style="border-top: 1px solid #eee;padding-top: 10px;margin-top: 10px;">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #666;font-weight: bold; margin-top:10px;">Địa chỉ khám</h3>
-                                <p style="margin-bottom:0px;">Bệnh viện Đa khoa Đông Đô
-                                <br>
-                                Số 5 phố Xã Đàn - Đống Đa - Hà Nội</p>
-                            </div>
-                            <div class="cost">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #666;font-weight: bold;display:inline;">Giá khám:</h3>
-                                <span>400.000<sup>đ</sup></span>
+                            <div class="infoAbstract">
+                                <h2 style="color:#45c3d2;font-size:18px">Phó Giáo sư, Tiến sĩ Vũ Thị Thanh Thủy</h2>
+                                <p>
+                                    Nguyên Trưởng khoa Cơ - Xương - Khớp, Bệnh viện Bạch Mai
+                                    <br>
+                                    Chủ tịch Hội loãng xương Hà Nội
+                                    <br>
+                                    Bác sĩ nhận bệnh nhân từ 18 tuổi trở lên
+                                    <br>
+                                    Địa chỉ: Hà Nội
+                                </p>
                             </div>
                         </div>
+                        <!--End Abstract doctor-->
+                        <!--Register Info-->
+                        <div class="infoRegister">
+                            <div class="infoRegister_modifyScope">
+                                <div class="register_scope1">
+                                    <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static">
+                                        <i style="position:static"
+                                           class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám
+                                    </h3>
+                                </div>
+                                <div class="register_scope2">
+                                    <a style="display: block;
+                                              overflow-x: visible;
+                                              white-space: normal;
+                                              padding: 10px;
+                                              width: 200px;
+                                              font-size: 14px;
+                                              border-style: solid;
+                                              display: block;
+                                              margin-left: 15px;
+                                              text-align: center;"
+                                       href="#">Đăng ký khám (Sáng)</a>
+                                    <p style="margin-left:10px;margin-top:10px;">Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ</p>
+                                </div>
+                                <div class="address"
+                                     style="border-top: 1px solid #eee;
+                                            padding-top: 10px;
+                                            margin-top: 10px;">
+                                    <h3 style="text-transform: uppercase;
+                                               font-size: 14px;
+                                               color: #666;
+                                               font-weight: bold;
+                                               margin-top:10px;">Địa chỉ khám</h3>
+                                    <p style="margin-bottom:0px;">
+                                        Bệnh viện Đa khoa Đông Đô
+                                        <br>
+                                        Số 5 phố Xã Đàn - Đống Đa - Hà Nội
+                                    </p>
+                                </div>
+                                <div class="cost">
+                                    <h3 style="text-transform: uppercase;
+                                               font-size: 14px;
+                                               color: #666;
+                                               font-weight: bold;
+                                               display:inline;">Giá khám:</h3>
+                                    <span>400.000<sup>đ</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Register Info-->
                     </div>
-                    <!--End Register Info-->
-                </div>
-                <!--End Each doctor scope-->
-
-
-                <!--Each doctor scope-->
-                <div class="eachDoctor">
-                    <!--Abstract doctor-->
-                    <div class="abstract_doctor">
-                        <div class="image_scope">
-                            <img class="image_doctor" src="https://cdn.bookingcare.vn/fr/w200/2020/01/03/085845-bscki-hua-thi-ngoc-ha.jpg" width="80px" height="80">
-                            <div style="margin-top:5px;font-size: 14px;text-align: left;padding-left:7px;">Xem thêm</div>
+                    <!--End Each doctor scope-->
+                    <!--Each doctor scope-->
+                    <div class="eachDoctor">
+                        <!--Abstract doctor-->
+                        <div class="abstract_doctor">
+                            <div class="image_scope">
+                                <img class="image_doctor"
+                                     src="https://cdn.bookingcare.vn/fr/w200/2020/01/03/085845-bscki-hua-thi-ngoc-ha.jpg"
+                                     width="80px"
+                                     height="80">
+                                <div style="margin-top:5px;
+                                            font-size: 14px;
+                                            text-align: left;
+                                            padding-left:7px;">Xem thêm</div>
+                            </div>
+                            <div class="infoAbstract">
+                                <h2 style="color:#45c3d2;font-size:18px">Bác sĩ chuyên khoa I Hứa Thị Ngọc Hà</h2>
+                                <p>
+                                    Nguyên Trưởng khoa Nội tim mạch, Bệnh viện 198 - Bộ Công An
+                                    <br>
+                                    Hiện là Trưởng khoa Khám bệnh, Bệnh viện Đông Đô
+                                    <br>
+                                    Địa chỉ: Thành phố Hồ Chí Minh
+                                </p>
+                            </div>
                         </div>
-                        <div class="infoAbstract">
-                            <h2 style="color:#45c3d2;font-size:18px">Bác sĩ chuyên khoa I Hứa Thị Ngọc Hà</h2>
-                            <p>
-                                Nguyên Trưởng khoa Nội tim mạch, Bệnh viện 198 - Bộ Công An
-                                <br>
-                                Hiện là Trưởng khoa Khám bệnh, Bệnh viện Đông Đô
-                                <br>
-                                Địa chỉ: Thành phố Hồ Chí Minh
-                            </p>
+                        <!--End Abstract doctor-->
+                        <!--Register Info-->
+                        <div class="infoRegister">
+                            <div class="infoRegister_modifyScope">
+                                <div class="register_scope1">
+                                    <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static">
+                                        <i style="position:static"
+                                           class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám
+                                    </h3>
+                                </div>
+                                <div class="register_scope2">
+                                    <a style="display: block;
+                                              overflow-x: visible;
+                                              white-space: normal;
+                                              padding: 10px;
+                                              width: 200px;
+                                              font-size: 14px;
+                                              border-style: solid;
+                                              display: block;
+                                              margin-left: 15px;
+                                              text-align: center;"
+                                       href="#">Đăng ký khám (Tối)</a>
+                                    <p style="margin-left:10px;margin-top:10px;">
+                                        Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ
+                                    </p>
+                                </div>
+                                <div class="address"
+                                     style="border-top: 1px solid #eee;
+                                            padding-top: 10px;
+                                            margin-top: 10px;">
+                                    <h3 style="text-transform: uppercase;
+                                               font-size: 14px;
+                                               color: #666;
+                                               font-weight: bold;
+                                               margin-top:10px;">
+                                        Địa chỉ khám
+                                    </h3>
+                                    <p style="margin-bottom:0px;">
+                                        Bệnh viện Đa khoa Đông Đô
+                                        <br>
+                                        Số 5 phố Xã Đàn - Đống Đa - Hà Nội
+                                    </p>
+                                </div>
+                                <div class="cost">
+                                    <h3 style="text-transform: uppercase;
+                                               font-size: 14px;
+                                               color: #666;
+                                               font-weight: bold;
+                                               display:inline;">
+                                        Giá khám:
+                                    </h3>
+                                    <span>350.000<sup>đ</sup></span>
+                                </div>
+                            </div>
                         </div>
+                        <!--End Register Info-->
                     </div>
-                    <!--End Abstract doctor-->
-                    <!--Register Info-->
-                    <div class="infoRegister">
-                        <div class="infoRegister_modifyScope">
-                            <div class="register_scope1">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static"><i style="position:static" class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám</h3>
-                            </div>
-                            <div class="register_scope2">
-                                <a style="display: block;overflow-x: visible;white-space: normal;padding: 10px;width: 200px;font-size: 14px;border-style: solid;display: block;margin-left: 15px;text-align: center;" href="#">Đăng ký khám (Tối)</a>
-                                <p style="margin-left:10px;margin-top:10px;">Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ</p>
-                            </div>
-                            <div class="address"style="border-top: 1px solid #eee;padding-top: 10px;margin-top: 10px;">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #666;font-weight: bold; margin-top:10px;">Địa chỉ khám</h3>
-                                <p style="margin-bottom:0px;">Bệnh viện Đa khoa Đông Đô
-                                <br>
-                                Số 5 phố Xã Đàn - Đống Đa - Hà Nội</p>
-                            </div>
-                            <div class="cost">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #666;font-weight: bold;display:inline;">Giá khám:</h3>
-                                <span>350.000<sup>đ</sup></span>
-                            </div>
-                        </div>
+                    <!--End Each doctor scope-->
+                    <div class="intro_clinic" id="gioithieu">
+                        <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">
+                            GIỚI THIỆU:
+                        </h3>
+                        <hr style="margin-bottom:10px;margin-top:10px">
+                        <p>
+                            Bệnh viện Đa khoa Đông Đô hoạt động từ năm 2011 với diện tích sử dụng 3.500m2 , gồm 9 tầng lầu và 1 tầng hầm, quy mô 45 giường bệnh cùng các trang thiết bị tiên tiến nhất hiện nay.
+                            <br>
+                            <b>Nền tảng của Đông Đô chính là đội ngũ bác sĩ đầu ngành có chuyên môn sâu,</b> tận tâm yêu nghề, giàu y đức. Các bác sĩ đã từng học tập, tu nghiệp tại nước ngoài, đã và đang công tác tại các bệnh viện lớn như: Bệnh viện Bạch Mai, Viện Tim Trung ương, Bệnh viện Tim mạch Hà Nội, Bệnh viện Việt Đức, Bệnh viện Hữu nghị Việt Xô…
+                        </p>
+                        <ul>
+                            <li>
+                                Phó Giáo sư, Tiến sĩ Vũ Thị Thanh Thủy - Nguyên Trưởng khoa Cơ Xương Khớp - Bệnh Viện Bạch Mai, Chủ tịch Hội loãng xương Hà Nội
+                            </li>
+                            <li>
+                                Giáo sư, Tiến sĩ Nguyễn Lân Việt - Nguyên Viện trưởng Viện Tim Mạch Quốc Gia, nguyên Hiệu trưởng trường Đại học Y Hà Nội
+                            </li>
+                            <li>
+                                Giáo sư, Tiến sĩ, Bác sĩ Đỗ Doãn Lợi - Nguyên Viện trưởng Viện Tim mạch Quốc gia, nguyên Phó Giám đốc Bệnh viện Bạch Mai
+                            </li>
+                            <li>
+                                Phó Giáo sư, Tiến sĩ, Bác sĩ Phạm Thị Hồng Thi - Nguyên Viện trưởng Viện Tim Mạch Quốc Gia, nguyên Hiệu trưởng Trường Đại học Y Hà Nội
+                            </li>
+                            <li>
+                                Bác sĩ Chuyên khoa I Hứa Thị Ngọc Hà - Nguyên Trưởng khoa Nội tim mạch, Bệnh viện 198 - Bộ Công An
+                            </li>
+                        </ul>
+                        <p>
+                            <b>Sử dụng công nghệ, máy móc hiện đại theo tiêu chuẩn Châu Âu:</b>
+                        </p>
+                        <ul>
+                            <li>
+                                Hệ thống phòng mổ vô khuẩn một chiều được đánh giá hiện đại nhất hiện nay
+                            </li>
+                            <li>
+                                Máy can thiệp mạch DSA
+                            </li>
+                            <li>
+                                Máy đo loãng xương theo tiêu chuẩn quốc tế
+                            </li>
+                            <li>
+                                Hệ thống siêu âm 4D màu ALOKA…
+                            </li>
+                            <li>
+                                Và rất nhiều trang thiết bị hiện đại khác
+                            </li>
+                        </ul>
+                        <p>
+                            <b>Dịch vụ chăm sóc tốt, chi phí hợp lý cho mọi đối tượng</b>
+                        </p>
+                        <p>
+                            Bên cạnh hệ thống máy móc tiên tiến và đội ngũ bác sĩ có tay nghề cao, khách hàng có thể an tâm tới khám tại bệnh viện vì chi phí khám chữa bệnh luôn minh bạch, hợp lý . Các chi phí thăm khám, dịch vụ y tế đều được công khai, rõ ràng và phù hợp với mọi đối tượng bệnh nhân dưới sự giám sát và cho phép của Bộ Y tế.
+                        </p>
+                        <p>
+                            <b>Địa chỉ:</b> Số 5 Xã Đàn, Đống Đa, Hà Nội
+                        </p>
+                        <p>
+                            <b>Thời gian làm việc:</b>
+                        </p>
+                        <ul>
+                            <li>
+                                Thứ 2 đến Chủ Nhật
+                            </li>
+                            <li>
+                                7h30 đến 17h00
+                            </li>
+                        </ul>
+                        <p>
+                            <b>Hình thức thanh toán chi phí khám chữa bệnh:</b>
+                        </p>
+                        <ul>
+                            <li>
+                                Khám chữa bệnh theo yêu cầu (chi trả chi phí trực tiếp tại bệnh viện)
+                            </li>
+                            <li>
+                                Khám chữa bệnh theo bảo hiểm y tế
+                            </li>
+                            <li>
+                                Bảo lãnh viện phí
+                            </li>
+                        </ul>
                     </div>
-                    <!--End Register Info-->
-                </div>
-                <!--End Each doctor scope-->
-
-                <div class="intro_clinic" id="gioithieu">
-                    <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">GIỚI THIỆU:</h3>
-                    <hr style="margin-bottom:10px;margin-top:10px">
-                    <p>Bệnh viện Đa khoa Đông Đô hoạt động từ năm 2011 với diện tích sử dụng 3.500m2 , gồm 9 tầng lầu và 1 tầng hầm, quy mô 45 giường bệnh cùng các trang thiết bị tiên tiến nhất hiện nay.<br>
-                        <b>Nền tảng của Đông Đô chính là đội ngũ bác sĩ đầu ngành có chuyên môn sâu,</b> tận tâm yêu nghề, giàu y đức. Các bác sĩ đã từng học tập, tu nghiệp tại nước ngoài, đã và đang công tác tại các bệnh viện lớn như: Bệnh viện Bạch Mai, Viện Tim Trung ương, Bệnh viện Tim mạch Hà Nội, Bệnh viện Việt Đức, Bệnh viện Hữu nghị Việt Xô…
-                    </p>
-                    <ul>
-                        <li>Phó Giáo sư, Tiến sĩ Vũ Thị Thanh Thủy - Nguyên Trưởng khoa Cơ Xương Khớp - Bệnh Viện Bạch Mai, Chủ tịch Hội loãng xương Hà Nội</li>
-                        <li> Giáo sư, Tiến sĩ Nguyễn Lân Việt - Nguyên Viện trưởng Viện Tim Mạch Quốc Gia, nguyên Hiệu trưởng trường Đại học Y Hà Nội</li>
-                        <li> Giáo sư, Tiến sĩ, Bác sĩ Đỗ Doãn Lợi - Nguyên Viện trưởng Viện Tim mạch Quốc gia, nguyên Phó Giám đốc Bệnh viện Bạch Mai</li>
-                        <li> Phó Giáo sư, Tiến sĩ, Bác sĩ Phạm Thị Hồng Thi - Nguyên Viện trưởng Viện Tim Mạch Quốc Gia, nguyên Hiệu trưởng Trường Đại học Y Hà Nội</li>
-                        <li> Bác sĩ Chuyên khoa I Hứa Thị Ngọc Hà - Nguyên Trưởng khoa Nội tim mạch, Bệnh viện 198 - Bộ Công An</li>
-                    </ul>
-                    <p><b>Sử dụng công nghệ, máy móc hiện đại theo tiêu chuẩn Châu Âu:</b></p>
-                    <ul>
-                        <li>Hệ thống phòng mổ vô khuẩn một chiều được đánh giá hiện đại nhất hiện nay</li>
-                        <li>Máy can thiệp mạch DSA</li>
-                        <li>Máy đo loãng xương theo tiêu chuẩn quốc tế</li>
-                        <li>Hệ thống siêu âm 4D màu ALOKA…</li>
-                        <li>Và rất nhiều trang thiết bị hiện đại khác</li>
-                    </ul>
-                    <p><b>Dịch vụ chăm sóc tốt, chi phí hợp lý cho mọi đối tượng</b></p>
-                    <p>Bên cạnh hệ thống máy móc tiên tiến và đội ngũ bác sĩ có tay nghề cao, khách hàng có thể an tâm tới khám tại bệnh viện vì chi phí khám chữa bệnh luôn minh bạch, hợp lý . Các chi phí thăm khám, dịch vụ y tế đều được công khai, rõ ràng và phù hợp với mọi đối tượng bệnh nhân dưới sự giám sát và cho phép của Bộ Y tế. </p>
-                    <p><b>Địa chỉ:</b> Số 5 Xã Đàn, Đống Đa, Hà Nội </p>
-                    <p><b>Thời gian làm việc:</b></p>
-                    <ul>
-                        <li>Thứ 2 đến Chủ Nhật</li>
-                        <li>7h30 đến 17h00</li>
-                    </ul>
-                    <p><b>Hình thức thanh toán chi phí khám chữa bệnh:</b></p>
-                    <ul>
-                        <li>Khám chữa bệnh theo yêu cầu (chi trả chi phí trực tiếp tại bệnh viện)</li>
-                        <li>Khám chữa bệnh theo bảo hiểm y tế</li>
-                        <li>Bảo lãnh viện phí</li>
-                    </ul>
-                </div>
-                <div class="info_strengh" id="themanh">
-                    <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">THẾ MẠNH CHUYÊN MÔN:</h3>
-                    <hr style="margin-bottom:10px;margin-top:10px">
-                    <p><b>Bệnh viện có thế mạnh chuyên khám và điều trị về các vấn đề:</b></p>
-                    <ul>
-                        <li>Tim mạch </li>
-                        <li>Phẫu thuật Tim mạch </li>
-                        <li>Cơ xương khớp </li>
-                        <li>Tiêu hóa</li>
-                        <li>Mắt</li>
-                        <li>Vô sinh hiếm muộn</li>
-                    </ul>
-                </div>
-                <div class="info_equipment" id="thietbi">
-                    <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">TRANG THIẾT BỊ</h3>
-                    <hr style="margin-bottom:10px;margin-top:10px">
-                    <p>Bệnh viện đã cho nhập khẩu, chuyển giao trang thiết bị, công nghệ y học hiện đại ở những nước có nền y học phát triển và kế thừa những thành tựu y học của họ đưa vào ứng dụng trong thăm khám, tầm soát điều trị bệnh, trong đó phải kể đến:</p>
-                    <ul>
-                        <li>Hệ thống phòng mổ vô khuẩn một chiều được đánh giá hiện đại nhất hiện nay</li>
-                        <li>Máy can thiệp mạch DSA</li>
-                        <li>Máy đo loãng xương theo tiêu chuẩn quốc tế</li>
-                        <li>Hệ thống siêu âm 4D màu ALOKA… và rất nhiều trang thiết bị hiện đại khác</li>
-                    </ul>
-                    <img src="https://bookingcare.vn/files/blog/2022/09/07/101134-do-loang-xuong.jpg" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;height: auto;padding-bottom:10px">
-                    <p style="text-align:center"><i>Máy đo mật độ loãng xương toàn thân Hologic – Discovery - Nguồn: Bệnh viện cung cấp</i></p>
-                    <img src="https://bookingcare.vn/files/blog/2022/09/07/101513-phong-mo-tim-mach.jpg" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;height: auto;padding-bottom:10px">
-                    <p style="text-align:center"><i>Phòng mổ hiện đại đạt tiêu chuẩn quốc tế - Nguồn: Bệnh viện cung cấp</i></p>
-                </div>
-                <div class="info_location" id="vitri">
-                    <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">VỊ TRÍ</h3>
-                    <hr style="margin-bottom:10px;margin-top:10px">
-                    <p>Bệnh viện Đông Đô ở gần cửa hầm Kim Liên, đi từ hướng ngã tư Ô Chợ Dừa - Xã Đàn</p>
-                    <img src="https://bookingcare.vn/files/blog/2022/09/07/102604-map-dong-do.png" style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;height: auto;padding-bottom:10px">
+                    <div class="info_strengh" id="themanh">
+                        <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">
+                            THẾ MẠNH CHUYÊN MÔN:
+                        </h3>
+                        <hr style="margin-bottom:10px;margin-top:10px">
+                        <p>
+                            <b>Bệnh viện có thế mạnh chuyên khám và điều trị về các vấn đề:</b>
+                        </p>
+                        <ul>
+                            <li>
+                                Tim mạch
+                            </li>
+                            <li>
+                                Phẫu thuật Tim mạch
+                            </li>
+                            <li>
+                                Cơ xương khớp
+                            </li>
+                            <li>
+                                Tiêu hóa
+                            </li>
+                            <li>
+                                Mắt
+                            </li>
+                            <li>
+                                Vô sinh hiếm muộn
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="info_equipment" id="thietbi">
+                        <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">
+                            TRANG THIẾT BỊ
+                        </h3>
+                        <hr style="margin-bottom:10px;margin-top:10px">
+                        <p>
+                            Bệnh viện đã cho nhập khẩu, chuyển giao trang thiết bị, công nghệ y học hiện đại ở những nước có nền y học phát triển và kế thừa những thành tựu y học của họ đưa vào ứng dụng trong thăm khám, tầm soát điều trị bệnh, trong đó phải kể đến:
+                        </p>
+                        <ul>
+                            <li>
+                                Hệ thống phòng mổ vô khuẩn một chiều được đánh giá hiện đại nhất hiện nay
+                            </li>
+                            <li>
+                                Máy can thiệp mạch DSA
+                            </li>
+                            <li>
+                                Máy đo loãng xương theo tiêu chuẩn quốc tế
+                            </li>
+                            <li>
+                                Hệ thống siêu âm 4D màu ALOKA… và rất nhiều trang thiết bị hiện đại khác
+                            </li>
+                        </ul>
+                        <img src="https://bookingcare.vn/files/blog/2022/09/07/101134-do-loang-xuong.jpg"
+                             style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;height: auto;padding-bottom:10px">
+                        <p style="text-align:center">
+                            <i>Máy đo mật độ loãng xương toàn thân Hologic – Discovery - Nguồn: Bệnh viện cung cấp</i>
+                        </p>
+                        <img src="https://bookingcare.vn/files/blog/2022/09/07/101513-phong-mo-tim-mach.jpg"
+                             style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;height: auto;padding-bottom:10px">
+                        <p style="text-align:center">
+                            <i>Phòng mổ hiện đại đạt tiêu chuẩn quốc tế - Nguồn: Bệnh viện cung cấp</i>
+                        </p>
+                    </div>
+                    <div class="info_location" id="vitri">
+                        <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">
+                            VỊ TRÍ
+                        </h3>
+                        <hr style="margin-bottom:10px;margin-top:10px">
+                        <p>
+                            Bệnh viện Đông Đô ở gần cửa hầm Kim Liên, đi từ hướng ngã tư Ô Chợ Dừa - Xã Đàn
+                        </p>
+                        <img src="https://bookingcare.vn/files/blog/2022/09/07/102604-map-dong-do.png"
+                             style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;height: auto;padding-bottom:10px">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="footer">
+        <div class="footer">
             <div >
-                <img height="40" width="160" src="https://bookingcare.vn/assets/icon/bookingcare-2020.svg" alt="BookingCareLogo">
-                <h4>Công ty Cổ phần Công nghệ BookingCare</h4>
-                <p>
-                    28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội <br>
-                    ĐKKD số: 0106790291. Sở KHĐT Hà Nội cấp ngày 16/03/2015
-                </p> 
-            </div>
-            <div class="footerAddress">
-                <h4>Trụ sở tại Hà Nội</h4>
+                <img height="40"
+                     width="160"
+                     src="https://bookingcare.vn/assets/icon/bookingcare-2020.svg"
+                     alt="BookingCareLogo">
+                <h4>
+                    Công ty Cổ phần Công nghệ BookingCare
+                </h4>
                 <p>
                     28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội
-                </p> 
-                <h4>Văn phòng tại TP Hồ Chí Minh</h4>
+                    <br>
+                    ĐKKD số: 0106790291. Sở KHĐT Hà Nội cấp ngày 16/03/2015
+                </p>
+            </div>
+            <div class="footerAddress">
+                <h4>
+                    Trụ sở tại Hà Nội
+                </h4>
+                <p>
+                    28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội
+                </p>
+                <h4>
+                    Văn phòng tại TP Hồ Chí Minh
+                </h4>
                 <p>
                     Số 01, Hồ Bá Kiện, Phường 15, Quận 10
-                </p> 
-                <h4>Hỗ trợ khách hàng</h4>
+                </p>
+                <h4>
+                    Hỗ trợ khách hàng
+                </h4>
                 <p>
                     support@bookingcare.vn (7h - 18h)
-                </p> 
+                </p>
             </div>
         </div>
-
-    <script>
+        <script>
         function myFunction() {
             var change = document.getElementById("toggle");
             if (change.innerHTML == "Đọc thêm")
@@ -629,9 +857,8 @@
                 document.getElementById("content").style.display = 'none'
             }
         }
-    </script>
-
-    <script>
+        </script>
+        <script>
         window.onscroll = function() {myFunction1()};
         var navbar = document.getElementById("navbar");
         var sticky = navbar.offsetTop;
@@ -646,7 +873,6 @@
                 navbar.classList.remove("sticky");
             }
         }
-    </script>
-</body>
-
+        </script>
+    </body>
 </html>

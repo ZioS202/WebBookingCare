@@ -18,7 +18,7 @@ body {
 }
 
 #main-wrapper {
-  background-color: #efefef;
+  background-color: #f9f9f9;
   scroll-behavior: smooth;
   overflow-y: scroll;
   height: 100vh;
@@ -220,6 +220,7 @@ nav span {
  */
 footer {
   padding-top: 40px;
+  background: #efefef;
 }
 
 #contact {
@@ -276,6 +277,10 @@ footer {
 #contact__two a {
   color: var(--mau-bc-16);
   padding: 5px 0;
+}
+
+#contact__two a:hover {
+  text-decoration: underline;
 }
 
 #contact__three div {

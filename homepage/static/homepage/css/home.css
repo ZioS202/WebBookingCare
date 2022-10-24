@@ -422,8 +422,8 @@
 .segment-download {
   background: transparent url('../images/bookingcare-app-2020.png') no-repeat;
   background-size: 200px auto;
-  padding: 40px 25px 40px 520px;
-  background-position-x: 300px;
+  padding: 40px 25px 40px 530px;
+  background-position-x: 310px;
 }
 
 .segment-download h2 {

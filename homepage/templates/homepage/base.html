@@ -6,6 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>[NT208.N11.ANTT] - Group04_Booking Care</title>
+        {% block extra_head %}
+        {% endblock extra_head %}
         <link rel="stylesheet"
               type="text/css"
               href="{% static 'homepage/css/base.css' %}">
@@ -15,8 +17,6 @@
         <link rel="icon"
               type="image/png"
               href="{% static 'homepage/images/favicon.png' %}"/>
-        {% block extra_head %}
-        {% endblock extra_head %}
     </head>
     <body>
         <div id="main-wrapper">
@@ -30,7 +30,7 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">
+                            <a href="{% url 'findSpecialist' %}">
                                 Chuyên khoa
                                 <span>Tìm bác sĩ theo chuyên khoa</span>
                             </a>
@@ -42,7 +42,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{% url 'findDoctor' %}">
                                 Bác sĩ
                                 <span>Chọn bác sĩ giỏi</span>
                             </a>

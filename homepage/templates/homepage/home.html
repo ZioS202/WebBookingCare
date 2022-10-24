@@ -4,7 +4,9 @@
     <link rel="stylesheet"
           type="text/css"
           href="{% static 'homepage/css/home.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'homepage/slick-1.8.1/slick/slick.css' %} "/>
+    <link rel="stylesheet"
+          type="text/css"
+          href="{% static 'homepage/slick-1.8.1/slick/slick.css' %} "/>
     {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'homepage/slick-1.8.1/slick/slick-theme.css' %} "/> {% endcomment %}
 {% endblock extra_head %}
 {% block content %}
@@ -165,7 +167,13 @@
             <h2>Truyền thông nói về BookingCare</h2>
         </div>
         <div class="segment__content segment__truyenthong">
-            <iframe width="50%" height="432" src="https://www.youtube.com/embed/7tiR7SI4CkI" title="BookingCare trên VTV1 ngày 21/02/2018 - Chương trình Cà phê khởi nghiệp" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="50%"
+                    height="432"
+                    src="https://www.youtube.com/embed/7tiR7SI4CkI"
+                    title="BookingCare trên VTV1 ngày 21/02/2018 - Chương trình Cà phê khởi nghiệp"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             <ul>
                 <li>
                     <i class="segment__truyenthong-img suckhoedoisong-img"><a href="#">&af;</a></i>
@@ -211,8 +219,8 @@
     </section>
 {% endblock content %}
 {% block extra_script %}
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="{% static 'homepage/slick-1.8.1/slick/slick.min.js' %} "></script>
-<script type="text/javascript" src="{% static 'homepage/js/main.js' %} "></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'homepage/slick-1.8.1/slick/slick.min.js' %} "></script>
+    <script type="text/javascript" src="{% static 'homepage/js/main.js' %} "></script>
 {% endblock extra_script %}

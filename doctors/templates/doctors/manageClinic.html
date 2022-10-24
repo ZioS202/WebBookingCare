@@ -1,8 +1,6 @@
 {% extends 'doctors/base.html' %}
 {% block content %}
-
-<style>
-
+    <style>
 .tablink {
   background-color: #555;
   color: black;
@@ -119,217 +117,415 @@ tr:nth-child(even) {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-</style>
-<button class="tablink" onclick="openPage('schedule', this, 'rgb(192,192,192)')" id="defaultOpen">Tạo lịch khám</button>
-<button class="tablink" onclick="openPage('manegeBooking', this, 'rgb(192,192,192)')" >Quản lý booking</button>
-<button class="tablink" onclick="openPage('history', this, 'rgb(192,192,192)')">Lịch sử khám bệnh</button>
-
-<div id="schedule" class="tabcontent">
-  <hr>
-  <h3>Chọn thời gian lịch khám bạn muốn tạo:</h3>
-    <div class="choiceTime">
-      <div>
-        <button class="butChoice" onclick="choiceTime(this)">7:30 - 8:00</button>
-        <button class="butChoice" onclick="choiceTime(this)">8:00 - 9:00</button>
-        <button class="butChoice" onclick="choiceTime(this)">9:00 - 9:30</button>
-        <button class="butChoice" onclick="choiceTime(this)">9:30 - 10:00</button>
-        <button class="butChoice" onclick="choiceTime(this)">10:00 - 10:30</button>
-        <button class="butChoice" onclick="choiceTime(this)">10:30 - 11:00</button>
-        <button class="butChoice" onclick="choiceTime(this)">13:30 - 14:00</button>
-        <button class="butChoice" onclick="choiceTime(this)">14:00 - 14:30</button>
-        <button class="butChoice" onclick="choiceTime(this)">14:30 - 15:00</button>
-        <button class="butChoice" onclick="choiceTime(this)">15:00 - 15:30</button>
-        <button class="butChoice" onclick="choiceTime(this)">15:30 - 16:00</button>
-        <button class="butChoice" onclick="choiceTime(this)">16:00 - 16:30</button>
-        <button class="butChoice" onclick="choiceTime(this)">16:30 - 17:00</button>
-        <button class="butChoice" onclick="choiceTime(this)">17:00 - 17:30</button>
-      </div>
-      <div>
-        <button id ="reChoice" onclick="reloadClick('reload')">Tạo lại</button>
-        <button id ="create" onclick="reloadClick('accept')"> Xác nhận</button>
-
-      </div>
-  </div>
-</div>
-
-<div id="manegeBooking" class="tabcontent">
-  <hr>
-  <h3>Bảng tình trạng booking</h3>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <table>
-    <tr>
-      <th style="width:50%">Booking</th>
-      <th>Xử lý</th>
-    </tr>
-    <tr>
-      <td>Nguyễn Thị A - (15:30 - 16:00) - 0254123658</td>
-      <td>
-        <button class="fa fa-remove" onclick=""> Từ chối</button>
-        <button class="fa fa-check" onclick=""> Chấp nhận</button>
-      </td>
-    </tr>
-    <tr>
-      <td>Phạm Đoàn B - (14:00 - 14:30) - 0425789345</td>
-      <td>
-        <button class="fa fa-remove" onclick=""> Từ chối</button>
-        <button class="fa fa-check" onclick=""> Chấp nhận</button>
-      </td>
-    </tr>
-    <tr>
-      <td>Phạm Đoàn B - (14:00 - 14:30) - 0425789345</td>
-      <td><i class="fa fa-check"></i></td>
-    </tr>
-    <tr>
-      <td>Mạc C - (7:30 - 8:00) - 0254698254</td>
-      <td><i class="fa fa-remove"></i></td>
-    </tr>
-    <tr>
-      <td>Lưu Đ - (9:00 - 9:30) - 0365148529</td>
-      <td><i class="fa fa-check"></i></td>
-    </tr>
-  </table>
-</div>
-
-<div id="history" class="tabcontent">
-  <hr>
-  <div>
-
-    <table id="tableHistory" class="table table-striped table-bordered" style="width:100%;">
-      <thead>
-          <tr>
-              <th>Họ và tên</th>
-              <th>Ca khám</th>
-              <th>SĐT</th>
-              <th>Tuổi</th>
-              <th>Ngày khám</th>
-              <th>Thanh toán</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td>Phạm A</td>
-              <td>9:00 - 9:30</td>
-              <td>0236548596</td>
-              <td>61</td>
-              <td>2022-04-25</td>
-              <td>150.000</td>
-          </tr>
-          <tr>
-            <td>Đoàn D</td>
-            <td>9:00 - 10:30</td>
-            <td>0236548596</td>
-            <td>21</td>
-            <td>2022-03-25</td>
-            <td>510.000</td>
-          </tr>
-
-          <tr>
-            <td>Tuyên K</td>
-            <td>8:00 - 9:30</td>
-            <td>0123485769</td>
-            <td>31</td>
-            <td>2022-06-05</td>
-            <td>425.000</td>
-          </tr>
-          <tr>
-            <td>An T</td>
-            <td>8:00 - 9:30</td>
-            <td>0351485962</td>
-            <td>27</td>
-            <td>2022-05-15</td>
-            <td>614.000</td>
-          </tr>
-          <tr>
-            <td>Bách K</td>
-            <td>10:00 - 10:30</td>
-            <td>0528569582</td>
-            <td>26</td>
-            <td>2022-03-15</td>
-            <td>128.000</td>
-          </tr>
-          <tr>
-            <td>Nhĩ Đại V</td>
-            <td>10:00 - 10:30</td>
-            <td>0528569582</td>
-            <td>26</td>
-            <td>2022-03-15</td>
-            <td>128.000</td>
-          </tr>
-          <tr>
-            <td>Chung Q</td>
-            <td>9:00 - 10:30</td>
-            <td>0369696347</td>
-            <td>25</td>
-            <td>2022-06-27</td>
-            <td>687.000</td>
-          </tr>
-          <tr>
-            <td>Tiêu A</td>
-            <td>9:00 - 9:30</td>
-            <td>0236548596</td>
-            <td>61</td>
-            <td>2022-04-25</td>
-            <td>150.000</td>
-        </tr>
-        <tr>
-          <td>Mỹ Đô T</td>
-          <td>9:00 - 10:30</td>
-          <td>0236548596</td>
-          <td>21</td>
-          <td>2022-03-25</td>
-          <td>510.000</td>
-        </tr>
-
-        <tr>
-          <td>Bách Lý T</td>
-          <td>8:00 - 9:30</td>
-          <td>0123485769</td>
-          <td>31</td>
-          <td>2022-06-05</td>
-          <td>425.000</td>
-        </tr>
-        <tr>
-          <td>Tư Đồ L</td>
-          <td>8:00 - 9:30</td>
-          <td>0351485962</td>
-          <td>27</td>
-          <td>2022-05-15</td>
-          <td>614.000</td>
-        </tr>
-        <tr>
-          <td>Quách T</td>
-          <td>10:00 - 10:30</td>
-          <td>0528569582</td>
-          <td>26</td>
-          <td>2022-03-15</td>
-          <td>128.000</td>
-        </tr>
-        <tr>
-          <td>Long Nhĩ Đ</td>
-          <td>10:00 - 10:30</td>
-          <td>0528569582</td>
-          <td>26</td>
-          <td>2022-03-15</td>
-          <td>128.000</td>
-        </tr>
-        <tr>
-          <td>Phương Mây X</td>
-          <td>9:00 - 10:30</td>
-          <td>0369696347</td>
-          <td>25</td>
-          <td>2022-06-27</td>
-          <td>687.000</td>
-        </tr>
-      </tbody>
-      </table>
-  </div>
-    
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
-</div>
-<script>
+    </style>
+    <button class="tablink"
+            onclick="openPage('schedule', this, 'rgb(192,192,192)')"
+            id="defaultOpen">
+        Tạo lịch khám
+    </button>
+    <button class="tablink"
+            onclick="openPage('manegeBooking', this, 'rgb(192,192,192)')">Quản lý booking</button>
+    <button class="tablink"
+            onclick="openPage('history', this, 'rgb(192,192,192)')">Lịch sử khám bệnh</button>
+    <div id="schedule" class="tabcontent">
+        <hr>
+        <h3>Chọn thời gian lịch khám bạn muốn tạo:</h3>
+        <div class="choiceTime">
+            <div>
+                <button class="butChoice" onclick="choiceTime(this)">7:30 - 8:00</button>
+                <button class="butChoice" onclick="choiceTime(this)">8:00 - 9:00</button>
+                <button class="butChoice" onclick="choiceTime(this)">9:00 - 9:30</button>
+                <button class="butChoice" onclick="choiceTime(this)">9:30 - 10:00</button>
+                <button class="butChoice" onclick="choiceTime(this)">10:00 - 10:30</button>
+                <button class="butChoice" onclick="choiceTime(this)">10:30 - 11:00</button>
+                <button class="butChoice" onclick="choiceTime(this)">13:30 - 14:00</button>
+                <button class="butChoice" onclick="choiceTime(this)">14:00 - 14:30</button>
+                <button class="butChoice" onclick="choiceTime(this)">14:30 - 15:00</button>
+                <button class="butChoice" onclick="choiceTime(this)">15:00 - 15:30</button>
+                <button class="butChoice" onclick="choiceTime(this)">15:30 - 16:00</button>
+                <button class="butChoice" onclick="choiceTime(this)">16:00 - 16:30</button>
+                <button class="butChoice" onclick="choiceTime(this)">16:30 - 17:00</button>
+                <button class="butChoice" onclick="choiceTime(this)">17:00 - 17:30</button>
+            </div>
+            <div>
+                <button id ="reChoice" onclick="reloadClick('reload')">Tạo lại</button>
+                <button id ="create" onclick="reloadClick('accept')">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+    <div id="manegeBooking" class="tabcontent">
+        <hr>
+        <h3>Bảng tình trạng booking</h3>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <table>
+            <tr>
+                <th style="width:50%">Booking</th>
+                <th>Xử lý</th>
+            </tr>
+            <tr>
+                <td>Nguyễn Thị A - (15:30 - 16:00) - 0254123658</td>
+                <td>
+                    <button class="fa fa-remove" onclick="">Từ chối</button>
+                    <button class="fa fa-check" onclick="">Chấp nhận</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Phạm Đoàn B - (14:00 - 14:30) - 0425789345
+                </td>
+                <td>
+                    <button class="fa fa-remove" onclick="">
+                        Từ chối
+                    </button>
+                    <button class="fa fa-check" onclick="">
+                        Chấp nhận
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Phạm Đoàn B - (14:00 - 14:30) - 0425789345
+                </td>
+                <td>
+                    <i class="fa fa-check"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mạc C - (7:30 - 8:00) - 0254698254
+                </td>
+                <td>
+                    <i class="fa fa-remove"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Lưu Đ - (9:00 - 9:30) - 0365148529
+                </td>
+                <td>
+                    <i class="fa fa-check"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="history" class="tabcontent">
+        <hr>
+        <div>
+            <table id="tableHistory"
+                   class="table table-striped table-bordered"
+                   style="width:100%;">
+                <thead>
+                    <tr>
+                        <th>
+                            Họ và tên
+                        </th>
+                        <th>
+                            Ca khám
+                        </th>
+                        <th>
+                            SĐT
+                        </th>
+                        <th>
+                            Tuổi
+                        </th>
+                        <th>
+                            Ngày khám
+                        </th>
+                        <th>
+                            Thanh toán
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Phạm A
+                        </td>
+                        <td>
+                            9:00 - 9:30
+                        </td>
+                        <td>
+                            0236548596
+                        </td>
+                        <td>
+                            61
+                        </td>
+                        <td>
+                            2022-04-25
+                        </td>
+                        <td>
+                            150.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Đoàn D
+                        </td>
+                        <td>
+                            9:00 - 10:30
+                        </td>
+                        <td>
+                            0236548596
+                        </td>
+                        <td>
+                            21
+                        </td>
+                        <td>
+                            2022-03-25
+                        </td>
+                        <td>
+                            510.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Tuyên K
+                        </td>
+                        <td>
+                            8:00 - 9:30
+                        </td>
+                        <td>
+                            0123485769
+                        </td>
+                        <td>
+                            31
+                        </td>
+                        <td>
+                            2022-06-05
+                        </td>
+                        <td>
+                            425.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            An T
+                        </td>
+                        <td>
+                            8:00 - 9:30
+                        </td>
+                        <td>
+                            0351485962
+                        </td>
+                        <td>
+                            27
+                        </td>
+                        <td>
+                            2022-05-15
+                        </td>
+                        <td>
+                            614.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Bách K
+                        </td>
+                        <td>
+                            10:00 - 10:30
+                        </td>
+                        <td>
+                            0528569582
+                        </td>
+                        <td>
+                            26
+                        </td>
+                        <td>
+                            2022-03-15
+                        </td>
+                        <td>
+                            128.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Nhĩ Đại V
+                        </td>
+                        <td>
+                            10:00 - 10:30
+                        </td>
+                        <td>
+                            0528569582
+                        </td>
+                        <td>
+                            26
+                        </td>
+                        <td>
+                            2022-03-15
+                        </td>
+                        <td>
+                            128.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Chung Q
+                        </td>
+                        <td>
+                            9:00 - 10:30
+                        </td>
+                        <td>
+                            0369696347
+                        </td>
+                        <td>
+                            25
+                        </td>
+                        <td>
+                            2022-06-27
+                        </td>
+                        <td>
+                            687.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Tiêu A
+                        </td>
+                        <td>
+                            9:00 - 9:30
+                        </td>
+                        <td>
+                            0236548596
+                        </td>
+                        <td>
+                            61
+                        </td>
+                        <td>
+                            2022-04-25
+                        </td>
+                        <td>
+                            150.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Mỹ Đô T
+                        </td>
+                        <td>
+                            9:00 - 10:30
+                        </td>
+                        <td>
+                            0236548596
+                        </td>
+                        <td>
+                            21
+                        </td>
+                        <td>
+                            2022-03-25
+                        </td>
+                        <td>
+                            510.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Bách Lý T
+                        </td>
+                        <td>
+                            8:00 - 9:30
+                        </td>
+                        <td>
+                            0123485769
+                        </td>
+                        <td>
+                            31
+                        </td>
+                        <td>
+                            2022-06-05
+                        </td>
+                        <td>
+                            425.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Tư Đồ L
+                        </td>
+                        <td>
+                            8:00 - 9:30
+                        </td>
+                        <td>
+                            0351485962
+                        </td>
+                        <td>
+                            27
+                        </td>
+                        <td>
+                            2022-05-15
+                        </td>
+                        <td>
+                            614.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Quách T
+                        </td>
+                        <td>
+                            10:00 - 10:30
+                        </td>
+                        <td>
+                            0528569582
+                        </td>
+                        <td>
+                            26
+                        </td>
+                        <td>
+                            2022-03-15
+                        </td>
+                        <td>
+                            128.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Long Nhĩ Đ
+                        </td>
+                        <td>
+                            10:00 - 10:30
+                        </td>
+                        <td>
+                            0528569582
+                        </td>
+                        <td>
+                            26
+                        </td>
+                        <td>
+                            2022-03-15
+                        </td>
+                        <td>
+                            128.000
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Phương Mây X
+                        </td>
+                        <td>
+                            9:00 - 10:30
+                        </td>
+                        <td>
+                            0369696347
+                        </td>
+                        <td>
+                            25
+                        </td>
+                        <td>
+                            2022-06-27
+                        </td>
+                        <td>
+                            687.000
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
+    </div>
+    <script>
     function openPage(pageName, elmnt, color) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -364,5 +560,5 @@ tr:nth-child(even) {
       $('#tableHistory').DataTable({
       });
     });
-</script>
+    </script>
 {% endblock content %}
