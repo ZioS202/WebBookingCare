@@ -1,0 +1,195 @@
+{% extends 'homepage/base.html' %}
+{% block extra_head %}
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+    h3 
+    {
+        font-size: 16px;
+        font-weight: lighter;
+    }
+    .content
+    {
+        padding: 40px 15px;
+        background: #fff;
+    }
+    table 
+    {
+        border-collapse: collapse;
+        width: 40%;
+    }
+    th, td 
+    {
+        text-align: left;
+        padding-top: 8px;
+        padding-left: 8px;
+        padding-bottom: 8px;
+        padding-right: 8px;
+        background-color: #ffffff;
+    }
+    .content hr 
+    {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: 0;
+        border-top: 1px solid #eee;
+    }
+    </style>
+{% endblock extra_head %}
+{% block content %}
+    <div class="content">
+        <h3 style="font-weight:bold">Thông tin các bệnh viện, phòng khám nổi bật:</h3>
+        <table>
+            <tr>
+                <td>
+                    <a href="{% url 'clinicDetail' %}">
+                        <img src="https://cdn.bookingcare.vn/fr/w300/2022/09/07/103829-le-tan-dong-do.jpg"
+                             alt="Bệnh viện Đa khoa Đông Đô"
+                             style="width:100px;height:67px">
+                    </a>
+                </td>
+                <td style="text-align:left;width: 90%;">
+                    <a href="{% url 'clinicDetail' %}">
+                        <h3>Bệnh viện Đa khoa Đông Đô</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <hr color="#e2e1e1">
+        <table>
+            <tr>
+                <td style="text-align:left;">
+                    <img src="https://cdn.bookingcare.vn/fr/w500/2021/09/14/095119-benh-vien-cho-ray-h1.jpg"
+                         alt="Bệnh viện Chợ Rẫy"
+                         style="width:100px;height:67px">
+                </td>
+                <td style="text-align:left;width: 90%">
+                    <a href="#">
+                        <h3>Bệnh viện Chợ Rẫy</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <hr color="#e2e1e1">
+        <table>
+            <tr>
+                <td style="text-align:left;">
+                    <img src="https://cdn.bookingcare.vn/fr/w500/2020/05/29/112414-pk-dhyd1.jpg"
+                         alt="Phòng khám Bệnh viện Đại học Y Dược 1"
+                         style="width:100px;height:67px">
+                </td>
+                <td style="text-align:left;width: 90%">
+                    <a href="#">
+                        <h3>Phòng khám Bệnh viện Đại học Y Dược 1</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <hr color="#e2e1e1">
+        <table>
+            <tr>
+                <td style="text-align:left;">
+                    <img src="https://cdn.bookingcare.vn/fr/w500/2020/04/13/114446-anh-bia-bvk.jpg"
+                         alt="Bệnh viện K - Cơ sở Phan Chu Trinh"
+                         style="width:100px;height:67px">
+                </td>
+                <td style="text-align:left;width: 90%">
+                    <a href="#">
+                        <h3>Bệnh viện K - Cơ sở Phan Chu Trinh</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <hr color="#e2e1e1">
+        <table>
+            <tr>
+                <td style="text-align:left;">
+                    <img src="https://cdn.bookingcare.vn/fr/w500/2020/06/04/095412-bv-hung-viet.jpg"
+                         alt="Bệnh viện Ung bướu Hưng Việt"
+                         style="width:100px;height:67px">
+                </td>
+                <td style="text-align:left;width: 90%">
+                    <a href="#">
+                        <h3>Bệnh viện Ung bướu Hưng Việt</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <hr color="#e2e1e1">
+        <table>
+            <tr>
+                <td style="text-align:left;">
+                    <img src="https://cdn.bookingcare.vn/fr/w500/2020/06/04/093035-benh-vien-thu-cuc-1.jpg"
+                         alt="Hệ thống Y tế Thu Cúc TCI"
+                         style="width:100px;height:67px">
+                </td>
+                <td style="text-align:left;width: 90%">
+                    <a href="#">
+                        <h3>Hệ thống Y tế Thu Cúc TCI</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <hr color="#e2e1e1">
+        <table>
+            <tr>
+                <td style="text-align:left;">
+                    <img src="https://cdn.bookingcare.vn/fr/w500/2022/05/12/101727-anh-sg-toan-dien-ben-ngoai.jpg"
+                         alt="Phòng khám Đa khoa Saigon Healthcare"
+                         style="width:100px;height:67px">
+                </td>
+                <td style="text-align:left;width: 90%">
+                    <a href="#">
+                        <h3>Phòng khám Đa khoa Saigon Healthcare</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <hr color="#e2e1e1">
+        <table>
+            <tr>
+                <td style="text-align:left;">
+                    <img src="https://cdn.bookingcare.vn/fr/w500/2021/04/29/145224-bn-nam-hoc-va-hiem-muon-hn.jpg"
+                         alt="Bệnh viện Nam học và Hiếm muộn Hà Nội"
+                         style="width:100px;height:67px">
+                </td>
+                <td style="text-align:left;width: 90%">
+                    <a href="#">
+                        <h3>Bệnh viện Nam học và Hiếm muộn Hà Nội</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <hr color="#e2e1e1">
+        <table>
+            <tr>
+                <td style="text-align:left;">
+                    <img src="https://cdn.bookingcare.vn/fr/w500/2019/09/04/172230benh-vien-hong-phat.jpg"
+                         alt="Bệnh viện Đa khoa Hồng Phát"
+                         style="width:100px;height:67px">
+                </td>
+                <td style="text-align:left;width: 90%">
+                    <a href="#">
+                        <h3>Bệnh viện Đa khoa Hồng Phát</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+        <hr color="#e2e1e1">
+        <table>
+            <tr>
+                <td style="text-align:left;">
+                    <img src="https://cdn.bookingcare.vn/fr/w500/2020/06/04/090854-bv-an-viet1.jpg"
+                         alt="Bệnh viện Đa khoa An Việt"
+                         style="width:100px;height:67px">
+                </td>
+                <td style="text-align:left;width: 90%">
+                    <a href="#">
+                        <h3>Bệnh viện Đa khoa An Việt</h3>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock content %}
