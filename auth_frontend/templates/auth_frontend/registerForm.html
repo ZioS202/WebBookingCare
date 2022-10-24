@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>REGISTER</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="{% static 'auth_frontend/css/style_register.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="register-form-wrap">
+  <img src="https://bookingcare.vn/assets/icon/bookingcare-2020.svg" alt="Booking Care" style="width:200px;height:50px;">
+  <h2><b>Register</b></h2>
+  <form id="register-form">
+    <p>
+    <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="password" id="password" name="password" placeholder="Password" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p style="margin-bottom:6px;">
+    <input type="password" id="retype-password" name="retype-password" placeholder="Retype password" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p style="display:inline;text-align: center;">
+    <input style="display:inline;width:12px;height:12px;" type="checkbox" id="showhide" name="Showhide" onclick="Click()"> <p style="display:inline;font-size:16px;font-style:normal;color:rgb(94, 93, 93)">Show password</p>
+    </p>
+    <p>
+    <input type="submit" id="register" value="Register now!" onclick="ClickSubmit()">
+    </p>
+    <a style="font-size: 20px" href="{% url 'loginForm' %}">Back to login!</a>
+  </form>
+  <div id="footer-register-form">
+    <p>"Booking care" want to save your health!<p>
+  </div><!--footer-register-form-->
+</div><!--register-form-wrap-->
+<!-- partial -->
+
+<script>
+  // Change the type of input to password or text
+function Click() {
+  var temp1 = document.getElementById("password");
+  var temp2 = document.getElementById("retype-password")
+  if (temp1.type === "password") {
+      temp1.type = "text";
+      temp2.type = "text";
+  }
+  else {
+      temp1.type = "password";
+      temp2.type = "password";
+  }
+}
+</script>
+    
+<script>
+function ClickSubmit() {
+  // Selecting the input element and get its value 
+  let password = document.getElementById("password").value;
+  let re_password = document.getElementById("retype-password").value;
+  if (password != re_password)
+  {
+    alert("Two password is not the same! Please try again!");
+  }
+  // Displaying the value
+  alert(inputVal);
+}
+</script>
+  
+</body>
+</html>

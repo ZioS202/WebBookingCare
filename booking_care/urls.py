@@ -23,4 +23,5 @@ urlpatterns = [
     path("", include("homepage.urls")),
     path("specialist/", include("specialists.urls")),
     path("clinic/", include("clinics.urls")),
+    path("auth_frontend/", include("auth_frontend.urls"))
 ]
