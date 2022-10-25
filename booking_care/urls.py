@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from auth_frontend.views import LoginForm, RegisterForm
 
 urlpatterns = [
     path("doctor/", include("doctors.urls")),
@@ -23,5 +24,8 @@ urlpatterns = [
     path("", include("homepage.urls")),
     path("specialist/", include("specialists.urls")),
     path("clinic/", include("clinics.urls")),
-    path("auth_frontend/", include("auth_frontend.urls"))
+    path("auth_frontend/", include("auth_frontend.urls")),
+    path("notification/", include("notifications.urls")),
+    path("login/", LoginForm.as_view(), name="login"),
+    path("signup/", RegisterForm.as_view(), name="signup"),
 ]

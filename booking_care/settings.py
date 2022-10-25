@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "notifications.apps.NotificationsConfig",
     "patients.apps.PatientsConfig",
     "specialists.apps.SpecialistsConfig",
+    "auth_frontend.apps.AuthFrontendConfig",
 ]
 
 MIDDLEWARE = [
