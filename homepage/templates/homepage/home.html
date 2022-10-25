@@ -23,7 +23,50 @@
                     <i class="search-icon" style='cursor: pointer;'></i>
                     <input type="search" placeholder='Tìm kiếm'>
                 </div>
-                <div id="banner__search-form-dropdown"></div>
+                <div id="banner__search-form-dropdown">
+                    <h3>Chuyên khoa</h3>
+                        <a href="{% url 'findSpecialist' %}">
+                            <i class='coxuongkhop-img'></i>
+                            <h4>Cơ xương khớp</h4>
+                        </a>
+                        <a href="#">
+                            <i class="thankinh-img"></i>
+                            <h4>Thần kinh</h4>
+                        </a>
+                        <a href="#">
+                            <i class="tieuhoa-img"></i>
+                            <h4>Tiêu hoá</h4>
+                        </a>
+                    <h3>Cơ sở y tế</h3>
+                        <a href="#">
+                            <i class="coxuongkhop-img"></i>
+                            <h4>Bệnh viện Hữu nghị Việt Đức</h4>
+                        </a>
+                        <a href="#">
+                            <i class="coxuongkhop-img"></i>
+                            <h4>Bệnh viện Chợ Rẫy</h4>
+                        </a>
+                        <a href="#">
+                            <i class="coxuongkhop-img"></i>
+                            <h4>Phòng khám Bệnh viện Đại học Y Dược 1</h4>
+                        </a>
+                    <h3>Bác sĩ</h3>
+                        <a href="#">
+                            <i class="coxuongkhop-img"></i>
+                            <h4>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h4>
+                            <h5>Da liễu</h5>
+                        </a>
+                        <a href="#">
+                            <i class="coxuongkhop-img"></i>
+                            <h4>Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An</h4>
+                            <h5>Tai Mũi Họng - Nhi khoa</h5>
+                        </a>
+                        <a href="#">
+                            <i class="coxuongkhop-img"></i>
+                            <h4>PGS, TS, Giảng viên cao cấp Trần Hữu Bình</h4>
+                            <h5>Sức khỏe tâm thần</h5>
+                        </a>
+                </div>
             </div>
             <div id="banner__shorcut-download">
                 <i class='google-play-badge'><a href="#">&af;</a></i>
@@ -33,7 +76,7 @@
         <div id="banner__choices">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="{% url 'findSpecialist' %}">
                         <i class='khamchuyenkhoa-icon banner__choices-img'></i>
                         Khám
                         <br>
@@ -111,7 +154,7 @@
     <section class="segment background--gray">
         <div class="segment__head">
             <h2>Chuyên khoa phổ biến</h2>
-            <a href="#">Xem thêm</a>
+            <a href="{% url 'findSpecialist' %}">Xem thêm</a>
         </div>
         <div class="segment__content segment__chuyenkhoa slick-4">
             <a href="#">
@@ -151,16 +194,90 @@
     <section class="segment background--white">
         <div class="segment__head">
             <h2>Cơ sở y tế nổi bật</h2>
-            <a href="#">Xem thêm</a>
+            <a href="{% url 'findClinic' %}">Xem thêm</a>
         </div>
-        <div class="segment__content"></div>
+        <div class="segment__content segment__clinic slick-4">
+            <a href="#">
+                <i class="segment__clinic-img bv-vietduc-img"></i>
+                Bệnh viện Hữu nghị Việt Đức
+            </a>
+            <a href="#">
+                <i class="segment__clinic-img bv-vietduc-img"></i>
+                Bệnh viện Hữu nghị Việt Đức
+            </a>
+            <a href="#">
+                <i class="segment__clinic-img bv-vietduc-img"></i>
+                Bệnh viện Hữu nghị Việt Đức
+            </a>
+            <a href="#">
+                <i class="segment__clinic-img bv-vietduc-img"></i>
+                Bệnh viện Hữu nghị Việt Đức
+            </a>
+            <a href="#">
+                <i class="segment__clinic-img bv-vietduc-img"></i>
+                Bệnh viện Hữu nghị Việt Đức
+            </a>
+            <a href="#">
+                <i class="segment__clinic-img bv-vietduc-img"></i>
+                Bệnh viện Hữu nghị Việt Đức
+            </a>
+            <a href="#">
+                <i class="segment__clinic-img bv-vietduc-img"></i>
+                Bệnh viện Hữu nghị Việt Đức
+            </a>
+            <a href="#">
+                <i class="segment__clinic-img bv-vietduc-img"></i>
+                Bệnh viện Hữu nghị Việt Đức
+            </a>
+        </div>
     </section>
     <section class="segment background--gray">
         <div class="segment__head">
             <h2>Bác sĩ nổi bật tuần qua</h2>
-            <a href="#">Xem thêm</a>
+            <a href="{% url 'findDoctor' %}">Xem thêm</a>
         </div>
-        <div class="segment__content"></div>
+        <div class="segment__content segment__doctor slick-4">
+            <a href="#">
+                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
+                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
+                <h4>Da liễu</h4>
+            </a>
+            <a href="#">
+                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
+                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
+                <h4>Da liễu</h4>
+            </a>
+            <a href="#">
+                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
+                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
+                <h4>Da liễu</h4>
+            </a>
+            <a href="#">
+                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
+                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
+                <h4>Da liễu</h4>
+            </a>
+            <a href="#">
+                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
+                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
+                <h4>Da liễu</h4>
+            </a>
+            <a href="#">
+                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
+                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
+                <h4>Da liễu</h4>
+            </a>
+            <a href="#">
+                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
+                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
+                <h4>Da liễu</h4>
+            </a>
+            <a href="#">
+                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
+                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
+                <h4>Da liễu</h4>
+            </a>
+        </div>
     </section>
     <section class="segment background--white">
         <div class="segment__head">

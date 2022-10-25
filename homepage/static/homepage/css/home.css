@@ -128,6 +128,17 @@
     no-repeat;
 }
 
+.bv-vietduc-img {
+  background: transparent
+    url('../images/segment-clinics/114348-bv-viet-duc.jpg') center center
+    no-repeat;
+}
+
+.bs-nguyenduyhung-img {
+  background: transparent url('../images/segment-doctors/114430-bshung.jpg')
+    center center no-repeat;
+}
+
 .suckhoedoisong-img {
   background: transparent
     url('../images/segment-communication/suckhoedoisong.png') center center
@@ -199,11 +210,12 @@
   width: fit-content;
   margin: 10px auto;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 #banner__search-form-input {
   display: flex;
+  position: relative;
   align-items: center;
   width: 456px;
   height: 50px;
@@ -219,6 +231,63 @@
   height: 21px;
   outline: none;
   background: transparent;
+}
+
+#banner__search-form-dropdown {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  text-align: left;
+  min-height: 50px;
+  max-height: 60vh;
+  overflow: auto;
+  font-size: 14px;
+  display: none;
+}
+
+#banner__search-form-dropdown h3 {
+  background: #f5f5f5;
+  padding: 3px 10px;
+  font-size: 14px;
+}
+
+#banner__search-form-dropdown h4,
+#banner__search-form-dropdown h5 {
+  font-weight: normal;
+}
+
+#banner__search-form-dropdown h5 {
+  color: #666;
+  font-size: 12px;
+  margin-top: 5px;
+  grid-column: 2/3;
+}
+
+#banner__search-form-dropdown a {
+  display: grid;
+  padding: 5px 10px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  font-weight: normal;
+  column-gap: 10px;
+  grid-template-columns: 35px 1fr;
+  align-items: center;
+}
+
+#banner__search-form-dropdown i {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  background-size: cover;
+  grid-row: 1/3;
+}
+
+.show-search-dropdown {
+  display: block !important;
 }
 
 #banner__shorcut-download {
@@ -263,7 +332,9 @@
 }
 
 #banner__choices a:hover,
-.segment__chuyenkhoa a:hover {
+.segment__chuyenkhoa a:hover,
+.segment__clinic a:hover,
+.segment__doctor a:hover {
   color: var(--mau-bc-16);
 }
 
@@ -327,7 +398,9 @@
   font-weight: bold;
 }
 
-.segment__chuyenkhoa a {
+.segment__chuyenkhoa a,
+.segment__clinic a,
+.segment__doctor a {
   display: flex !important;
   flex-flow: column;
   justify-content: space-between;
@@ -337,9 +410,35 @@
   font-size: 15px;
 }
 
-.segment__chuyenkhoa-img {
+.segment__doctor a {
+  text-align: center;
+}
+
+.segment__doctor h3 {
+  color: #111;
+  white-space: pre-wrap;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.segment__doctor h4 {
+  color: #555;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.segment__chuyenkhoa-img,
+.segment__clinic-img {
   width: 100%;
   height: 156px;
+  background-size: cover;
+}
+
+.segment__doctor-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
   background-size: cover;
 }
 

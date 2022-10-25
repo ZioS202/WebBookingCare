@@ -36,7 +36,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{% url 'findClinic' %}">
                                 Cơ sở y tế
                                 <span>Chọn bệnh viện phòng khám</span>
                             </a>
@@ -54,9 +54,11 @@
                         <i class='support-icon' style='margin-right: 3px;'></i>
                         Hỗ trợ
                     </a>
-                    <i class="notify-icon"></i>
+                    {% comment %} <i class="notify-icon"><span class="notify-badge">99+</span></i> {% endcomment %}
                     <i class="lang-icon"></i>
-                    <i class="user-icon"></i>
+                    {% comment %} <i class="user-icon"></i> {% endcomment %}
+                    <a href="{% url 'login' %}">Sign in</a>
+                    <a href="{% url 'signup' %}">Sign up</a>
                 </div>
             </header>
             <main>
@@ -148,8 +150,46 @@
                     </div>
                 </div>
             </footer>
+            <section class="modal js-modal">
+                <div class="homepage-modal-container js-modal-container">
+                    <div class="homepage-modal-container__main">
+                        <ul>
+                            <li>
+                                <a href="{% url 'homepage' %}">Trang chủ</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'findSpecialist' %}">Chuyên khoa</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'findClinic' %}">Cơ sở y tế</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'findDoctor' %}">Bác sĩ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </div>
+        
         {% comment %} Javascript {% endcomment %}
+        <script type="text/javascript">
+            const listIcon = document.querySelector('.list-icon');
+            const modal = document.querySelector('.js-modal');
+            const modalContainer = document.querySelector('.js-modal-container');
+
+            listIcon.onclick = function () {
+            modal.classList.add('show-homepage-modal');
+            };
+
+            modal.onclick = function () {
+            modal.classList.remove('show-homepage-modal');
+            };
+
+            modalContainer.onclick = function (event) {
+            event.stopPropagation();
+            };
+        </script>
         {% block extra_script %}
         {% endblock extra_script %}
     </body>
