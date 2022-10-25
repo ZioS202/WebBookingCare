@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -10,7 +11,9 @@
 <body>
 <!-- partial:index.partial.html -->
 <div id="register-form-wrap">
-  <img src="https://bookingcare.vn/assets/icon/bookingcare-2020.svg" alt="Booking Care" style="width:200px;height:50px;">
+  <div class='bookingcare-logo'>
+    <a href="{% url 'homepage' %}">&af;</a>
+  </div>
   <h2><b>Register</b></h2>
   <form id="register-form">
     <p>
@@ -31,7 +34,7 @@
     <p>
     <input type="submit" id="register" value="Register now!" onclick="ClickSubmit()">
     </p>
-    <a style="font-size: 20px" href="{% url 'loginForm' %}">Back to login!</a>
+    <a style="font-size: 20px" href="{% url 'login' %}">Back to login!</a>
   </form>
   <div id="footer-register-form">
     <p>"Booking care" want to save your health!<p>

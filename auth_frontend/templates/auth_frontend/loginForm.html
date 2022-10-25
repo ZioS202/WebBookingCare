@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>LOGIN</title>
+  <title>[NT208.N11.ANTT] - Group04_Booking Care</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="{% static 'auth_frontend/css/style_login.css' %}">
 
@@ -10,7 +11,9 @@
 <body>
 <!-- partial:index.partial.html -->
 <div id="login-form-wrap">
-  <img src="https://bookingcare.vn/assets/icon/bookingcare-2020.svg" alt="Booking Care" style="width:200px;height:50px;">
+  <div class='bookingcare-logo'>
+      <a href="{% url 'homepage' %}">&af;</a>
+  </div>
   <h2><b>Login</b></h2>
   <form id="login-form">
     <p>
@@ -27,7 +30,7 @@
     </p>
   </form>
   <div id="create-account-wrap">
-    <p>Not a member? <a href="{% url 'registerForm' %}">Create Account</a><p>
+    <p>Not a member? <a href="{% url 'signup' %}">Create Account</a><p>
   </div><!--create-account-wrap-->
 </div><!--login-form-wrap-->
 <!-- partial -->
