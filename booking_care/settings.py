@@ -41,10 +41,12 @@ INSTALLED_APPS = [
     "clinics.apps.ClinicsConfig",
     "doctors.apps.DoctorsConfig",
     "homepage.apps.HomepageConfig",
-    "notifications.apps.NotificationsConfig",
+    # "notifications.apps.NotificationsConfig",
     "patients.apps.PatientsConfig",
     "specialists.apps.SpecialistsConfig",
-    "auth_frontend.apps.AuthFrontendConfig",
+    "accounts.apps.AccountsConfig",
+    "phonenumber_field",
+    "djmoney",
 ]
 
 MIDDLEWARE = [
@@ -131,8 +133,32 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+# STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+
+# Media files (User uploaded files)
+
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# CustomUser model
+
+AUTH_USER_MODEL = "accounts.CustomUser"
+
+# django-phonenumber-field settings
+# https://django-phonenumber-field.readthedocs.io/en/latest/reference.html#settings
+
+PHONENUMBER_DEFAULT_REGION = "VN"
+PHONENUMBER_DB_FORMAT = "INTERNATIONAL"
+PHONENUMBER_DEFAULT_FORMAT = "INTERNATIONAL"
+
+# django-money settings
+# https://django-money.readthedocs.io/en/stable/#format-localization
+
+USE_L10N = True
