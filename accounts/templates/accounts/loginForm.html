@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>[NT208.N11.ANTT] - Group04_Booking Care</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="{% static 'accounts/css/style_login.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <div class='bookingcare-logo'>
+      <a href="{% url 'homepage' %}">&af;</a>
+  </div>
+  <h2><b>Login</b></h2>
+  <form id="login-form">
+    <p>
+    <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p style="margin-bottom:6px;">
+    <input type="password" id="password" name="password" placeholder="Password" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p style="display:inline;text-align: center;">
+    <input style="display:inline;width:12px;height:12px;" type="checkbox" id="showhide" name="Showhide" onclick="Click()"> <p style="display:inline;font-size:16px;font-style:normal;color:rgb(94, 93, 93)">Show password</p>
+    </p>
+    <p>
+    <input type="submit" id="login" value="Login">
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>Not a member? <a href="{% url 'signup' %}">Create Account</a><p>
+  </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->
+<!-- partial -->
+
+<script>
+  // Change the type of input to password or text
+function Click() {
+  var temp = document.getElementById("password");
+  if (temp.type === "password") {
+      temp.type = "text";
+  }
+  else {
+      temp.type = "password";
+  }
+}
+</script>
+  
+</body>
+</html>
