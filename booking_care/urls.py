@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from accounts.views import LoginForm, RegisterForm
+from custom_MatorMarkdownEditor.views import markdown_uploader
 
 urlpatterns = [
     path("doctor/", include("doctors.urls")),
@@ -27,7 +28,10 @@ urlpatterns = [
     path("specialist/", include("specialists.urls")),
     path("clinic/", include("clinics.urls")),
     path("accounts/", include("accounts.urls")),
+    path("bookings/", include("bookings.urls")),
     # path("notification/", include("notifications.urls")),
     path("login/", LoginForm.as_view(), name="login"),
     path("signup/", RegisterForm.as_view(), name="signup"),
+    path("martor/", include("martor.urls")),
+    path("api/uploader/", markdown_uploader, name="markdown_uploader_page"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

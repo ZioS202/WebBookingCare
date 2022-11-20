@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from djmoney.models.fields import MoneyField
+from martor.models import MartorField
 
 
 class Schedule(models.Model):
@@ -28,15 +29,17 @@ class DetailsDoctor(models.Model):
     clinic = models.ForeignKey(
         "clinics.Clinic", on_delete=models.PROTECT, related_name="clinic_doctors"
     )
+    specialists = models.ManyToManyField(
+        "specialists.Specialist", related_name="specialist_doctors"
+    )
     degree = models.ForeignKey(
         "accounts.AllCode",
         on_delete=models.PROTECT,
         related_name="degree_doctors",
         blank=True,
     )
-    descriptions = models.TextField(blank=True)
-    background_html = models.TextField(blank=True)
-    background_markdown = models.TextField(blank=True)
+    descriptions = MartorField(blank=True)
+    background = MartorField(blank=True)
     examination_price = MoneyField(
         max_digits=19, decimal_places=4, default_currency="VND", null=True, blank=True
     )
@@ -48,4 +51,4 @@ class DetailsDoctor(models.Model):
         db_table = "details_doctors"
 
     def __str__(self):
-        return self.doctor
+        return self.doctor.username

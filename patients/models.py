@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from martor.models import MartorField
 
 
 class History(models.Model):
@@ -13,8 +14,7 @@ class History(models.Model):
         on_delete=models.CASCADE,
         related_name="doctor_histories",
     )
-    Description_markdown = models.TextField()
-    Description_html = models.TextField()
+    description = MartorField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -22,4 +22,4 @@ class History(models.Model):
         db_table = "histories"
 
     def __str__(self):
-        return self.patient
+        return self.patient.username
