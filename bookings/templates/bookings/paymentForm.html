@@ -9,12 +9,17 @@
     <style>
         .frame
         {
-            margin-top:20px;
+            margin-top:100px;
             margin-left:400px;
             margin-right:400px;
             margin-bottom:100px;
             padding-bottom:20px;
             background-color: #adbfc3;
+            border-radius: 10px;
+            border-radius: 4px;
+            box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.5);
+            border: 1px black solid;
+            
         }
         .frame1
         {
@@ -24,10 +29,9 @@
             margin-bottom:10px;
             background-color: rgb(255, 255, 255);
             padding-bottom:10px;
+            border: 0.5px black solid;
         }
-        
-
-        .selectMethod
+        .select_method
         {
             margin-top:20px;
             margin-bottom: 30px;
@@ -36,10 +40,30 @@
         }
         body
         {
-            background-image: url(https://i.pinimg.com/originals/c2/94/cb/c294cbeeffadcea558d3ef7e7509b68d.gif);
-            background-repeat:no-repeat;
-            background-size: cover;
-            backdrop-filter: blur(4px)
+            background-color: #818a8c;
+        }
+        .info_basic
+        {
+            margin-left:50px;
+        }
+        input[type=submit] 
+        {
+            width: 20%;
+            background-color: #adbfc3;
+            color: rgb(0, 0, 0);
+            padding: 10px 10px;
+            margin: 8px 0;
+            border: 0.5px rgb(0, 0, 0) solid;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left:280px;
+            margin-right:280px;
+            font-weight: bolder;
+        }
+
+        input[type=submit]:hover 
+        {
+            background-color: #65868d;
         }
     </style>
 </head>
@@ -48,37 +72,38 @@
     <div class="frame">
         <h1 style="text-align:center; font-size:40px; padding-top:10px;"><b>Thông tin thanh toán</b></h1>
         <div class="frame1">
-            <h1 style="text-align:left; font-size:20px;padding-top:10px;"><b>Bác sĩ đặt khám:</b> Nguyễn Thị Hoài An</h1>
-            <h1 style="text-align:left; font-size:20px"><b>Thời gian:</b> 20h-20h30 14/5/2022</h1>
-            <h1 style="text-align:left; font-size:20px"><b>Tổng phí:</b> 200000 VND</h1>
-
-            <label style="text-align:left; font-size:20px" for="method">Chọn hình thức thanh toán:</label>
-            <select style="font-size:16px;" name="payment" id="payment">
-                <option value="Cash">Thanh toán bằng tiền mặt</option>
-                <option value="Momo">Thanh toán bằng Momo</option>
-                <option value="Visa">Thanh toán bằng Visa</option>
-                <option value="ATM">Thanh toán bằng ATM</option>
-            </select>
-
-            <div id="Momo" class="selectMethod">
-                <p>Vui lòng quét mã bên dưới để thanh toán:</p>
-                <img src="https://aebits-wp.s3.me-south-1.amazonaws.com/wp-content/uploads/2018/06/Icon-950x950.png" width="350px" height="380px" style="margin-left:90px">
+            <div class="info_basic">
+                <h1 style="text-align:left; font-size:20px;padding-top:10px;"><b>Bác sĩ đặt khám:</b> Nguyễn Thị Hoài An</h1>
+                <h1 style="text-align:left; font-size:20px"><b>Thời gian:</b> 20h-20h30 14/5/2022</h1>
+                <h1 style="text-align:left; font-size:20px"><b>Tổng phí:</b> 200000 VND</h1>
+                <label style="text-align:left; font-size:20px" for="method">Chọn hình thức thanh toán:</label>
+                <select style="font-size:16px;" name="payment" id="payment">
+                    <option value="Cash">Thanh toán bằng tiền mặt</option>
+                    <option value="Momo">Thanh toán bằng Momo</option>
+                    <option value="Visa">Thanh toán bằng Visa</option>
+                    <option value="ATM">Thanh toán bằng ATM</option>
+                </select>
             </div>
 
-            <div id="Visa" class="selectMethod">
+            <div id="Momo" class="select_method">
+                <p>Vui lòng quét mã bên dưới để thanh toán:</p>
+                <img src="https://aebits-wp.s3.me-south-1.amazonaws.com/wp-content/uploads/2018/06/Icon-950x950.png" width="350px" height="350px" style="margin-left:90px;margin-right:90px">
+            </div>
+
+            <div id="Visa" class="select_method">
                 <div style="margin-bottom:10px;">
                     <p>Nhập đầy đủ thông tin Visa để thanh toán:</p>
-                    <p style="display:inline; margin-right:38px;margin-bottom: 10px;">Số thẻ:</p><input style="width:400px;" type="text" id="idvisa" placeholder="48574...">
+                    <p style="display:inline; margin-right:38px;margin-bottom: 10px;">Số thẻ:</p><input style="width:450px;" type="text" id="idvisa" placeholder="48574...">
                 </div>
                 <div style="margin-bottom:10px;">
-                    <p style="display: inline; margin-right:10px">CVV/CVV2:</p><input style="width:400px;" type="text" id="cvv" placeholder="cvv or cvv2">
+                    <p style="display: inline; margin-right:10px">CVV/CVV2:</p><input style="width:450px;" type="text" id="cvv" placeholder="cvv or cvv2">
                 </div>
                 <div style="margin-bottom:10px;">
-                    <p style="display: inline; margin-right:35px">Số tiền:</p><input style="width:400px;" type="text" id="cvv" placeholder="200.000">
+                    <p style="display: inline; margin-right:35px">Số tiền:</p><input style="width:450px;" type="text" id="money" placeholder="200.000">
                 </div>
             </div>
 
-            <div id="ATM" class="selectMethod">
+            <div id="ATM" class="select_method">
                 <div style="margin-bottom:10px;">
                     <p>Nhập đầy đủ thông tin của thẻ ngân hàng để thanh toán:</p>
                     <p style="display:inline; margin-right:38px;margin-bottom: 10px;">Chọn ngân hàng: </p>
@@ -94,28 +119,29 @@
                     </select>
                 </div>
                 <div style="margin-bottom:10px;">
-                    <p style="display:inline; margin-right:44px;margin-bottom: 10px;">Số thẻ:</p><input style="width:400px;" type="text" id="idvisa" placeholder="48574...">
+                    <p style="display:inline; margin-right:44px;margin-bottom: 10px;">Số thẻ:</p><input style="width:450px;" type="text" id="idcard" placeholder="48574...">
                 </div>
                 <div style="margin-bottom:10px;">
-                    <p style="display: inline; margin-right:10px">Chủ sở hữu:</p><input style="width:400px;" type="text" id="cvv" placeholder="Nguyen Van A">
+                    <p style="display: inline; margin-right:10px">Chủ sở hữu:</p><input style="width:450px;" type="text" id="name" placeholder="Nguyen Van A">
                 </div>
                 <div style="margin-bottom:10px;">
-                    <p style="display: inline; margin-right:41px">Số tiền:</p><input style="width:400px;" type="text" id="cvv" placeholder="200.000">
+                    <p style="display: inline; margin-right:41px">Số tiền:</p><input style="width:450px;" type="text" id="money" placeholder="200.000">
                 </div>
             </div>
             <br>
-            <input style="margin-left:280px;margin-right:280px;;" type="submit" value="Chấp nhận">
+            <input type="submit" value="Chấp nhận">
         </div>
-
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
 
         $(document).ready(function(){
             $("#payment").on('change', function(){
-                $(".selectMethod").hide();
+                $(".select_method").hide();
                 $("#" + $(this).val()).fadeIn(700);
             }).change();
         });
     </script>
+    
 </body>
