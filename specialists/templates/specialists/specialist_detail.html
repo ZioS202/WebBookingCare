@@ -2,342 +2,334 @@
 {% block extra_head %}
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <style>
-    .abstract_scope
-    {
-        padding: 0;
-
-    }
-    h1 {
-        font-size: 16px;
-        font-weight: bold;
-    }
-    p,li{
-        font-size: 14px;
-        font-weight: lighter;
-    }
-    .content
-    {
-        padding: 40px;
-    }
-    table {
-        border-collapse: collapse;
-        width: 30%;
-    }
-    th, td {
-        text-align: left;
-        padding-top: 8px;
-        padding-left: 8px;
-        padding-bottom: 8px;
-        padding-right: 8px;
-        background-color: #ffffff;
-    }
-    hr {
-        width: 100%;
-    }
-    .abstract_scope_image {
-        background-image: url(https://cdn.bookingcare.vn/fr/w300/2019/12/13/120331-co-xuong-khop.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        image-rendering: -webkit-optimize-contrast;
-    }
-    .abstract_scope_info
-    {
-        padding-left: 200px;
-        padding-top: 60px;
-        padding-right: 190px;
-        padding-bottom: auto;
-        background-image: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 1));
-    }
-    
-    .specialist_scope{
-        margin: 0px;
-        padding: 0px;
-        padding-top:5px;
-        margin-top:10px;
-    }
-    .chonbacsi
-    {
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: auto;
-        margin-left: auto;
-        background-color: red;
-        opacity:1;
-    }
-    .choose{
-        padding: 10px 0;
-    }
-    .dropbtn {
-        background-color:rgb(231, 224, 224);
-        color: black;
-        padding-top: 7px;
-        padding-bottom: 25px;
-        margin-left:-18px;
-        font-size: 16px;
-        border-style: solid;
-        cursor: pointer;
-        border-radius: 5px;
-        width: 150px;
-        height: 40px;
-        text-align:left;
-        border-color:#858181
-        
-        }
-
-    .dropdown {
-        position: static;
-        display: inline-block;
-        padding-left:200px;
-        padding-top: 10px;
-        box-sizing: border-box;
-        
-    }
-
-    .dropdown-content {
-        display: none;
-        position: static;
-        background-color: #f9f9f9;
-        min-width: 130px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-
-    .dropdown-content a {
-        color: black;
-        padding-top: 5px;
-        padding-bottom:5px;
-        padding-right:0px;
-        padding-left: 5px;
-        text-decoration: none;
-        display: block;
-        font-size: 14px;
-    }
-
-    .dropdown-content a:hover {background-color: #f1f1f1}
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown:hover .dropbtn {
-        background-color: #4c4c4c;
-        color:white;
-        border-color: white;
-    }
-    .buttonshowhide
-    {
-        background-color: white;
-        color: rgb(66, 76, 184);
-        border: 2px solid #e7e7e7;
-        border-style:solid;
-        font-size: 15px;
-        border-color:rgb(230, 224, 224);
-        border-radius: 5px;
-    }
-    .buttonshowhide:hover
-    {
-        background-color: #e7e7e7;
-    }
-    .doctorsomeinfo
-    {
-        margin-top:10px;
-        margin-left:180px;
-        margin-right:200px;
-        background-color: aquamarine;
-    }
-    .doctor_scope
-    {
-        margin-left: 50px;
-        margin-right:50px;
-    }
-    .eachDoctor
-    {
-        background-color: #fff;
-        box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
-        border-radius: 8px;
-        border-bottom: none;
-        margin-bottom: 10px;
-        display:flex;
-    }
-
-
-    
-    .chooseDoctor_scope{
-        padding-right: 15px;
-        padding-left: 15px;
-        margin-right: 100px;
-        margin-left: 100px;
-        width:930x;
-    }
-    .section_menu{
-        padding: 10px, 0px;
-        display: block;
-    }
-    .select{
-        margin-left: 50px;
-        padding-right: 20px;
-        margin-top: 10px;
-        font-size: 16px;
-        padding-top: 5px;
-        padding-left: 5px;
-        border-color: gray;
-        margin-bottom: 10px;
-    }
-    .abstract_doctor
-    {
-        border-right: 1px solid #eee;
-        padding-right: 10px;
-        padding-top: 15px;
-        padding-left:15px;
-        padding-bottom: 15px;
-        width:53%;
-        box-sizing: border-box;
-
-    }
-    .image_scope
-    {
-        padding-right: 15px;
-        text-align: center;
-        display: table-cell;
-        vertical-align: top;;
-    }
-    .infoAbstract{
-        display: table-cell;
-        vertical-align: top;
-    }
-    .select_hour
-    {
-        color: #666;
-        text-transform: uppercase;
-        font-weight: bold;
-        padding: 15px;
-        margin: 0;
-        display: block;
-    }
-    .image_doctor
-    {
-        border-radius: 50%;
-        min-width: 80px;
-        
-    }
-    .schedule_and_cost
-    {
-        width: 47%;
-        float: right;
-    }
-    .infoRegister_modifyScope
-    {
-        padding: 15px 15px 10px 15px;
-        margin:0px;
-        box-sizing: border-box;
-    }
-    .register_scope1
-    {
-        padding: 0px 15px 15px 15px;
-        display: block;
-    }
-    .register_scope2
-    {
-        padding: 0px;
-        margin: 0px;
-        display:block;
-    }
-    .cost{
-        border-top: 1px solid #eee;
-        padding-top: 10px;
-        margin-top: 10px;
-        display: block;
-        font-size: 14px;
-    }
-    sup{
-        position: static;
-    }
-    i{
-        position: static;
-    }
-    
-    </style>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <title>Cơ xương khớp</title>
+          <style>
+              .abstract_scope
+              {
+                  padding: 0;
+      
+              }
+              h1 {
+                  font-size: 16px;
+                  font-weight: bold;
+              }
+              p,li{
+                  font-size: 14px;
+                  font-weight: lighter;
+              }
+              body
+              {
+                  background-color: #ffffff;
+                  margin: 0;
+                  font-size: 28px;
+                  font-family: Arial, Helvetica, sans-serif;
+                  opacity:0.9;
+              }
+              .content
+              {
+                  padding: 40px;
+              }
+      
+              table {
+                  border-collapse: collapse;
+                  width: 30%;
+                  
+              }
+      
+              th, td {
+                  text-align: left;
+                  padding-top: 8px;
+                  padding-left: 8px;
+                  padding-bottom: 8px;
+                  padding-right: 8px;
+                  background-color: #ffffff;
+              }
+      
+              hr {
+                  width: 100%;
+              }
+              .abstract_scope_image {
+                  background-image: url(https://cdn.bookingcare.vn/fr/w300/2019/12/13/120331-co-xuong-khop.jpg);
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  image-rendering: -webkit-optimize-contrast;
+              }
+              .abstract_scope_info
+              {
+                  padding-left: 200px;
+                  padding-top: 60px;
+                  padding-right: 200px;
+                  padding-bottom: auto;
+                  background-image: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 1));
+              }
+              
+              .specialist_scope{
+                  margin: 0px;
+                  padding: 0px;
+                  padding-top:0px;
+                  margin-top:0px;
+              }
+      
+              .dropbtn {
+                  background-color:rgb(231, 224, 224);
+                  color: black;
+                  padding-top: 7px;
+                  padding-bottom: 25px;
+                  margin-left:-18px;
+                  font-size: 16px;
+                  border-style: solid;
+                  cursor: pointer;
+                  border-radius: 5px;
+                  width: 150px;
+                  height: 40px;
+                  text-align:left;
+                  border-color:#858181
+                  
+              }
+      
+              .dropdown {
+                  position: static;
+                  display: inline-block;
+                  padding-left:200px;
+                  padding-top: 10px;
+                  box-sizing: border-box;
+                  
+              }
+      
+              .dropdown-content {
+                  display: none;
+                  position: static;
+                  background-color: #f9f9f9;
+                  min-width: 130px;
+                  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                  z-index: 1;
+              }
+      
+              .dropdown-content a {
+                  color: black;
+                  padding-top: 5px;
+                  padding-bottom:5px;
+                  padding-right:0px;
+                  padding-left: 5px;
+                  text-decoration: none;
+                  display: block;
+                  font-size: 14px;
+              }
+      
+              .dropdown-content a:hover {background-color: #f1f1f1}
+      
+              .dropdown:hover .dropdown-content {
+                  display: block;
+              }
+      
+              .dropdown:hover .dropbtn {
+                  background-color: #4c4c4c;
+                  color:white;
+                  border-color: white;
+              }
+              .buttonshowhide
+              {
+                  background-color: white;
+                  color: rgb(66, 76, 184);
+                  border: 2px solid #e7e7e7;
+                  border-style:solid;
+                  font-size: 15px;
+                  border-color:rgb(230, 224, 224);
+                  border-radius: 5px;
+              }
+              .buttonshowhide:hover
+              {
+                  background-color: #e7e7e7;
+              }
+              .each_doctor
+              {
+                  background-color: #fff;
+                  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+                  border-radius: 8px;
+                  border-bottom: none;
+                  margin-bottom: 10px;
+                  display:flex;
+              }
+              
+              .doctor_area{
+                  padding-right: 0px;
+                  padding-left: 0px;
+                  margin-right: 200px;
+                  margin-left: 200px;
+                  width:930x;
+              }
+              .section_menu, .section_doctor{
+                  padding: 10px, 0px;
+                  display: block;
+              }
+              .select{
+                  margin-left: 0px;
+                  padding-right: 20px;
+                  margin-top: 10px;
+                  font-size: 16px;
+                  padding-top: 5px;
+                  padding-left: 5px;
+                  border-color: gray;
+                  margin-bottom: 10px;
+              }
+              .abstract_doctor
+              {
+                  border-right: 1px solid #eee;
+                  padding-right: 10px;
+                  padding-top: 15px;
+                  padding-left:15px;
+                  padding-bottom: 15px;
+                  width:53%;
+                  box-sizing: border-box;
+      
+              }
+              .image_scope
+              {
+                  padding-right: 15px;
+                  text-align: center;
+                  display: table-cell;
+                  vertical-align: top;;
+              }
+              .info_doctor{
+                  display: table-cell;
+                  vertical-align: top;
+              }
+              .image_doctor
+              {
+                  border-radius: 50%;
+                  min-width: 80px;
+                  
+              }
+              .register_scope1
+              {
+                  padding: 0px 15px 15px 15px;
+                  display: block;
+              }
+              .register_scope1 h3{
+                  text-transform: uppercase;
+                  font-size: 14px;color: #333;
+                  font-weight: bold;padding: 0;
+                  margin: 0 0 5px 0;
+                  position:static;
+              }
+              .register_scope1 i{
+                  position:static;
+              }
+              .register_scope2
+              {
+                  padding: 0px;
+                  margin: 0px;
+                  display:block;
+              }
+              .register_scope2 a{
+                  overflow-x: visible;
+                  white-space: normal;
+                  padding: 10px;
+                  width: 200px;
+                  font-size: 14px;
+                  border-style: solid;
+                  display: block;
+                  margin-left: 15px;
+                  text-align: center;
+              }
+              .register_scope2 p{
+                  margin-left:10px;
+                  margin-top:10px;
+              }
+              sup{
+                  position: static;
+              }
+              .name h2{ 
+                  color:#45c3d2;
+                  font-size:18px
+              }
+              .register_scope{
+                  padding: 15px 15px 10px 15px;
+                  margin:0px;
+                  box-sizing: border-box;
+              }
+              .address{
+                  border-top: 1px solid #eee;
+                  padding-top: 10px;
+                  margin-top: 10px;
+              }
+              .address h3{
+                  text-transform: uppercase;
+                  font-size: 14px;color: #666;
+                  font-weight: bold; margin-top:10px;
+              }
+              .see_more{
+                  margin-top:5px;
+                  font-size: 14px;
+                  text-align: center;
+                  padding-left:7px;
+              }
+          </style>
 {% endblock extra_head %}
 {% block content %}
-    <div class="specialist_scope">
-        <!--Abstract of specialist-->
-        <div class="abstract_scope">
-            <div class="abstract_scope_image">
-                <div class="abstract_scope_info">
-                    <h1>CƠ XƯƠNG KHỚP:</h1>
-                    <h1>Bác sĩ cơ xương khớp giỏi</h1>
-                    <p>Danh sách các bác sĩ uy tín đầu ngành Cơ Xương Khớp tại Việt Nam:</p>
-                    <ul>
-                        <li>Các chuyên gia có quá trình đào tạo bài bản, nhiều kinh nghiệm</li>
-                        <li>Các giáo sư, phó giáo sư đang trực tiếp nghiên cứu và giảng dạy tại Đại học Y khoa Hà Nội</li>
-                        <li>
-                            Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu Khoa Cơ Xương Khớp - Bệnh viện Bạch Mai, Bệnh viện Hữu nghị Việt Đức,Bệnh Viện E.
-                        </li>
-                        <li>Là thành viên hoặc lãnh đạo các tổ chức chuyên môn như: Hiệp hội Cơ Xương Khớp, Hội Thấp khớp học,...</li>
-                        <li>Được nhà nước công nhận các danh hiệu Thầy thuốc Nhân dân, Thầy thuốc Ưu tú, Bác sĩ Cao cấp,...</li>
-                    </ul>
-                    <div id="content" style="display:none;">
-                        <h1 >Bệnh cơ xương khớp</h1>
-                        <ul >
-                            <li>Gout</li>
-                            <li>Thoái hóa khớp: khớp gối, cột sống thắt lưng, cột sống cổ</li>
-                            <li>Viêm khớp dạng thấp, Viêm đa khớp, Viêm gân</li>
-                            <li>Tràn dịch khớp gối, Tràn dịch khớp háng, Tràn dịch khớp khủy, Tràn dịch khớp vai</li>
-                            <li>Loãng xương, đau nhức xương</li>
-                            <li>Viêm xương, gai xương</li>
-                            <li>Viêm cơ, Teo cơ, chứng đau mỏi cơ</li>
-                            <li>Yếu cơ, Loạn dưỡng cơ</li>
-                            <li>Các chấn thương về cơ, xương, khớp</li>
-                            <li>...</li>
-                        </ul>
-                    </div>
-                    <button class="buttonshowhide" id="toggle" onclick="myFunction()">Đọc thêm</button>
-                </div>
+<div class="specialist_scope">
+    <div class="abstract_scope_image">
+        <div class="abstract_scope_info">
+            <h1>CƠ XƯƠNG KHỚP:</h1>
+            <h1>Bác sĩ cơ xương khớp giỏi</h1>
+            <p>Danh sách các bác sĩ uy tín đầu ngành Cơ Xương Khớp tại Việt Nam:</p>
+            <ul>
+                <li>Các chuyên gia có quá trình đào tạo bài bản, nhiều kinh nghiệm</li>
+                <li>Các giáo sư, phó giáo sư đang trực tiếp nghiên cứu và giảng dạy tại Đại học Y khoa Hà Nội</li>
+                <li>Các bác sĩ đã, đang công tác tại các bệnh viện hàng đầu Khoa Cơ Xương Khớp - Bệnh viện Bạch Mai, Bệnh viện Hữu nghị Việt Đức,Bệnh Viện E.</li>
+                <li>Là thành viên hoặc lãnh đạo các tổ chức chuyên môn như: Hiệp hội Cơ Xương Khớp, Hội Thấp khớp học,...</li>
+                <li>Được nhà nước công nhận các danh hiệu Thầy thuốc Nhân dân, Thầy thuốc Ưu tú, Bác sĩ Cao cấp,...</li>
+            </ul>
+
+            <div id="content" style="display:none;">
+                <h1 >Bệnh cơ xương khớp</h1>
+                <ul >
+                    <li>Gout</li>
+                    <li>Thoái hóa khớp: khớp gối, cột sống thắt lưng, cột sống cổ</li>
+                    <li>Viêm khớp dạng thấp, Viêm đa khớp, Viêm gân</li>
+                    <li>Tràn dịch khớp gối, Tràn dịch khớp háng, Tràn dịch khớp khủy, Tràn dịch khớp vai</li>
+                    <li>Loãng xương, đau nhức xương</li>
+                    <li>Viêm xương, gai xương</li>
+                    <li>Viêm cơ, Teo cơ, chứng đau mỏi cơ</li>
+                    <li>Yếu cơ, Loạn dưỡng cơ</li>
+                    <li>Các chấn thương về cơ, xương, khớp</li>
+                    <li>...</li>
+                </ul>
             </div>
+            <button class="buttonshowhide" id="toggle" onclick="myFunction()">Đọc thêm</button>
         </div>
-        <!--End Abstract of specialist-->
-        <!--Select choose doctor to register-->
-        <div class="chooseDoctor_scope">
-            <!--Select location-->
-            <div class="section_menu">
-                <select class ="select"
-                        style="padding-top:5px;
-                               padding-left:10px;
-                               padding-bottom:5px;
-                               padding-right:10px;"
-                        name="menu"
-                        id="menu">
-                    <option value="nation ">
-                        Toàn quốc
-                    </option>
-                    <option value="tphcm">
-                        Hồ Chí Minh
-                    </option>
-                    <option value="hn">
-                        Hà Nội
-                    </option>
+    </div>
+</div>
+
+
+<div class="select_doctor_scope">
+    <div class="doctor_area">
+        <!--Select location-->
+        <div class="section_menu">
+                <select class ="select" style="padding-top:5px;padding-left:10px;padding-bottom:5px;padding-right:10px;" name="menu" id="menu">
+                    <option value="nation ">Toàn quốc</option>
+                    <option value="tphcm">Hồ Chí Minh</option>
+                    <option value="hn">Hà Nội</option>
                 </select>
-            </div>
-            <!--End Select location-->
-            <!--Choose doctor scope-->
-            <div class="doctor_scope" id="hn">
-                <!--Each doctor scope-->
-                <div class="eachDoctor">
-                    <!--Abstract doctor-->
-                    <div class="abstract_doctor">
-                        <div class="image_scope">
-                            <img class="image_doctor"
-                                 src="https://cdn.bookingcare.vn/fr/w200/2018/04/09/151800292142135730131997187173031663525568184320n.jpg"
-                                 width="80px"
-                                 height="80">
-                            <div style="margin-top:5px;
-                                        font-size: 14px;
-                                        text-align: left;
-                                        padding-left:7px;">Xem thêm</div>
+        </div>
+        <!--End Select location-->
+        
+        <!--Section doctor-->
+        <div class="section_doctor">
+            <!--Each doctor scope-->
+            <div class="each_doctor">
+                <!--Abstract doctor-->
+                <div class="abstract_doctor">
+                    <div class="image_scope">
+                        <img class="image_doctor" src="https://cdn.bookingcare.vn/fr/w200/2018/04/09/151800292142135730131997187173031663525568184320n.jpg" width="80px" height="80">
+                        <div class="see_more">Xem thêm</div>
+                    </div>
+                    <div class="info_doctor">
+                        <div class="name">
+                            <h2>Giáo sư, Tiến sĩ, Bác sĩ Trần Ngọc Ân</h2>
                         </div>
-                        <div class="infoAbstract">
-                            <h2 style="color:#45c3d2;font-size:18px">Giáo sư, Tiến sĩ, Bác sĩ Trần Ngọc Ân</h2>
+                        <div class="intro_doctor">
                             <p>
                                 Nguyên Trưởng khoa Cơ xương khớp, Bệnh viện Bạch Mai
                                 <br>
@@ -347,263 +339,55 @@
                                 <br>
                                 Bác sĩ khám cho người bệnh từ 14 tuổi trở lên
                                 <br>
-                                Địa chỉ: Hà Nội
+                                Địa chỉ: Hà Nộis
                             </p>
                         </div>
                     </div>
-                    <!--End Abstract doctor-->
-                    <!--Register Info-->
-                    <div class="infoRegister">
-                        <div class="infoRegister_modifyScope">
-                            <div class="register_scope1">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static">
-                                    <i style="position:static"
-                                       class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám
-                                </h3>
-                            </div>
-                            <div class="register_scope2">
-                                <a style="display: block;
-                                          overflow-x: visible;
-                                          white-space: normal;
-                                          padding: 10px;
-                                          width: 200px;
-                                          font-size: 14px;
-                                          border-style: solid;
-                                          display: block;
-                                          margin-left: 15px;
-                                          text-align: center;"
-                                   href="#">Đăng ký khám (Sáng)</a>
-                                <p style="margin-left:10px;margin-top:10px;">Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ</p>
-                            </div>
-                            <div class="address"
-                                 style="border-top: 1px solid #eee;
-                                        padding-top: 10px;
-                                        margin-top: 10px;">
-                                <h3 style="text-transform: uppercase;
-                                           font-size: 14px;
-                                           color: #666;
-                                           font-weight: bold;
-                                           margin-top:10px;">
-                                    Địa chỉ khám
-                                </h3>
-                                <p style="margin-bottom:0px;">
-                                    Bệnh viện Đa khoa Hồng Phát
-                                    <br>
-                                    Số 219 Lê Duẩn - Hai Bà Trưng - Hà Nội
-                                </p>
-                            </div>
-                            <div class="cost">
-                                <h3 style="text-transform: uppercase;
-                                           font-size: 14px;
-                                           color: #666;
-                                           font-weight: bold;
-                                           display:inline;">Giá khám:</h3>
-                                <span>500.000<sup>đ</sup></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Register Info-->
                 </div>
-                <!--End Each doctor scope-->
-                <!--Each doctor scope-->
-                <div class="eachDoctor">
-                    <!--Abstract doctor-->
-                    <div class="abstract_doctor">
-                        <div class="image_scope">
-                            <img class="image_doctor"
-                                 src="https://cdn.bookingcare.vn/fr/w200/2019/12/31/161245-pgs-vu-thi-thanh-thuy.jpg"
-                                 width="80px"
-                                 height="80">
-                            <div style="margin-top:5px;
-                                        font-size: 14px;
-                                        text-align: left;
-                                        padding-left:7px;">
-                                Xem thêm
-                            </div>
-                        </div>
-                        <div class="infoAbstract">
-                            <h2 style="color:#45c3d2;font-size:18px">
-                                Phó Giáo sư, Tiến sĩ Vũ Thị Thanh Thủy
-                            </h2>
-                            <p>
-                                Nguyên Trưởng khoa Cơ - Xương - Khớp, Bệnh viện Bạch Mai
-                                <br>
-                                Chủ tịch Hội loãng xương Hà Nội
-                                <br>
-                                Bác sĩ nhận bệnh nhân từ 18 tuổi trở lên
-                                <br>
-                                Địa chỉ: Hà Nội
-                            </p>
-                        </div>
+                <!--End Abstract doctor-->
+
+                <!--Register scope-->
+                <div class="register_scope">
+                    <div class="register_scope1">
+                        <h3><i class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám</h3>
                     </div>
-                    <!--End Abstract doctor-->
-                    <!--Register Info-->
-                    <div class="infoRegister">
-                        <div class="infoRegister_modifyScope">
-                            <div class="register_scope1">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static">
-                                    <i style="position:static"
-                                       class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám
-                                </h3>
-                            </div>
-                            <div class="register_scope2">
-                                <a style="display: block;
-                                          overflow-x: visible;
-                                          white-space: normal;
-                                          padding: 10px;
-                                          width: 200px;
-                                          font-size: 14px;
-                                          border-style: solid;
-                                          display: block;
-                                          margin-left: 15px;
-                                          text-align: center;"
-                                   href="#">Đăng ký khám (Sáng)</a>
-                                <p style="margin-left:10px;margin-top:10px;">
-                                    Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ
-                                </p>
-                            </div>
-                            <div class="address"
-                                 style="border-top: 1px solid #eee;
-                                        padding-top: 10px;
-                                        margin-top: 10px;">
-                                <h3 style="text-transform: uppercase;
-                                           font-size: 14px;
-                                           color: #666;
-                                           font-weight: bold;
-                                           margin-top:10px;">
-                                    Địa chỉ khám
-                                </h3>
-                                <p style="margin-bottom:0px;">
-                                    Bệnh viện Đa khoa Đông Đô
-                                    <br>
-                                    Số 5 phố Xã Đàn - Đống Đa - Hà Nội
-                                </p>
-                            </div>
-                            <div class="cost">
-                                <h3 style="text-transform: uppercase;
-                                           font-size: 14px;
-                                           color: #666;
-                                           font-weight: bold;
-                                           display:inline;">
-                                    Giá khám:
-                                </h3>
-                                <span>400.000<sup>đ</sup></span>
-                            </div>
-                        </div>
+                    <div class="register_scope2">
+                        <a href="#">Đăng ký khám</a>
+                        <p>Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ</p>
                     </div>
-                    <!--End Register Info-->
+                    <div class="address">
+                        <h3>Địa chỉ khám</h3>
+                        <p style="margin-bottom:0px;">Bệnh viện Đa khoa Hồng Phát
+                        <br>
+                            Số 219 Lê Duẩn - Hai Bà Trưng - Hà Nội</p>
+                    </div>
                 </div>
-                <!--End Each doctor scope-->
-                <!--Each doctor scope-->
-                <div class="eachDoctor">
-                    <!--Abstract doctor-->
-                    <div class="abstract_doctor">
-                        <div class="image_scope">
-                            <img class="image_doctor"
-                                 src="https://cdn.bookingcare.vn/fr/w200/2021/06/15/152136-bs-tri.jpg"
-                                 width="80px"
-                                 height="80">
-                            <div style="margin-top:5px;
-                                        font-size: 14px;
-                                        text-align: left;
-                                        padding-left:7px;">
-                                Xem thêm
-                            </div>
-                        </div>
-                        <div class="infoAbstract">
-                            <h2 style="color:#45c3d2;font-size:18px">
-                                Thạc sĩ, Bác sĩ Chuyên khoa II Dương Minh Trí
-                            </h2>
-                            <p>
-                                Phó Trưởng khoa Hô hấp - Cơ xương khớp, Bệnh viện Nhân dân Gia Định
-                                <br>
-                                Nhiều năm kinh nghiệm trong khám và điều trị bệnh lý về Nội Cơ xương khớp
-                                <br>
-                                Bác sĩ nhận khám cho bệnh nhân từ 16 tuổi trở lên
-                                <br>
-                                Địa chỉ: Thành phố Hồ Chí Minh
-                            </p>
-                        </div>
-                    </div>
-                    <!--End Abstract doctor-->
-                    <!--Register Info-->
-                    <div class="infoRegister">
-                        <div class="infoRegister_modifyScope">
-                            <div class="register_scope1">
-                                <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static">
-                                    <i style="position:static"
-                                       class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám
-                                </h3>
-                            </div>
-                            <div class="register_scope2">
-                                <a style="display: block;
-                                          overflow-x: visible;
-                                          white-space: normal;
-                                          padding: 10px;
-                                          width: 200px;
-                                          font-size: 14px;
-                                          border-style: solid;
-                                          display: block;
-                                          margin-left: 15px;
-                                          text-align: center;"
-                                   href="#">Đăng ký khám (Sáng)</a>
-                                <p style="margin-left:10px;margin-top:10px;">
-                                    Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ
-                                </p>
-                            </div>
-                            <div class="address"
-                                 style="border-top: 1px solid #eee;
-                                        padding-top: 10px;
-                                        margin-top: 10px;">
-                                <h3 style="text-transform: uppercase;
-                                           font-size: 14px;
-                                           color: #666;
-                                           font-weight: bold;
-                                           margin-top:10px;">
-                                    Địa chỉ khám
-                                </h3>
-                                <p style="margin-bottom:0px;">
-                                    Phòng khám Cơ Xương Khớp Bác sĩ Dương Minh Trí
-                                    <br>
-                                    101 Trần Hữu Trang, Phường 10, Quận Phú Nhuận, Thành phố Hồ Chí Minh
-                                </p>
-                            </div>
-                            <div class="cost">
-                                <h3 style="text-transform: uppercase;
-                                           font-size: 14px;
-                                           color: #666;
-                                           font-weight: bold;
-                                           display:inline;">
-                                    Giá khám:
-                                </h3>
-                                <span>300.000<sup>đ</sup> - 400.000<sup>đ</sup></span>
-                            </div>
-                        </div>
-                    </div>
-                    <!--End Register Info-->
-                </div>
-                <!--End Each doctor scope-->
+                <!--End Register scope-->
             </div>
+            <!--End Each doctor scope-->
         </div>
+        <!--End Section doctor-->
     </div>
+</div>
 {% endblock content %}
 {% block extra_script %}
-    <script type="text/javascript">
-        function myFunction() {
-            var change = document.getElementById("toggle");
-            if (change.innerHTML == "Đọc thêm")
-            {
-                change.innerHTML = "Ẩn bớt";
-                document.getElementById("content").style.display = 'block'
-            }
-            else {
-                change.innerHTML = "Đọc thêm";
-                document.getElementById("content").style.display = 'none'
-            }
+<script type="text/javascript">
+    function myFunction() {
+        var change = document.getElementById("toggle");
+        if (change.innerHTML == "Đọc thêm")
+        {
+            change.innerHTML = "Ẩn bớt";
+            document.getElementById("content").style.display = 'block'
         }
-    </script>
+        else {
+            change.innerHTML = "Đọc thêm";
+            document.getElementById("content").style.display = 'none'
+        }
+    }
+</script>
 {% endblock extra_script %}
-{% comment %} <!DOCTYPE html>
+{% comment %} 
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="vi">
 <head>
     <meta charset="UTF8">
@@ -1223,4 +1007,5 @@
     </script>
 </body>
 
-</html> {% endcomment %}
+</html> 
+{% endcomment %}
