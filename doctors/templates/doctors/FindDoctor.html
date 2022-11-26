@@ -1,6 +1,6 @@
 {% extends 'homepage/base.html' %}
 {% block extra_head %}
-    <style>
+    <!-- <style>
     h6 {
         font-size: 16px;
         font-weight: lighter;
@@ -21,10 +21,207 @@
         border: 1px solid black;
         border-radius:20px;
     }
+    </style> -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+    h3 
+    {
+        font-size: 16px;
+        font-weight: lighter;
+        margin-top: 0px;
+    }
+    .content
+    {
+        padding: 10px 15px;
+        background: #fff;
+    }
+    table 
+    {
+        border-collapse: collapse;
+        width: 40%;
+    }
+    th, td 
+    {
+        text-align: left;
+        padding-top: 8px;
+        padding-left: 8px;
+        padding-bottom: 8px;
+        padding-right: 8px;
+        background-color: #ffffff;
+    }
+    .content hr 
+    {
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        border: 0;
+        border-top: 1px solid #eee;
+    }
+    .search input
+    {
+        width:100%;
+        border-radius:14px;
+        border: 1px rgb(148, 147, 147) solid;
+        height: 30px;
+        padding-left: 10px;
+    }
+    .search
+    {
+        padding: 20px 15px;
+        background: #fff;
+        background-color:#f5f5f5;
+    }
+    .content hr
+    {
+        border-top: 1px solid #e2e1e1;
+    }
+    img
+    {
+        width:80px;
+        height:80px;
+        border-radius: 200px;
+    }
     </style>
 {% endblock extra_head %}
 {% block content %}
-    <input id ="boxSearchDoctor" type="search" placeholder="Tìm kiếm bác sĩ">
+<div class="search">
+    <input type="text" placeholder="Tìm kiếm chuyên khoa" id="search">
+</div>
+<div class="content">
+    <h3 style="font-weight:bold">Thông tin các chuyên khoa: </h3>
+    <table>
+        <tr>
+            <td>
+                <a href="{% url 'doctorDetail' %}">
+                    <img src="https://cdn.bookingcare.vn/fr/w200/2020/03/17/114430-bshung.jpg" alt="Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng">
+                </a>
+            </td>
+            <td style="text-align:left;width: 90%;">
+                <a href="{% url 'doctorDetail' %}">
+                    <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td style="text-align:left;">
+                <img src="https://cdn.bookingcare.vn/fr/w200/2019/11/14/103848anh-dai-dien-bs.jpg" alt="Khám Nam học, Bệnh viện Nam học và Hiếm muộn Hà Nội">
+            </td>
+            <td style="text-align:left;width: 90%">
+                <a href="#">
+                    <h3>Khám Nam học, Bệnh viện Nam học và Hiếm muộn Hà Nội</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td style="text-align:left;">
+                <img src="https://cdn.bookingcare.vn/fr/w200/2021/01/14/160049-bs-hoai-huong.jpg" alt="Bác sĩ chuyên khoa II Trần Thị Hoài Hương">
+            </td>
+            <td style="text-align:left;width: 90%">
+                <a href="#">
+                    <h3>Bác sĩ chuyên khoa II Trần Thị Hoài Hương</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td style="text-align:left;">
+                <img src="https://cdn.bookingcare.vn/fr/w200/2020/01/03/090559-pgs-nguyen-thi-hoai-an.jpg" alt="Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An">
+            </td>
+            <td style="text-align:left;width: 90%">
+                <a href="#">
+                    <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td style="text-align:left;">
+                <img src="https://cdn.bookingcare.vn/fr/w200/2021/01/18/105401-bsckii-tran-minh-khuyen.jpg" alt="Bác sĩ Chuyên khoa II Trần Minh Khuyên">
+            </td>
+            <td style="text-align:left;width: 90%">
+                <a href="#">
+                    <h3>Bác sĩ Chuyên khoa II Trần Minh Khuyên</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td style="text-align:left;">
+                <img src="https://cdn.bookingcare.vn/fr/w200/2019/03/04/180640bac-si-vu-thai-ha.jpg" alt="Tiến sĩ, Bác sĩ Vũ Thái Hà">
+            </td>
+            <td style="text-align:left;width: 90%">
+                <a href="#">
+                    <h3>Tiến sĩ, Bác sĩ Vũ Thái Hà</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td style="text-align:left;">
+                <img src="https://cdn.bookingcare.vn/fr/w200/2021/01/21/142313-bs-tran-huu-binh.jpg" alt="PGS, TS, Giảng viên cao cấp Trần Hữu Bình">
+            </td>
+            <td style="text-align:left;width: 90%">
+                <a href="#">
+                    <h3>PGS, TS, Giảng viên cao cấp Trần Hữu Bình</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td style="text-align:left;">
+                <img src="https://cdn.bookingcare.vn/fr/w200/2018/12/06/150208bac-si-chuyen-khoa-ii-pham-xuan-hau.jpg" alt="Bác sĩ Chuyên khoa II Phạm Xuân Hậu">
+            </td>
+            <td style="text-align:left;width: 90%">
+                <a href="#">
+                    <h3>Bác sĩ Chuyên khoa II Phạm Xuân Hậu</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td style="text-align:left;">
+                <img src="https://cdn.bookingcare.vn/fr/w200/2019/11/14/103848anh-dai-dien-bs.jpg" alt="Khám Hiếm muộn - Hỗ trợ sinh sản, Bệnh viện Nam học và Hiếm muộn Hà Nội">
+            </td>
+            <td style="text-align:left;width: 90%">
+                <a href="#">
+                    <h3>Khám Hiếm muộn - Hỗ trợ sinh sản, Bệnh viện Nam học và Hiếm muộn Hà Nội</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td style="text-align:left;">
+                <img src="https://cdn.bookingcare.vn/fr/w200/2018/02/11/165555bac-si-nguyen-van-toan.jpg" alt="Phó Giáo sư, Tiến sĩ, Bác sĩ Ngô Văn Toàn">
+            </td>
+            <td style="text-align:left;width: 90%">
+                <a href="#">
+                    <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ Ngô Văn Toàn</h3>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <!-- <input id ="boxSearchDoctor" type="search" placeholder="Tìm kiếm bác sĩ">
     <h3 style="margin-left: 20px;">Bác sĩ nổi bật :</h3>
     <table>
         <tr>
@@ -224,5 +421,5 @@
                 </h8>
             </td>
         </tr>
-    </table>
+    </table> -->
 {% endblock content %}
