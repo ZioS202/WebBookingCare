@@ -1,0 +1,238 @@
+{% extends 'homepage/base.html' %}
+{% block extra_head %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .container-1
+        {
+            margin: 10px 0px;
+            background-color: #f1ededd6;
+        }
+
+        .doctor-info
+        {
+            margin: 0px 300px;
+            padding: 15px 0px;
+        }
+
+        .doctor-image
+        {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .doctor-image, .doctor-quickview
+        {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .doctor-quickview h1, h2, h3
+        {
+            font-size: 16px; 
+            margin: 5px;
+        }
+
+        .container-2
+        {
+            margin-bottom: 10px;
+            font-size: 15px
+        }
+
+        .payment-info
+        {
+            margin-left: 300px;
+            margin-right: 300px;
+        }
+
+        .price-label
+        {
+            margin: 10px 5px;
+            border-radius: 4%;
+            padding: 15px 40px;
+            font-size: medium; 
+            font-weight: normal;
+            border: 2px solid #e4601e;
+        }
+
+        .input-form
+        {
+            margin: 14px 0px;
+            padding: 7px;
+            width: 100%;
+            border: 1px solid #84888a;
+            border-radius: 4px;
+            position: relative;
+            display: table;
+        }
+
+        .input-form input, select, textarea
+        {
+            width: 100%;
+            height: 40px;
+            border: none;
+            outline: none;
+            text-align: start;
+            display: table-cell;
+        }
+
+        .input-form i
+        {
+            display: table-cell;
+            width: 1%;
+            vertical-align: center;
+            padding-right: 7px;
+        }
+
+        .payment
+        {
+            padding: 15px;
+            background: #d6d3d356;
+            border-radius: 4px;
+        }
+
+        .content
+        {
+            display: flex;
+            margin: 4px;
+            justify-content: space-between;
+        }
+
+        .content p
+        {
+            margin-bottom: 5px;
+        }
+
+        .note-info
+        {
+            background: #b3d7ea;
+            padding: 5px 7px;
+            margin: 10px 0px;
+            border-radius: 4px;
+        }
+
+        .button-claim button
+        {
+            margin: 10px 0px;
+            width: 100%;
+            height: 40px;
+            background-color: rgb(250, 169, 6);
+            text-align: center;
+            color: white;
+            border-radius: 4px;
+            border: #edf2f5;
+        }
+    </style>
+{% endblock extra_head %}
+{% block content %}
+    <div class="container-1">     
+        <div class="doctor-info">
+            <div class="doctor-image">
+                <img style="border-radius: 50%;" src="https://cdn.bookingcare.vn/fr/w100/2020/03/17/114430-bshung.jpg" alt="Doctor" width="100px" height="100px">
+            </div>
+            <div class="doctor-quickview">
+                <h1 style="text-transform: uppercase;";>Đặt lịch khám</h1>
+                <h2><a href="https://link_to_doctor_detail.com" style="color: rgb(10, 139, 253);">Phó giáo sư, tiến sĩ, Nguyễn Duy Hưng</a></h2>
+                <h3 style="font-size: 14px;">14:45 - Thứ 5, ngày 24/11/2022</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-2">
+        <div class="payment-info"> 
+            <div class="price-option">
+                <label class="price-label">
+                    <input type="radio" checked="checked" name="price" id="price">
+                    <span>Giá khám</span>
+                    <div style="text-align: center;">300.000đ</div>
+                </label>
+            </div>
+
+            <div class="personal-info">
+                <div class="input-form">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" placeholder="Họ và tên bệnh nhân (bắt buộc)" name="name" id="name">
+                </div>
+                <div class="note-form">
+                    <p style="font-size: small">Hãy ghi rõ Họ Và Tên, viết hoa những chữ cái đầu tiên, ví dụ: Trần Văn Phú</p> 
+                </div>
+                <div class="check-form">
+                    <input style="height: 15px; width: auto;" type="radio" checked="checked" name="gender" id="male" value="0">
+                    <p style="display: inline;">Nam</p>  
+                    <input style="height: 15px; width: auto; display: inline;" type="radio" checked="checked" name="gender" id="female" value="1">
+                    <p style="display: inline;">Nữ</p>   
+                </div>
+                <div class="input-form">
+                    <i class="glyphicon glyphicon-earphone"></i>
+                    <input type="text" placeholder="Số điện thoại (bắt buộc)" name="phone" id="phone">
+                </div>  
+                <div class="input-form">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                    <input type="text" placeholder="Năm sinh" name="birthyear" id="birthyear">
+                </div>
+                <div class="input-form">
+                    <i style="vertical-align: center;" class="glyphicon glyphicon-map-marker"></i>
+                    <select placeholder="Chọn tỉnh/thành" name="city" id="city">
+                        <option value>Chọn tỉnh/thành</option>
+                        <option value="89">An Giang</option>
+                        <option value="77">Bà Rịa Vũng Tàu</option>
+                    </select>                  
+                </div>
+                <div class="input-form">
+                    <i class="glyphicon glyphicon-map-marker"></i>
+                    <input type="text" placeholder="Quận huyện" name="district" id="district">
+                </div>
+                <div class="input-form">
+                    <i class="glyphicon glyphicon-map-marker"></i>
+                    <input type="text" placeholder="Địa chỉ" name="address" id="address">
+                </div>
+                <div class="input-form">
+                    <i style="vertical-align: top;" class="glyphicon glyphicon-plus-sign"></i>
+                    <textarea placeholder="Lý do khám" name="reason" id="reason"></textarea>
+                </div>                    
+                <div style="margin: 10px 0px;" class="check-form">
+                    <input style="height: 15px; width: auto;" type="radio" checked="checked" name="payincash" id="payincash" value="1">
+                    <p style="display: inline;">Thanh toán sau tại cơ sở y tế</p>   
+                </div>
+                <div class="payment">
+                    <div class="content">
+                        <p>Giá khám<p>
+                        <p name="price" id="price">300.000đ</p>
+                    </div>
+                    <div class="content">
+                        <p>Phí đặt lịch<p>
+                        <p>Miễn phí</p>
+                    </div>
+                    <hr style="border: 1px solid #ccc; margin: 10px 0px;">
+                    <div class="content">
+                        <p>Tổng cộng</p>
+                        <p style="color: rgb(195, 56, 56);">300.000đ</p>
+                    </div>
+                </div>
+                <p style="text-align: center; margin: 10px 0px; font-size: small">Quý khách vui lòng điền đầy đủ thông tin để tiết kiệm thời gian làm thủ tục khám</p>
+            </div>
+
+            <div class="note-info">
+                <b style="margin-bottom: 10px;">LƯU Ý</b>
+                <p style="text-align: justify;">
+                    1. Thông tin anh/chị cung cấp sẽ được sử dụng làm hồ sơ khám bệnh, khi điền thông tin anh/chị vui lòng:     
+                </p>
+                <ul style="list-style-type: disc; padding-left: 20px;">
+                    <li style="text-align: justify; display: list-item;">Ghi rõ họ và tên, viết hoa những chữ cái đầu tiên, ví dụ: <b>Trần Văn Phú</b></li>
+                    <li style="text-align: justify; display: list-item;">Điền đầy đủ, đúng và vui lòng kiểm tra lại thông tin trước khi ấn <b>Xác nhận</b></li>
+                </ul>              
+                <p style="text-align: justify;">
+                    2. Anh/chị vui lòng tuân thủ quy định phòng chống dịch (đeo khẩu trang, khử khuẩn, khai báo dịch tễ) khi đến khám.
+                </p>
+            </div>
+
+            <div class="button-claim">
+                <button type="submit">Xác nhận đặt khám</button>
+                <p style="text-align: center; margin: 5px 0px; font-size: small">
+                    Bằng việc xác nhận đặt khám, bạn đã hoàn toàn đồng ý với 
+                    <a href="https://link_to_term_of_service.com">Điều khoản sử dụng </a>
+                    dịch vụ của chúng tôi
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
