@@ -1,0 +1,23 @@
+{% extends "accounts/base.html" %}
+{% load static %}
+{% block extra_head %}
+{% block title %}<title>Log out</title>{% endblock %}
+    <link href="{% static 'accounts/css/style_logout.css' %}" rel="stylesheet">
+{% endblock extra_head %}
+{% block content %}
+<div id="logout-form-wrap">
+  <div class='bookingcare-logo'>
+      <a href="{% url 'homepage' %}">&af;</a>
+  </div>
+  <div style="margin-left:20px;margin-right:20px">
+    <h2><b>You are logged out successfully! Goodbye and see you again!</b></h2>
+  </div>
+  <div id="footer-logout-form">
+    <p>If you want to go back to "Booking Care", <a href="{% url 'login' %}">click here</a> to log in.<p>
+    <p>Let live a healthy and beautiful life!</p>
+  </div>
+</div>
+{% endblock content %}
+
+{% block script %}
+{% endblock script %}
