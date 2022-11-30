@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import  UserRegistrationForm #,CustomUserCreationForm,
@@ -18,8 +18,13 @@ from django.contrib import messages
 
 # class RegisterForm(TemplateView):
 #     template_name = "accounts/registerForm.html"
+# def logout_request(request):
+#     logout(request)
+#     return redirect('logout')
 
-
+class LogoutForm(TemplateView):
+      template_name = "accounts/logoutForm.html"
+      
 def user_login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -33,38 +38,17 @@ def user_login(request):
                     login(request, user)
                     return redirect('homepage')
                 else:
-                    messages.error(request, "The login failed!")
+                    messages.error(request, "The account is disabled!")
                     # return HttpResponse('Invalid login')
-                    return redirect('login')
+                    #return redirect('login')
             else:
-                messages.error(request, "The login failed!")
+                messages.error(request, "Your account is not exist! Please create a new account!")
                 # return HttpResponse('Invalid login')
-                return redirect('login')
+                #return redirect('login')
     else:
         form = LoginForm()
     return render(request, 'accounts/loginForm.html', {'form': form})
 
-# def signup(request):
-#     if request.method == "POST":
-#         form = UserCreationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('login')
-#     else:
-#         form = UserCreationForm()
-#     return render(request,'accounts/registerForm.html',{'form':form})
-
-# def signup(request):  
-#     if request.POST == 'POST':  
-#         form = CustomUserCreationForm()  
-#         if form.is_valid():  
-#             form.save()  
-#     else:  
-#         form = CustomUserCreationForm()  
-#         context = {  
-#         'form':form  
-#     }  
-#     return render(request, 'accounts/registerForm.html', context) 
 def signup(request):
     if request.method == 'POST':
         user_form = UserRegistrationForm(request.POST)
@@ -80,8 +64,8 @@ def signup(request):
             #             'accounts/loginForm.html',
             #             {'new_user': new_user})
             return redirect('login')
+        else:
+            messages.error(request, "Can not create your account! May be username is used or 2 passwords are not the same! Please try again!")
     else:
         user_form = UserRegistrationForm()
-    return render(request,
-                        'accounts/registerForm.html',
-                        {'user_form': user_form})
+    return render(request, 'accounts/registerForm.html', {'user_form': user_form})
