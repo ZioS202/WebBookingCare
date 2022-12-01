@@ -1,7 +1,9 @@
 from django.urls import path
+from .views import Specialist_Detail
 from . import views
 
 urlpatterns = [
-    path("findSpecialist/", views.find_specialist, name="findSpecialist"),
-    path("specialistDetail/", views.specialist_detail, name="specialistDetail"),
+    path("findSpecialist/", views.list_specialists, name="findSpecialist"),
+    # path("specialistDetail/<str:name>", views.specialist_detail, name="specialistDetail"),
+    path("specialistDetail/<int:pk>", Specialist_Detail.as_view(), name="specialistDetail"),
 ]
