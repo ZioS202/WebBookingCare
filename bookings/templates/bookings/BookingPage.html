@@ -150,10 +150,7 @@
             <div class="personal-info">
                 <div class="input-form">
                     <i class="glyphicon glyphicon-user"></i>
-                    <input type="text" placeholder="Họ và tên bệnh nhân (bắt buộc)" name="name" id="name">
-                </div>
-                <div class="note-form">
-                    <p style="font-size: small">Hãy ghi rõ Họ Và Tên, viết hoa những chữ cái đầu tiên, ví dụ: Trần Văn Phú</p> 
+                    <input type="text" placeholder="Họ tên của bệnh nhân" name="name" id="name" value="{{user.first_name}} {{user.last_name}}">
                 </div>
                 <div class="check-form">
                     <input style="height: 15px; width: auto;" type="radio" checked="checked" name="gender" id="male" value="0">
@@ -163,32 +160,23 @@
                 </div>
                 <div class="input-form">
                     <i class="glyphicon glyphicon-earphone"></i>
-                    <input type="text" placeholder="Số điện thoại (bắt buộc)" name="phone" id="phone">
+                    <input type="text" placeholder="Số điện thoại" name="phone" id="phone" value="{{user.phone_number}}">
                 </div>  
                 <div class="input-form">
                     <i class="glyphicon glyphicon-calendar"></i>
-                    <input type="text" placeholder="Năm sinh" name="birthyear" id="birthyear">
+                    <input type="text" placeholder="Năm sinh" name="birthyear" id="birthyear" value="{{user.birthdate}}">
                 </div>
-                <!-- <div class="input-form">
-                    <i style="vertical-align: center;" class="glyphicon glyphicon-map-marker"></i>
-                    <select placeholder="Chọn tỉnh/thành" name="city" id="city">
-                        <option value>Chọn tỉnh/thành</option>
-                        <option value="89">An Giang</option>
-                        <option value="77">Bà Rịa Vũng Tàu</option>
-                    </select>                  
-                </div> -->
-                <!-- <div class="input-form">
-                    <i class="glyphicon glyphicon-map-marker"></i>
-                    <input type="text" placeholder="Quận huyện" name="district" id="district">
-                </div> -->
                 <div class="input-form">
                     <i class="glyphicon glyphicon-map-marker"></i>
-                    <input type="text" placeholder="Địa chỉ" name="address" id="address">
+                    <input type="text" placeholder="Địa chỉ" name="address" id="address" value="{{user.address}}">
                 </div>
                 <div class="input-form">
                     <i style="vertical-align: top;" class="glyphicon glyphicon-plus-sign"></i>
                     <textarea placeholder="Lý do khám" name="reason" id="reason"></textarea>
                 </div>                    
+                <div>
+                    <p style="text-align: center; margin: 10px 0px; font-size: small">Quý khách vui lòng điền đầy đủ, chân thật lí do khám để đội ngũ bác sĩ có thể chuẩn bị buổi khám chuyên nghiệp, đầy đủ hơn</p>
+                </div>
                 <div style="margin: 10px 0px;" class="check-form">
                     <input style="height: 15px; width: auto;" type="radio" checked="checked" name="payincash" id="payincash" value="1">
                     <p style="display: inline;">Thanh toán sau tại cơ sở y tế</p>   
@@ -235,4 +223,5 @@
             </div>
         </div>
     </div>
+    <script></script>
 {% endblock content %}
