@@ -26,8 +26,6 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         font-family: Arial, Helvetica, sans-serif;
         opacity:0.9;
     }
-
-    
     .footer{
         padding: 0px 240px; 
         display :flex;
@@ -266,7 +264,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         padding:10px 0;
     }
     .Navi{
-        padding: 0px;
+        padding: 0px 30px;
         margin:0px;
         box-shadow: 0 10px 4px -8px rgba(0, 0, 0, 0.4);
     }
@@ -274,20 +272,19 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         list-style: none;
         background-color: #ffffff;
         color: rgb(0, 0, 0);
-        display: inline-block;
-        padding: 0rem 2rem;
+        display: table-cell;
+        padding: 0rem 3rem;
         margin-top: 0rem;
         margin-left: 250px;
         margin-right: 250px;
     }
 
     ul.horizontal-list li {
-        display: inline-block;
-        padding: 0 0.5rem;
+        display: table-cell;
+        padding: 0 1rem;
         min-width: 7rem;
         text-align: center;
         cursor: pointer;
-
     }
     .intro_BC{
         padding: 12px 12px 20px 56px;
@@ -315,12 +312,28 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         position: static;
         width: 24px;
     }
+    .description_markdown li
+    {
+        margin-left:30px;
+    }
+    .description_markdown h4
+    {
+        font-weight: bolder;
+        font-size:19px;
+    }
+    .description_markdown h2
+    {
+        font-size:15px;
+        font-weight:bold;
+        color: #337ab7;
+        margin-top:40px
+    }
 </style>
 {% endblock extra_head %}
 {% block content %}
 <div class="infoClinic_andNavi">
     <div class="infoClinic">
-        <img src="https://cdn.bookingcare.vn/fr/w300/2022/09/07/091211-logo-dong-do.jpg"
+        <img src="/media/{{ clinics.avatar }}"
              style="height:120px;
                     width:120px;
                     display:inline-block;
@@ -328,11 +341,11 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                     border-color: #e6e6e6;
                     border-width: 1px;">
         <h3 style="display:inline-block;font-size: 18px;font-weight: bold;">
-            Bệnh viện Đa khoa Đông Đô
+            {{ clinics.name }}
             <br>
             <i style="display:inline;font-size: 10px;position:static"
                class="bt-g bt-g-diadiem glyphicon glyphicon-map-marker"></i>
-            <span style="font-size:10px;font-weight:lighter">Số 5 phố Xã Đàn - Đống Đa - Hà Nội</span>
+            <span style="font-size:10px;font-weight:lighter">{{ clinics.address }}</span>
         </h3>
     </div>
     <hr style="margin:0px;">
@@ -366,7 +379,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                 BookingCare là Nền tảng Y tế chăm sóc sức khỏe toàn diện hàng đầu Việt Nam kết nối người dùng với trên 150 bệnh viện - phòng khám uy tín, hơn 1,000 bác sĩ chuyên khoa giỏi và hàng nghìn dịch vụ, sản phẩm y tế chất lượng cao.
             </div>
             <div class="suggest_clinic">
-                <p>Hãy đặt khám với Bệnh viện Đa khoa Đông Đô trên Nền tảng Y tế Chăm sóc sức khỏe toàn diện BookingCare:</p>
+                <p>Hãy đặt khám với {{ clinics.name }} trên Nền tảng Y tế Chăm sóc sức khỏe toàn diện BookingCare:</p>
                 <ul>
                     <li>Được lựa chọn khám với các bác sĩ chuyên khoa giàu kinh nghiệm, dịch vụ y tế chất lượng</li>
                     <li>Đặt hẹn trực tuyến & nhận hướng dẫn chi tiết trước khi đi khám (miễn phí)</li>
@@ -619,159 +632,11 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
             </div>
             <!--End Each doctor scope-->
             <div class="intro_clinic" id="gioithieu">
-                <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">
-                    GIỚI THIỆU:
-                </h3>
                 <hr style="margin-bottom:10px;margin-top:10px">
-                <p>
-                    Bệnh viện Đa khoa Đông Đô hoạt động từ năm 2011 với diện tích sử dụng 3.500m2 , gồm 9 tầng lầu và 1 tầng hầm, quy mô 45 giường bệnh cùng các trang thiết bị tiên tiến nhất hiện nay.
-                    <br>
-                    <b>Nền tảng của Đông Đô chính là đội ngũ bác sĩ đầu ngành có chuyên môn sâu,</b> tận tâm yêu nghề, giàu y đức. Các bác sĩ đã từng học tập, tu nghiệp tại nước ngoài, đã và đang công tác tại các bệnh viện lớn như: Bệnh viện Bạch Mai, Viện Tim Trung ương, Bệnh viện Tim mạch Hà Nội, Bệnh viện Việt Đức, Bệnh viện Hữu nghị Việt Xô…
-                </p>
-                <ul>
-                    <li>
-                        Phó Giáo sư, Tiến sĩ Vũ Thị Thanh Thủy - Nguyên Trưởng khoa Cơ Xương Khớp - Bệnh Viện Bạch Mai, Chủ tịch Hội loãng xương Hà Nội
-                    </li>
-                    <li>
-                        Giáo sư, Tiến sĩ Nguyễn Lân Việt - Nguyên Viện trưởng Viện Tim Mạch Quốc Gia, nguyên Hiệu trưởng trường Đại học Y Hà Nội
-                    </li>
-                    <li>
-                        Giáo sư, Tiến sĩ, Bác sĩ Đỗ Doãn Lợi - Nguyên Viện trưởng Viện Tim mạch Quốc gia, nguyên Phó Giám đốc Bệnh viện Bạch Mai
-                    </li>
-                    <li>
-                        Phó Giáo sư, Tiến sĩ, Bác sĩ Phạm Thị Hồng Thi - Nguyên Viện trưởng Viện Tim Mạch Quốc Gia, nguyên Hiệu trưởng Trường Đại học Y Hà Nội
-                    </li>
-                    <li>
-                        Bác sĩ Chuyên khoa I Hứa Thị Ngọc Hà - Nguyên Trưởng khoa Nội tim mạch, Bệnh viện 198 - Bộ Công An
-                    </li>
-                </ul>
-                <p>
-                    <b>Sử dụng công nghệ, máy móc hiện đại theo tiêu chuẩn Châu Âu:</b>
-                </p>
-                <ul>
-                    <li>
-                        Hệ thống phòng mổ vô khuẩn một chiều được đánh giá hiện đại nhất hiện nay
-                    </li>
-                    <li>
-                        Máy can thiệp mạch DSA
-                    </li>
-                    <li>
-                        Máy đo loãng xương theo tiêu chuẩn quốc tế
-                    </li>
-                    <li>
-                        Hệ thống siêu âm 4D màu ALOKA…
-                    </li>
-                    <li>
-                        Và rất nhiều trang thiết bị hiện đại khác
-                    </li>
-                </ul>
-                <p>
-                    <b>Dịch vụ chăm sóc tốt, chi phí hợp lý cho mọi đối tượng</b>
-                </p>
-                <p>
-                    Bên cạnh hệ thống máy móc tiên tiến và đội ngũ bác sĩ có tay nghề cao, khách hàng có thể an tâm tới khám tại bệnh viện vì chi phí khám chữa bệnh luôn minh bạch, hợp lý . Các chi phí thăm khám, dịch vụ y tế đều được công khai, rõ ràng và phù hợp với mọi đối tượng bệnh nhân dưới sự giám sát và cho phép của Bộ Y tế.
-                </p>
-                <p>
-                    <b>Địa chỉ:</b> Số 5 Xã Đàn, Đống Đa, Hà Nội
-                </p>
-                <p>
-                    <b>Thời gian làm việc:</b>
-                </p>
-                <ul>
-                    <li>
-                        Thứ 2 đến Chủ Nhật
-                    </li>
-                    <li>
-                        7h30 đến 17h00
-                    </li>
-                </ul>
-                <p>
-                    <b>Hình thức thanh toán chi phí khám chữa bệnh:</b>
-                </p>
-                <ul>
-                    <li>
-                        Khám chữa bệnh theo yêu cầu (chi trả chi phí trực tiếp tại bệnh viện)
-                    </li>
-                    <li>
-                        Khám chữa bệnh theo bảo hiểm y tế
-                    </li>
-                    <li>
-                        Bảo lãnh viện phí
-                    </li>
-                </ul>
-            </div>
-            <div class="info_strengh" id="themanh">
-                <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">
-                    THẾ MẠNH CHUYÊN MÔN:
-                </h3>
-                <hr style="margin-bottom:10px;margin-top:10px">
-                <p>
-                    <b>Bệnh viện có thế mạnh chuyên khám và điều trị về các vấn đề:</b>
-                </p>
-                <ul>
-                    <li>
-                        Tim mạch
-                    </li>
-                    <li>
-                        Phẫu thuật Tim mạch
-                    </li>
-                    <li>
-                        Cơ xương khớp
-                    </li>
-                    <li>
-                        Tiêu hóa
-                    </li>
-                    <li>
-                        Mắt
-                    </li>
-                    <li>
-                        Vô sinh hiếm muộn
-                    </li>
-                </ul>
-            </div>
-            <div class="info_equipment" id="thietbi">
-                <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">
-                    TRANG THIẾT BỊ
-                </h3>
-                <hr style="margin-bottom:10px;margin-top:10px">
-                <p>
-                    Bệnh viện đã cho nhập khẩu, chuyển giao trang thiết bị, công nghệ y học hiện đại ở những nước có nền y học phát triển và kế thừa những thành tựu y học của họ đưa vào ứng dụng trong thăm khám, tầm soát điều trị bệnh, trong đó phải kể đến:
-                </p>
-                <ul>
-                    <li>
-                        Hệ thống phòng mổ vô khuẩn một chiều được đánh giá hiện đại nhất hiện nay
-                    </li>
-                    <li>
-                        Máy can thiệp mạch DSA
-                    </li>
-                    <li>
-                        Máy đo loãng xương theo tiêu chuẩn quốc tế
-                    </li>
-                    <li>
-                        Hệ thống siêu âm 4D màu ALOKA… và rất nhiều trang thiết bị hiện đại khác
-                    </li>
-                </ul>
-                <img src="https://bookingcare.vn/files/blog/2022/09/07/101134-do-loang-xuong.jpg"
-                     style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;height: auto;padding-bottom:10px">
-                <p style="text-align:center">
-                    <i>Máy đo mật độ loãng xương toàn thân Hologic – Discovery - Nguồn: Bệnh viện cung cấp</i>
-                </p>
-                <img src="https://bookingcare.vn/files/blog/2022/09/07/101513-phong-mo-tim-mach.jpg"
-                     style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;height: auto;padding-bottom:10px">
-                <p style="text-align:center">
-                    <i>Phòng mổ hiện đại đạt tiêu chuẩn quốc tế - Nguồn: Bệnh viện cung cấp</i>
-                </p>
-            </div>
-            <div class="info_location" id="vitri">
-                <h3 style="font-size:15px;font-weight:bold;color: #337ab7;margin-top:40px">
-                    VỊ TRÍ
-                </h3>
-                <hr style="margin-bottom:10px;margin-top:10px">
-                <p>
-                    Bệnh viện Đông Đô ở gần cửa hầm Kim Liên, đi từ hướng ngã tư Ô Chợ Dừa - Xã Đàn
-                </p>
-                <img src="https://bookingcare.vn/files/blog/2022/09/07/102604-map-dong-do.png"
-                     style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;height: auto;padding-bottom:10px">
+                {% load martortags %}
+                <div class="description_markdown">
+                    {{ clinics.description | safe_markdown}}
+                </div>
             </div>
         </div>
     </div>
