@@ -5,9 +5,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import  UserRegistrationForm #,CustomUserCreationForm,
-from .forms import LoginForm
+from .forms import LoginForm, UpdateProfileForm, UpdateUserForm
 from django.shortcuts import redirect, render
 from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -18,12 +22,10 @@ from django.contrib import messages
 
 # class RegisterForm(TemplateView):
 #     template_name = "accounts/registerForm.html"
-# def logout_request(request):
-#     logout(request)
-#     return redirect('logout')
 
-class LogoutForm(TemplateView):
-      template_name = "accounts/logoutForm.html"
+def logout_request(request):
+    logout(request)
+    return render(request, 'accounts/logoutForm.html')
       
 def user_login(request):
     if request.method == 'POST':
@@ -63,9 +65,57 @@ def signup(request):
             # return render(request,
             #             'accounts/loginForm.html',
             #             {'new_user': new_user})
+            messages.info(request, "You created a new account!")
             return redirect('login')
         else:
             messages.error(request, "Can not create your account! May be username is used or 2 passwords are not the same! Please try again!")
     else:
         user_form = UserRegistrationForm()
     return render(request, 'accounts/registerForm.html', {'user_form': user_form})
+
+# def profile(request):
+#     # if request.method == 'POST':
+#     #     profile_form = UpdateUser(request.POST, request.FILES, instance=request.user)
+
+#     #     if  profile_form.is_valid():
+#     #         profile_form.save()
+#     #         messages.success(request, 'Your profile is updated successfully')
+#     #         return redirect('profile')
+#     # else:
+#     #     profile_form = UpdateUser(instance=request.user)
+
+#     # return render(request, 'accounts/profileUser.html', {'form': profile_form})
+#     if request.method == 'POST':
+#         form = UpdateUser(request.POST, request.FILES, instance=request.user)
+#         if form.is_valid():
+#             form.save()
+#             messages.info(request, "Cập nhật thông tin thành công!")
+#             return redirect('profile')
+#         else:
+#             messages.error(request, "Quá trình cập nhật thay đổi thất bại!")
+#             form = UpdateUser(request.FILES, instance=request.user)
+#     else:
+#         messages.info(request, 'Đây là không gian lưu trữ của tài khoản "Booking Care"')
+#         form = UpdateUser(request.FILES, instance=request.user)
+#     return render(request, 'accounts/profileUser.html', {'form':form})
+
+def profile(request):
+    if request.method == 'POST':
+        user_form = UpdateUserForm(request.POST, instance=request.user)
+        profile_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user)
+
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.info(request, 'Cập nhật thông tin cá nhân thành công!')
+            return redirect('profile')
+        else:
+            messages.error(request, 'Cập nhật thông tin cá nhân thất bại!')
+            user_form = UpdateUserForm(instance=request.user)
+            profile_form = UpdateProfileForm(instance=request.user)
+    else:
+        user_form = UpdateUserForm(instance=request.user)
+        profile_form = UpdateProfileForm(instance=request.user)
+        messages.info(request, 'Đây là không gian lưu trữ tài khoản "Booking Care" của bạn!')
+
+    return render(request, 'accounts/profileUser.html', {'user_form': user_form, 'profile_form': profile_form})

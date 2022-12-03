@@ -1,0 +1,460 @@
+{% extends 'homepage/base.html' %}
+{% block extra_head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+    .container-1
+    {
+        margin: 0px 0px 10px 0px;
+        background-color: #f1ededd6;
+        background-image: linear-gradient(to right, #5bdadad6, rgb(176, 222, 228) );
+        display: block;
+        border: 4px solid rgb(37, 183, 223);
+        border-left: none;
+        border-right: none;
+    }
+
+    .user-info
+    {
+        margin: 0px 300px;
+        padding: 15px 0px;
+    }
+
+    .user-image
+    {
+        padding-left: 8px;
+        padding-right: 8px;
+        display:inline-block
+    }
+
+    .user-image, .user-quickview
+    {
+        vertical-align: top;
+    }
+
+    .user-info img
+    {
+        display: block;
+        width: 150px;
+        height: 150px;
+        border: 3px solid rgb(9, 138, 174);
+    }
+
+    .frame-image
+    {
+        margin-left: 350px;
+        margin-right: 350px;
+    }
+
+    .user-quickview h1, h2, h3
+    {
+        font-size: 20px; 
+        text-align: center;
+        margin-top: 10px;
+        font-weight: bolder;
+    }
+
+    .user-detail-info h1
+    {
+        text-align: center;
+        font-weight: bolder;
+        padding-bottom: 5px;
+    }
+
+    .container-2
+    {
+        margin-bottom: 10px;
+        font-size: 15px;
+        display: none;
+    }
+
+    .user-detail-info
+    {
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+
+    .input-form
+    {
+        margin: 0px 0px 14px 0px;
+        padding: 7px;
+        width: 100%;
+        border: 1px solid #84888a;
+        border-radius: 4px;
+        position: relative;
+        display: table;
+    }
+
+    .input-form input, select, textarea
+    {
+        width: 100%;
+        height: 40px;
+        border: none;
+        outline: none;
+        text-align: start;
+        display: table-cell;
+        padding-left: 5px;
+    }
+
+    .input-form i
+    {
+        display: table-cell;
+        width: 1%;
+        vertical-align: center;
+        padding-right: 7px;
+    }
+
+    .content
+    {
+        display: flex;
+        margin: 4px;
+        justify-content: space-between;
+    }
+
+    .content p
+    {
+        margin-bottom: 5px;
+    }
+
+    .button-claim input[type="submit"]
+    {
+        margin: 10px 0px;
+        width: 100%;
+        height: 40px;
+        background-color: rgb(250, 169, 6);
+        text-align: center;
+        color: white;
+        border-radius: 4px;
+        border: #edf2f5;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+
+    .personal-info label
+    {
+        margin-bottom:0px;
+    }
+
+    .personal-info h1
+    {
+        font-size:30px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    .bar ul 
+    {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f193;
+    }
+
+    .bar
+    {
+        display: inline;
+        position: fixed;
+    }
+
+    .bar a 
+    {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+    .bar li:active
+    {
+        background-color:#04AA6D;
+    }
+
+/* Change the link color on hover */
+    .bar a:hover 
+    {
+        background-color: rgb(12, 118, 211);
+        color: rgb(73, 227, 232);
+    }
+
+    .bar a:active
+    {
+        background-color: #04AA6D;
+    }
+
+    #customers 
+    {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th 
+    {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+{% endblock extra_head %}
+{% block content %}
+<div class="container-1">
+    <div class="bar">
+        <ul>
+            <li><a href="#" onclick="Information()">Xem thông tin cá nhân</a></li>
+            <li><a href="#" onclick="Update_Profile()">Cập nhật thông tin</a></li>
+            <li><a href="#" onclick="Booking_History()">Xem lịch sử đặt khám</a></li>
+            <li><a href="#" onclick="Booking_History()">Thay đổi mật khẩu</a></li>
+        </ul>
+    </div>  
+
+    <div class="user-info">
+        <div class="user-image">
+            <div class="frame-image">
+                <img style="border-radius: 50%;" src="/media/{{user.avatar}}" alt="Doctor">
+            </div>
+        </div>
+        <div class="user-quickview">
+            <h1 style="text-transform: uppercase;">{{ user.username }}</h1>
+            <h1 style="font-size:14px">{{ user.last_login.date}} - {{ user.last_login.time }}</h1>
+        </div>
+    </div>
+</div>
+
+{% for msg in messages %}
+    {% if msg.tags == "info" %}
+    <div class="container-3" id="notification-info" style="background-color: rgb(84, 165, 237); margin-left: 0px; margin-right: 0px; padding-left: 10px; padding-right: 10px;">
+        <p style="text-align:center; color:rgb(255, 255, 255);font-size:15px;font-weight: bold;padding:10px 0px;">Thông báo: {{ msg }}</p>   
+    </div>
+    {% endif %}
+
+    {% if msg.tags == "error" %}
+    <div class="container-3" id="notification-error" style="background-color: rgb(222, 99, 99); margin-left: 0px; margin-right: 0px; padding-left: 10px; padding-right: 10px;">
+        <p style="text-align:center; color:rgb(255, 255, 255);font-size:15px;font-weight: bold;padding:10px 0px; ">Lỗi: {{ msg }}</p>   
+    </div>
+    {% endif %}
+{% endfor %}
+
+<div class="container-2" id="information">
+    <div class="user-detail-info"> 
+        <div class="personal-info">
+            <h1>THÔNG TIN CÁ NHÂN</h1>
+            <label>Username (Tên đăng ký):</label>
+            <div class="input-form">
+                <i class="glyphicon glyphicon-user"></i>
+                <input type="text" placeholder="Username:" name="username" id="username" value="{{user.username}}" readonly>
+            </div>
+
+            <label>Họ và tên lót:</label>
+            <div class="input-form">
+                <i class="glyphicon glyphicon-user"></i>
+                <input type="text" placeholder="Họ và tên lót: " name="lastname" id="lastname" value="{{user.last_name}}" readonly>
+            </div>
+            
+            <label>Tên:</label>
+            <div class="input-form">
+                <i class="glyphicon glyphicon-user"></i>
+                <input type="text" placeholder="Tên: " name="firstname" id="firstname" value="{{user.first_name}}" readonly>
+            </div>
+
+            <label>Giới tính:</label>
+            <div class="input-form">
+                <i class="glyphicon glyphicon-user"></i>
+                <input type="text" placeholder="Giới tính: " name="gender" id="gender" value="{{user.gender}}" readonly>
+            </div>
+
+            <label>Số điện thoại:</label>
+            <div class="input-form">
+                <i class="glyphicon glyphicon-earphone"></i>
+                <input type="text" placeholder="Số điện thoại" name="phone" id="phone" value="{{user.phone_number}}" readonly>
+            </div>  
+            
+            <label>Email:</label>
+            <div class="input-form">
+                <i class="glyphicon glyphicon-envelope"></i>
+                <input type="text" placeholder="Email: " name="email" id="email" value="{{user.email}}" readonly>
+            </div>
+
+            <label>Ngày sinh:</label>
+            <div class="input-form">
+                <i class="glyphicon glyphicon-calendar"></i>
+                <input type="text" placeholder="Ngày sinh" name="birthyear" id="birthyear" value="{{user.birthdate}}" readonly>
+            </div>
+
+            <label>Địa chỉ thường trú:</label>
+            <div class="input-form">
+                <i class="glyphicon glyphicon-map-marker"></i>
+                <input type="text" placeholder="Địa chỉ thường trú" name="address" id="address" value="{{user.address}}" readonly>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div class="container-2" id="update_information">
+    <div class="user-detail-info"> 
+        <div class="personal-info">
+            <h1>CẬP NHẬT THÔNG TIN</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-form">
+                    <label>Username (Tên đăng ký):</label>
+                    {{ user_form.username }}
+                </div>
+                    
+                <div class="input-form">
+                    <label>Họ và tên lót:</label>
+                    {{ user_form.last_name }}
+                </div>
+
+                <div class="input-form">
+                    <label>Tên:</label>
+                    {{ user_form.first_name }}
+                </div>
+
+                <div class="input-form">
+                    <label>Ngày sinh:</label>
+                    {{ user_form.birthdate }}
+                </div>
+
+                <div class="input-form">
+                    <label>Giới tính:</label>
+                    {{ user_form.gender }}
+                </div>
+
+                <div class="input-form">
+                    <label>Số điện thoại:</label>
+                    {{ user_form.phone_number }}
+                </div>
+
+                <div class="input-form">
+                    <label>Email:</label>
+                    {{ user_form.email }}
+                </div>
+
+                <div class="input-form">
+                    <label>Địa chỉ thường trú:</label>
+                    {{ user_form.address }}
+                </div>
+                    
+                <div class="input-form">
+                    <label>Ảnh đại diện:</label>
+                    {{ profile_form.avatar }}
+                </div>
+                
+                <div class="button-claim">
+                    <input type="submit" value="CẬP NHẬT">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class = "container-2" id="booking_history">
+    <div class = "user-detail-info">
+        <h1>LỊCH SỬ KHÁM BỆNH</h1>
+        <table id="customers">
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Country</th>
+            </tr>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Berglunds snabbköp</td>
+              <td>Christina Berglund</td>
+              <td>Sweden</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+            <tr>
+              <td>Ernst Handel</td>
+              <td>Roland Mendel</td>
+              <td>Austria</td>
+            </tr>
+            <tr>
+              <td>Island Trading</td>
+              <td>Helen Bennett</td>
+              <td>UK</td>
+            </tr>
+            <tr>
+              <td>Königlich Essen</td>
+              <td>Philip Cramer</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Laughing Bacchus Winecellars</td>
+              <td>Yoshi Tannamuri</td>
+              <td>Canada</td>
+            </tr>
+            <tr>
+              <td>Magazzini Alimentari Riuniti</td>
+              <td>Giovanni Rovelli</td>
+              <td>Italy</td>
+            </tr>
+            <tr>
+              <td>North/South</td>
+              <td>Simon Crowther</td>
+              <td>UK</td>
+            </tr>
+            <tr>
+              <td>Paris spécialités</td>
+              <td>Marie Bertrand</td>
+              <td>France</td>
+            </tr>
+          </table>
+    </div>
+</div>
+{% endblock content %}
+
+{% block extra_script %}
+<script type="text/javascript">
+    function Information(){
+        document.getElementById("information").style.display = "block";
+        document.getElementById("update_information").style.display = "none";
+        document.getElementById("booking_history").style.display = "none";
+    }
+</script>
+
+<script type="text/javascript">
+    function Update_Profile(){
+        document.getElementById("information").style.display = "none";
+        document.getElementById("update_information").style.display = "block";
+        document.getElementById("booking_history").style.display = "none";
+    }
+</script>
+
+<script type="text/javascript">
+    function Booking_History(){
+        document.getElementById("information").style.display = "none";
+        document.getElementById("update_information").style.display = "none";
+        document.getElementById("booking_history").style.display = "block";
+    }
+</script>
+
+<script type="text/javascript">
+    setTimeout(function(){
+      document.getElementById("notification-info").innerHTML = '';
+  }, 4000);
+  </script>
+  
+<script type="text/javascript">
+    setTimeout(function(){
+    document.getElementById("notification-error").innerHTML = '';
+    }, 4000);
+</script>
+{% endblock %}

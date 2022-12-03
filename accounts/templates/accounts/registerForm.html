@@ -1,20 +1,55 @@
 {% extends "accounts/base.html" %}
+{% load static %}
+{% block extra_head %}
+{% block title %}<title>Register</title>{% endblock %}
+<link href="{% static 'accounts/css/style_register.css' %}" rel="stylesheet">
+{% endblock extra_head %}
 {% block content %}
+<!-- {% if user.is_authenticated %}
+<h2>wellcome {{user.username}}</h2>
+{% endif %} -->
 <div id="register-form-wrap">
   <div class='bookingcare-logo'>
     <a href="{% url 'homepage' %}">&af;</a>
   </div>
-
   <h2><b>Register</b></h2>
   <form id="register-form" method="post">
     <div style="text-align:left;font-size:20px;">
-      {{ user_form.as_p }}
+      <!-- {{ user_form.as_p }} -->
+      <p><input type="text" id="id_username" name="username" placeholder="Username" required></p>
+      <p><input type="email" id="id_email" name="email" placeholder="Email" required></p>
+      <p><input type="password" id="id_password" name="password" placeholder="Password" required></p>
+      <p><input type="password" id="id_password2" name="password2" placeholder="Repeat password" required></p>
       {% csrf_token %}
+      <div style="text-align: center;">
+        <p style="display:inline;text-align: center;">
+          <input style="display:inline;width:12px;height:12px;" type="checkbox" id="showhide" name="showhide" onclick="Click()">
+          <p style="display:inline;font-size:16px;font-style:normal;color:rgb(94, 93, 93)">Show password</p>
+        </p>
+      </div>
     </div>
-    
     <p>
       <input type="submit" id="register" value="Register now!" onclick="ClickSubmit()">
     </p>
+
+  <!-- {% if form.errors %}
+    <div class="alert alert-danger">
+    {{ form.errors }}
+    </div>
+  {% endif %} -->
+
+    {% for message in messages %}
+    <div id="notification" style="background-color: rgb(222, 99, 99); margin-left: -60px; margin-right: -60px; padding-left: 10px; padding-right: 10px;">
+      <p style="color:rgb(255, 255, 255);font-size:15px;font-weight: bold;padding:10px 0px;">Error: {{ message }}</p>   
+    </div>
+    {% endfor %}
+
+    <!-- {% for error in form.errors %}
+    <div>
+      <p style="color:rgb(197, 46, 46);font-size:15px;display: inline-block;font-weight: bold;">Error: {{ error }}</p>   
+    </div>
+    {% endfor %} -->
+
     <a style="font-size: 20px" href="{% url 'login' %}">Back to login!</a>
   </form>
   
@@ -22,12 +57,13 @@
     <p>"Booking care" want to save your health!<p>
   </div>
 </div>
+{% endblock content %}
 
-
-<!-- <script>
+{% block script %}
+<script>
 function Click() {
-  var temp1 = document.getElementById("password");
-  var temp2 = document.getElementById("retype-password")
+  var temp1 = document.getElementById("id_password");
+  var temp2 = document.getElementById("id_password2")
   if (temp1.type === "password") {
       temp1.type = "text";
       temp2.type = "text";
@@ -37,19 +73,25 @@ function Click() {
       temp2.type = "password";
   }
 }
-</script> -->
-    
+</script>
+
+<script type="text/javascript">
+  setTimeout(function(){
+    document.getElementById("notification").innerHTML = '';
+}, 4000);
+</script>
 <!-- <script>
-function ClickSubmit() {
- 
-  let password = document.getElementById("password").value;
-  let re_password = document.getElementById("retype-password").value;
-  if (password != re_password)
-  {
-    alert("Two password is not the same! Please try again!");
+  function ClickSubmit() {
+    // Selecting the input element and get its value 
+    let password = document.getElementById("id_password").value;
+    let re_password = document.getElementById("id_password2").value;
+    if (password != re_password)
+    {
+      alert("Two password is not the same! Please try again!");
+    }
+    // Displaying the value
+    alert(inputVal);
   }
-  alert(inputVal);
-}
-</script> -->
-  
-{% endblock %}
+  </script> -->
+{% endblock script %}
+

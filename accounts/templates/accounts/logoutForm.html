@@ -10,7 +10,15 @@
       <a href="{% url 'homepage' %}">&af;</a>
   </div>
   <div style="margin-left:20px;margin-right:20px">
+    {% if request.user.is_authenticated %}
+    <h2><b>There are some problems, so {{ user.username }} can't not logout right now!</b></h2>
+    {% else %}
     <h2><b>You are logged out successfully! Goodbye and see you again!</b></h2>
+    {% endif %}
+    <!-- <h2><b>You are logged out successfully! Goodbye and see you again!</b></h2> -->
+  </div>
+  <div id="notification" style="background-color: rgb(84, 165, 237); margin-left: 0px; margin-right: 0px; padding-left: 10px; padding-right: 10px;">
+    <p style="color:rgb(255, 255, 255);font-size:15px;font-weight: bold;padding:10px 0px;">Info: You will redirect to homepage after some seconds!</p>
   </div>
   <div id="footer-logout-form">
     <p>If you want to go back to "Booking Care", <a href="{% url 'login' %}">click here</a> to log in.<p>
@@ -20,4 +28,18 @@
 {% endblock content %}
 
 {% block script %}
+<!-- Redirect to homepage after 3s -->
+<script type="text/javascript">   
+  function Redirect() 
+  {  
+      window.location="{% url 'homepage' %}"; 
+  } 
+  setTimeout('Redirect()', 5000);   
+</script>
+
+<script type="text/javascript">
+  setTimeout(function(){
+    document.getElementById("notification").innerHTML = '';
+}, 3000);
+</script>
 {% endblock script %}

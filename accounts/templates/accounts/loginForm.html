@@ -1,37 +1,69 @@
 {% extends "accounts/base.html" %}
+{% load static %}
+{% block extra_head %}
+{% block title %}<title>Log in</title>{% endblock %}
+    <link href="{% static 'accounts/css/style_login.css' %}" rel="stylesheet">
+{% endblock extra_head %}
 {% block content %}
 <div id="login-form-wrap">
   <div class='bookingcare-logo'>
       <a href="{% url 'homepage' %}">&af;</a>
   </div>
   <h2><b>Login</b></h2>
+  
   <form id="login-form" method="post">
     <div style="text-align:left;font-size:20px;">
-    {{ form.as_p }}
-    {% csrf_token %}
+      <!-- {{ form.as_p }} -->
+      <p><input type="text" id="id_username" name="username" placeholder="Username" required></p>
+      <p><input type="password" id="id_password" name="password" placeholder="Password" required></p>
+      {% csrf_token %}
+      <div style="text-align: center;">
+        <p style="display:inline;">
+          <input style="display:inline;width:12px;height:12px;" type="checkbox" id="showhide" name="Showhide" onclick="Click()"> 
+          <p style="display:inline;font-size:16px;font-style:normal;color:rgb(94, 93, 93)">Show password</p>
+        </p>
+      </div>
     </div>
 
-    
     <p>
-    <input type="submit" id="login" value="Login">
+      <input type="submit" id="login" value="Login">
     </p>
-    {% for message in messages %}
-    <div>
-        <p style="color:red;font-size:15px;display: inline-block;font-weight: bold;">Note: {{ message }}</p>
-          
-    </div>
+
+    {% for msg in messages %}
+      {% if msg.tags == "info" %}
+      <div id="notification-info" style="background-color: rgb(84, 165, 237); margin-left: -60px; margin-right: -60px; padding-left: 10px; padding-right: 10px;">
+        <p style="color:rgb(255, 255, 255);font-size:15px;font-weight: bold;padding:10px 0px;">Info: {{ msg }}</p>   
+      </div>
+      {% endif %}
+
+      {% if msg.tags == "error" %}
+      <div id="notification-error" style="background-color: rgb(222, 99, 99); margin-left: -60px; margin-right: -60px; padding-left: 10px; padding-right: 10px;">
+        <p style="color:rgb(255, 255, 255);font-size:15px;font-weight: bold;padding:10px 0px; ">Error: {{ msg }}</p>   
+      </div>
+      {% endif %}
+
+    <!-- <div>
+      <p style="color:rgb(197, 46, 46);font-size:15px;display: inline-block;font-weight: bold;">Error: {{ msg }}</p>   
+    </div> -->
+        <!-- {% if msg.tags == "info" %}
+          <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js">
+            alertify.set('notifier', 'position', 'top-right')
+            alertify.success('{{msg}}');
+          </script>
+        {% endif %} -->
     {% endfor %}
   </form>
-  <div id="create-account-wrap">
+
+  <div id="footer_login_form">
     <p>Not a member? <a href="{% url 'signup' %}">Create Account</a><p>
   </div>
 </div>
+{% endblock content %}
 
-
-<!-- <script>
-
+{% block script %}
+<script>
 function Click() {
-  var temp = document.getElementById("password");
+  var temp = document.getElementById("id_password");
   if (temp.type === "password") {
       temp.type = "text";
   }
@@ -39,6 +71,23 @@ function Click() {
       temp.type = "password";
   }
 }
-</script> -->
-{% endblock %}
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js">
+    alertify.set('notifier', 'position', 'top-right')
+</script>
+
+<script type="text/javascript">
+  setTimeout(function(){
+    document.getElementById("notification-info").innerHTML = '';
+}, 4000);
+</script>
+
+<script type="text/javascript">
+  setTimeout(function(){
+    document.getElementById("notification-error").innerHTML = '';
+}, 4000);
+</script>
+{% endblock script %}
+
 
