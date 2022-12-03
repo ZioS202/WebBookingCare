@@ -18,8 +18,6 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
-from accounts.views import LogoutForm
-#from accounts.views import LoginForm, RegisterForm
 from custom_MatorMarkdownEditor.views import markdown_uploader
 
 urlpatterns = [
@@ -34,7 +32,7 @@ urlpatterns = [
     # path("notification/", include("notifications.urls")),
     # path("login/", LoginForm.as_view(), name="login"),
     # path("signup/", RegisterForm.as_view(), name="signup"),
-    path('logout/', LogoutForm.as_view(), name='logout'),
+    # path('logout/', LogoutForm.as_view(), name='logout'),
     path("martor/", include("martor.urls")),
     path("api/uploader/", markdown_uploader, name="markdown_uploader_page"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

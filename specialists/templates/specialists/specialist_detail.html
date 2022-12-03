@@ -8,11 +8,13 @@
     {
         padding: 0;
     }
-    h1 {
+    h1 
+    {
         font-size: 16px;
         font-weight: bold;
     }
-    p,li{
+    p,li
+    {
         font-size: 14px;
         font-weight: lighter;
     }
@@ -28,14 +30,14 @@
     {
         padding: 40px;
     }
-
-    table {
+    table 
+    {
         border-collapse: collapse;
         width: 30%;
         
     }
-
-    th, td {
+    th, td 
+    {
         text-align: left;
         padding-top: 8px;
         padding-left: 8px;
@@ -43,12 +45,12 @@
         padding-right: 8px;
         background-color: #ffffff;
     }
-
     hr 
     {
         width: 100%;
     }
-    .abstract_scope_image {
+    .abstract_scope_image 
+    {
         background-image: url(/media/{{specialist.avatar}});
         background-repeat: no-repeat;
         background-size: cover;
@@ -62,15 +64,15 @@
         padding-bottom: auto;
         background-image: linear-gradient(rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 1));
     }
-    
-    .specialist_scope{
+    .specialist_scope
+    {
         margin: 0px;
         padding: 0px;
         padding-top:0px;
         margin-top:0px;
     }
-
-    .dropbtn {
+    .dropbtn 
+    {
         background-color:rgb(231, 224, 224);
         color: black;
         padding-top: 7px;
@@ -83,20 +85,18 @@
         width: 150px;
         height: 40px;
         text-align:left;
-        border-color:#858181
-        
+        border-color:#858181 
     }
-
-    .dropdown {
+    .dropdown 
+    {
         position: static;
         display: inline-block;
         padding-left:200px;
         padding-top: 10px;
-        box-sizing: border-box;
-        
+        box-sizing: border-box; 
     }
-
-    .dropdown-content {
+    .dropdown-content 
+    {
         display: none;
         position: static;
         background-color: #f9f9f9;
@@ -104,8 +104,8 @@
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
     }
-
-    .dropdown-content a {
+    .dropdown-content a 
+    {
         color: black;
         padding-top: 5px;
         padding-bottom:5px;
@@ -115,14 +115,13 @@
         display: block;
         font-size: 14px;
     }
-
     .dropdown-content a:hover {background-color: #f1f1f1}
-
-    .dropdown:hover .dropdown-content {
+    .dropdown:hover .dropdown-content 
+    {
         display: block;
     }
-
-    .dropdown:hover .dropbtn {
+    .dropdown:hover .dropbtn 
+    {
         background-color: #4c4c4c;
         color:white;
         border-color: white;
@@ -153,17 +152,19 @@
         margin-bottom: 10px;
         display:flex;
     }
-    
-    .doctor_area{
+    .doctor_area
+    {
         margin: 25px 200px;
         padding: 0px 0px;
         width:930x;
     }
-    .section_menu, .section_doctor{
+    .section_menu, .section_doctor
+    {
         padding: 10px, 0px;
         display: block;
     }
-    .select{
+    .select
+    {
         margin-left: 0px;
         padding-right: 20px;
         margin-top: 10px;
@@ -206,14 +207,16 @@
         padding: 0px 15px 15px 15px;
         display: block;
     }
-    .register_scope1 h3{
+    .register_scope1 h3
+    {
         text-transform: uppercase;
         font-size: 14px;color: #333;
         font-weight: bold;padding: 0;
         margin: 0 0 5px 0;
         position:static;
     }
-    .register_scope1 i{
+    .register_scope1 i
+    {
         position:static;
     }
     .register_scope2
@@ -222,7 +225,8 @@
         margin: 0px;
         display:block;
     }
-    .register_scope2 a{
+    .register_scope2 a
+    {
         overflow-x: visible;
         white-space: normal;
         padding: 10px;
@@ -233,34 +237,41 @@
         margin-left: 15px;
         text-align: center;
     }
-    .register_scope2 p{
+    .register_scope2 p
+    {
         margin-left:10px;
         margin-top:10px;
     }
-    sup{
+    sup
+    {
         position: static;
     }
-    .name h2{ 
+    .name h2
+    { 
         color:#45c3d2;
         font-size:18px
     }
-    .register_scope{
+    .register_scope
+    {
         padding: 15px 15px 10px 15px;
         margin:0px;
         box-sizing: border-box;
     }
-    .address{
+    .address
+    {
         border-top: 1px solid #eee;
         padding-top: 10px;
         margin-top: 10px;
         margin-left: 10px;
     }
-    .address h3{
+    .address h3
+    {
         text-transform: uppercase;
         font-size: 14px;color: #666;
         font-weight: bold; margin-top:10px;
     }
-    .see_more{
+    .see_more
+    {
         margin-top:5px;
         font-size: 12px;
         text-align: center;
@@ -293,21 +304,9 @@
 
 <div class="select_doctor_scope">
     <div class="doctor_area">
-        <!--Select location-->
-        <!-- <div class="section_menu">
-                <select class ="select" style="padding-top:5px;padding-left:10px;padding-bottom:5px;padding-right:10px;" name="menu" id="menu">
-                    <option value="nation ">Toàn quốc</option>
-                    <option value="tphcm">Hồ Chí Minh</option>
-                    <option value="hn">Hà Nội</option>
-                </select>
-        </div> -->
-        <!--End Select location-->
-        <!--Section doctor-->
         <div class="section_doctor">
-            <!--Each doctor scope-->
             {% for doctor in specialist.specialist_doctors.all %}
             <div class="each_doctor">
-                <!--Abstract doctor-->
                 <div class="abstract_doctor">
                     <div class="image_scope">
                         <img class="image_doctor" src="/media/{{doctor.doctor.avatar}}" width="80px" height="80">
@@ -322,9 +321,7 @@
                         </div>
                     </div>
                 </div>
-                <!--End Abstract doctor-->
 
-                <!--Register scope-->
                 <div class="register_scope">
                     <div class="register_scope1">
                         <h3><i class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Thông tin</h3>
@@ -339,12 +336,9 @@
                         <p style="margin-bottom:0px;">{{doctor.clinic}}</p>
                     </div>
                 </div>
-                <!--End Register scope-->
             </div>
-            <!--End Each doctor scope-->
             {% endfor %}
         </div>
-        <!--End Section doctor-->
     </div>
 </div>
 {% endblock content %}
@@ -353,25 +347,18 @@
 <script type="text/javascript">
     function myFunction() {
         var change = document.getElementById("toggle");
-        var first_h4 = document.querySelector(".martor_preview h4")
-        var second_h4 = document.querySelector(".martor_preview h4:nth-child(2)")
-        //var last_h4 = document.querySelector(".martor_preview h4:nth-child(3)")
-        var first_ul = document.querySelector(".martor_preview ul")
-        //var last_h4 = document.querySelector(".martor_preview h4:last-child")
+        var second_h4 = document.querySelector(".martor_preview h4:nth-last-child(2)")
+        var first_ul = document.querySelector(".martor_preview ul:last-child")
         if (change.innerHTML == "Ẩn bớt")
         {
             change.innerHTML = "Đọc thêm";
-            first_h4.style.display = 'none'
             first_ul.style.display = 'none'
             second_h4.style.display = 'none'
-            //last_h4.style.display = 'none'
         }
         else {
             change.innerHTML = "Ẩn bớt";
-            first_h4.style.display = 'block'
             first_ul.style.display = 'block'
             second_h4.style.display = 'block'
-            //last_h4.style.display = 'block'
         }
     }
 </script>
