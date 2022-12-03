@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from .forms import  UserRegistrationForm #,CustomUserCreationForm,
-from .forms import LoginForm, UpdateProfileForm, UpdateUserForm
+from .forms import SigninForm, UpdateProfileForm, UpdateUserForm
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.shortcuts import render, redirect
@@ -23,13 +23,13 @@ from django.contrib.auth.decorators import login_required
 # class RegisterForm(TemplateView):
 #     template_name = "accounts/registerForm.html"
 
-def logout_request(request):
+def user_signout(request):
     logout(request)
-    return render(request, 'accounts/logoutForm.html')
+    return render(request, 'accounts/signoutForm.html')
       
-def user_login(request):
+def user_signin(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
+        form = SigninForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
             user = authenticate(request,
@@ -48,8 +48,8 @@ def user_login(request):
                 # return HttpResponse('Invalid login')
                 #return redirect('login')
     else:
-        form = LoginForm()
-    return render(request, 'accounts/loginForm.html', {'form': form})
+        form = SigninForm()
+    return render(request, 'accounts/signinForm.html', {'form': form})
 
 def signup(request):
     if request.method == 'POST':
@@ -66,12 +66,12 @@ def signup(request):
             #             'accounts/loginForm.html',
             #             {'new_user': new_user})
             messages.info(request, "You created a new account!")
-            return redirect('login')
+            return redirect('signin')
         else:
             messages.error(request, "Can not create your account! May be username is used or 2 passwords are not the same! Please try again!")
     else:
         user_form = UserRegistrationForm()
-    return render(request, 'accounts/registerForm.html', {'user_form': user_form})
+    return render(request, 'accounts/signupForm.html', {'user_form': user_form})
 
 # def profile(request):
 #     # if request.method == 'POST':

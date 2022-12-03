@@ -1,7 +1,7 @@
 {% extends "accounts/base.html" %}
 {% load static %}
 {% block extra_head %}
-{% block title %}<title>Log in</title>{% endblock %}
+{% block title %}<title>Sign in</title>{% endblock %}
     <link href="{% static 'accounts/css/style_login.css' %}" rel="stylesheet">
 {% endblock extra_head %}
 {% block content %}
@@ -9,7 +9,7 @@
   <div class='bookingcare-logo'>
       <a href="{% url 'homepage' %}">&af;</a>
   </div>
-  <h2><b>Login</b></h2>
+  <h2><b>Sign in</b></h2>
   
   <form id="login-form" method="post">
     <div style="text-align:left;font-size:20px;">

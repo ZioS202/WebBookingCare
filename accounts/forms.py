@@ -25,7 +25,7 @@ class CustomUserChangeForm(UserChangeForm):
         model = get_user_model()
         fields = UserChangeForm.Meta.fields
 
-class LoginForm(forms.Form):
+class SigninForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
 

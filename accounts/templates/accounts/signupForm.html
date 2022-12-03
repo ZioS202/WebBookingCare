@@ -1,7 +1,7 @@
 {% extends "accounts/base.html" %}
 {% load static %}
 {% block extra_head %}
-{% block title %}<title>Register</title>{% endblock %}
+{% block title %}<title>Sign up</title>{% endblock %}
 <link href="{% static 'accounts/css/style_register.css' %}" rel="stylesheet">
 {% endblock extra_head %}
 {% block content %}
@@ -12,7 +12,7 @@
   <div class='bookingcare-logo'>
     <a href="{% url 'homepage' %}">&af;</a>
   </div>
-  <h2><b>Register</b></h2>
+  <h2><b>Sign up</b></h2>
   <form id="register-form" method="post">
     <div style="text-align:left;font-size:20px;">
       <!-- {{ user_form.as_p }} -->
@@ -50,7 +50,7 @@
     </div>
     {% endfor %} -->
 
-    <a style="font-size: 20px" href="{% url 'login' %}">Back to login!</a>
+    <a style="font-size: 20px" href="{% url 'signin' %}">Back to login!</a>
   </form>
   
   <div id="footer-register-form">
