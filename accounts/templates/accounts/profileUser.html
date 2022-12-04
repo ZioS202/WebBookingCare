@@ -212,7 +212,7 @@
             <li><a href="#" onclick="Information()">Xem thông tin cá nhân</a></li>
             <li><a href="#" onclick="Update_Profile()">Cập nhật thông tin</a></li>
             <li><a href="#" onclick="Booking_History()">Xem lịch sử đặt khám</a></li>
-            <li><a href="#" onclick="Booking_History()">Thay đổi mật khẩu</a></li>
+            <li><a href="{% url 'change_password' %}" onclick="Booking_History()">Thay đổi mật khẩu</a></li>
         </ul>
     </div>  
 
@@ -250,49 +250,49 @@
             <label>Username (Tên đăng ký):</label>
             <div class="input-form">
                 <i class="glyphicon glyphicon-user"></i>
-                <input type="text" placeholder="Username:" name="username" id="username" value="{{user.username}}" readonly>
+                <input type="text" placeholder="Chưa cập nhật" name="username" id="username" value="{{user.username}}" readonly>
             </div>
 
             <label>Họ và tên lót:</label>
             <div class="input-form">
                 <i class="glyphicon glyphicon-user"></i>
-                <input type="text" placeholder="Họ và tên lót: " name="lastname" id="lastname" value="{{user.last_name}}" readonly>
+                <input type="text" placeholder="Chưa cập nhật" name="lastname" id="lastname" value="{{user.last_name}}" readonly>
             </div>
             
             <label>Tên:</label>
             <div class="input-form">
                 <i class="glyphicon glyphicon-user"></i>
-                <input type="text" placeholder="Tên: " name="firstname" id="firstname" value="{{user.first_name}}" readonly>
+                <input type="text" placeholder="Chưa cập nhật" name="firstname" id="firstname" value="{{user.first_name}}" readonly>
             </div>
 
             <label>Giới tính:</label>
             <div class="input-form">
                 <i class="glyphicon glyphicon-user"></i>
-                <input type="text" placeholder="Giới tính: " name="gender" id="gender" value="{{user.gender}}" readonly>
+                <input type="text" placeholder="Chưa cập nhật" name="gender" id="gender" value="{{user.gender}}" readonly>
             </div>
 
             <label>Số điện thoại:</label>
             <div class="input-form">
                 <i class="glyphicon glyphicon-earphone"></i>
-                <input type="text" placeholder="Số điện thoại" name="phone" id="phone" value="{{user.phone_number}}" readonly>
+                <input type="text" placeholder="Chưa cập nhật" name="phone" id="phone" value="{{user.phone_number}}" readonly>
             </div>  
             
             <label>Email:</label>
             <div class="input-form">
                 <i class="glyphicon glyphicon-envelope"></i>
-                <input type="text" placeholder="Email: " name="email" id="email" value="{{user.email}}" readonly>
+                <input type="text" placeholder="Chưa cập nhật" name="email" id="email" value="{{user.email}}" readonly>
             </div>
 
             <label>Ngày sinh:</label>
             <div class="input-form">
                 <i class="glyphicon glyphicon-calendar"></i>
-                <input type="text" placeholder="Ngày sinh" name="birthyear" id="birthyear" value="{{user.birthdate}}" readonly>
+                <input type="text" placeholder="Chưa cập nhật" name="birthyear" id="birthyear" value="{{user.birthdate}}" readonly>
             </div>
 
             <label>Địa chỉ thường trú:</label>
             <div class="input-form">
                 <i class="glyphicon glyphicon-map-marker"></i>
-                <input type="text" placeholder="Địa chỉ thường trú" name="address" id="address" value="{{user.address}}" readonly>
+                <input type="text" placeholder="Chưa cập nhật" name="address" id="address" value="{{user.address}}" readonly>
             </div>
         </div>
     </div> 

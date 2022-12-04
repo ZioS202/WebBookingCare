@@ -2,7 +2,7 @@
 {% load static %}
 {% block extra_head %}
 {% block title %}<title>Log out</title>{% endblock %}
-    <link href="{% static 'accounts/css/style_logout.css' %}" rel="stylesheet">
+    <link href="{% static 'accounts/css/style_signout.css' %}" rel="stylesheet">
 {% endblock extra_head %}
 {% block content %}
 <div id="logout-form-wrap">
@@ -11,9 +11,9 @@
   </div>
   <div style="margin-left:20px;margin-right:20px">
     {% if request.user.is_authenticated %}
-    <h2><b>There are some problems, so {{ user.username }} can't not logout right now!</b></h2>
+    <h2><b>There are some problems, so {{ user.username }} can't not sign out right now!</b></h2>
     {% else %}
-    <h2><b>You are logged out successfully! Goodbye and see you again!</b></h2>
+    <h2><b>You are signed out successfully! Goodbye and see you again!</b></h2>
     {% endif %}
     <!-- <h2><b>You are logged out successfully! Goodbye and see you again!</b></h2> -->
   </div>
@@ -21,7 +21,7 @@
     <p style="color:rgb(255, 255, 255);font-size:15px;font-weight: bold;padding:10px 0px;">Info: You will redirect to homepage after some seconds!</p>
   </div>
   <div id="footer-logout-form">
-    <p>If you want to go back to "Booking Care", <a href="{% url 'signin' %}">click here</a> to log in.<p>
+    <p>If you want to go back to "Booking Care", <a href="{% url 'signin' %}">click here</a> to sign in.<p>
     <p>Let live a healthy and beautiful life!</p>
   </div>
 </div>
@@ -34,7 +34,7 @@
   {  
       window.location="{% url 'homepage' %}"; 
   } 
-  setTimeout('Redirect()', 5000);   
+  setTimeout('Redirect()', 4500);   
 </script>
 
 <script type="text/javascript">

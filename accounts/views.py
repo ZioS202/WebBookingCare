@@ -41,12 +41,8 @@ def user_signin(request):
                     return redirect('homepage')
                 else:
                     messages.error(request, "The account is disabled!")
-                    # return HttpResponse('Invalid login')
-                    #return redirect('login')
             else:
                 messages.error(request, "Your account is not exist! Please create a new account!")
-                # return HttpResponse('Invalid login')
-                #return redirect('login')
     else:
         form = SigninForm()
     return render(request, 'accounts/signinForm.html', {'form': form})
@@ -62,9 +58,6 @@ def signup(request):
                 user_form.cleaned_data['password'])
             # Save the User object
             new_user.save()
-            # return render(request,
-            #             'accounts/loginForm.html',
-            #             {'new_user': new_user})
             messages.info(request, "You created a new account!")
             return redirect('signin')
         else:
@@ -72,32 +65,6 @@ def signup(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'accounts/signupForm.html', {'user_form': user_form})
-
-# def profile(request):
-#     # if request.method == 'POST':
-#     #     profile_form = UpdateUser(request.POST, request.FILES, instance=request.user)
-
-#     #     if  profile_form.is_valid():
-#     #         profile_form.save()
-#     #         messages.success(request, 'Your profile is updated successfully')
-#     #         return redirect('profile')
-#     # else:
-#     #     profile_form = UpdateUser(instance=request.user)
-
-#     # return render(request, 'accounts/profileUser.html', {'form': profile_form})
-#     if request.method == 'POST':
-#         form = UpdateUser(request.POST, request.FILES, instance=request.user)
-#         if form.is_valid():
-#             form.save()
-#             messages.info(request, "Cập nhật thông tin thành công!")
-#             return redirect('profile')
-#         else:
-#             messages.error(request, "Quá trình cập nhật thay đổi thất bại!")
-#             form = UpdateUser(request.FILES, instance=request.user)
-#     else:
-#         messages.info(request, 'Đây là không gian lưu trữ của tài khoản "Booking Care"')
-#         form = UpdateUser(request.FILES, instance=request.user)
-#     return render(request, 'accounts/profileUser.html', {'form':form})
 
 def profile(request):
     if request.method == 'POST':
