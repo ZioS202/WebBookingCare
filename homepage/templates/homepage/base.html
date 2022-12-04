@@ -57,7 +57,11 @@
                     {% comment %} <i class="notify-icon"><span class="notify-badge">99+</span></i> {% endcomment %}
                     <i class="lang-icon"></i>
                     {% if user.is_authenticated %}
-                        <img src="{{user.avatar.url}}" alt="user-avatar" class="user-icon">
+                        {% if user.avatar %}
+                            <img src="{{user.avatar.url}}" alt="user-avatar" class="user-icon">
+                        {% else %}
+                            <img src="{% static 'homepage/icons/icons8-user.svg' %}" alt="user-avatar" class="user-icon" style="object-fit: contain;">
+                        {% endif %}
                         <div id="user-dropdown">
                             <a href="{% url 'profile' %}">Hồ sơ</a>
                             <a href="{% url 'signout' %}">Đăng xuất</a>

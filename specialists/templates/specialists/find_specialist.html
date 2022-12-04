@@ -1,4 +1,5 @@
 {% extends 'homepage/base.html' %}
+{% load static %}
 {% block extra_head %}
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -44,6 +45,9 @@
         height: 30px;
         padding-left: 10px;
     }
+    .search label{
+        display: none;
+    }
     .search
     {
         padding: 20px 15px;
@@ -64,7 +68,11 @@
 {% endblock extra_head %}
 {% block content %}
 <div class="search">
-    <input type="text" placeholder="Tìm kiếm chuyên khoa" id="search">
+    <form id="search_form" action="" method="get"> 
+        {% csrf_token %} 
+        {{form}}
+        <input type="submit" id="submit-btn" value="Submit" style="display: none;"/>
+    </form>
 </div>
 <div class="content">
     <h3 style="font-weight:bold">Thông tin các chuyên khoa: </h3>
@@ -73,7 +81,7 @@
         <tr>
             <td>
                 <a href="{% url 'specialistDetail' specialist.id %}">
-                    <img src="/media/{{specialist.avatar}}" alt="{{ specialist.name }}">
+                    <img src="/media/{{specialist.avatar}}" alt="{{ specialist.name }}" loading="lazy">
                 </a>
             </td>
             <td style="text-align:left;width: 90%;">
@@ -87,4 +95,6 @@
     {% endfor %}
 </div>
 {% endblock content %}
-{% comment %}  {% endcomment %}
+{% block extra_script %}
+    <script type="text/javascript" src="{% static 'specialists/js/main.js' %} "></script>
+{% endblock extra_script %}

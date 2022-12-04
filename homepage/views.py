@@ -57,18 +57,34 @@ def search_doctor(request):
     results = []
     if "query" in request.GET:
         query = request.GET.get("query")
-        results = DetailsDoctor.objects.filter(doctor__first_name__icontains=query)
-    for result in results:
-        data.update(
-            {
-                result.id: {
-                    "name": result.degree.value
-                    + " "
-                    + result.doctor.last_name
-                    + " "
-                    + result.doctor.first_name,
-                    "avatar": result.doctor.avatar.url,
+        results1 = DetailsDoctor.objects.filter(doctor__first_name__icontains=query)
+        results2 = DetailsDoctor.objects.filter(doctor__last_name__icontains=query)
+    if results1:
+        for result in results1:
+            data.update(
+                {
+                    result.id: {
+                        "name": result.degree.value
+                        + " "
+                        + result.doctor.last_name
+                        + " "
+                        + result.doctor.first_name,
+                        "avatar": result.doctor.avatar.url,
+                    }
                 }
-            }
-        )
+            )
+    elif results2:
+        for result in results2:
+            data.update(
+                {
+                    result.id: {
+                        "name": result.degree.value
+                        + " "
+                        + result.doctor.last_name
+                        + " "
+                        + result.doctor.first_name,
+                        "avatar": result.doctor.avatar.url,
+                    }
+                }
+            )
     return JsonResponse(data)

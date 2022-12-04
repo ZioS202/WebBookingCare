@@ -122,7 +122,11 @@
         <div class="segment__content segment__specialist slick-4">
             {% for specialist in specialists %}
                 <a href="{% url 'specialistDetail' specialist.id %}">
-                    <img data-lazy="{{specialist.avatar.url}}" alt="specialist-img" class="segment__specialist-img" loading="lazy">
+                    {% if specialist.avatar %}
+                        <img data-lazy="{{specialist.avatar.url}}" alt="specialist-img" class="segment__specialist-img" loading="lazy">
+                    {% else %}
+                        <img data-lazy="" alt="specialist-img" class="segment__specialist-img" loading="lazy">
+                    {% endif %}
                     {{specialist.name}}
                 </a>
             {% endfor %}
@@ -136,7 +140,11 @@
         <div class="segment__content segment__clinic slick-4">
             {% for clinic in clinics %}
                 <a href="{% url 'clinicDetail' clinic.id %}">
-                    <img data-lazy="{{clinic.Cover_photo.url}}" alt="clinic-img" class="segment__clinic-img" loading="lazy">
+                    {% if clinic.avatar %}
+                        <img data-lazy="{{clinic.Cover_photo.url}}" alt="clinic-img" class="segment__clinic-img" loading="lazy">
+                    {% else %}
+                        <img data-lazy="" alt="clinic-img" class="segment__clinic-img" loading="lazy">
+                    {% endif %}
                     {{clinic.name}}
                 </a>
             {% endfor %}
@@ -149,8 +157,12 @@
         </div>
         <div class="segment__content segment__doctor slick-4">
             {% for doctor in doctors %}
-                <a href="{% url 'doctorDetail' doctor.doctor.id %}">
-                    <img loading="lazy" data-lazy="{{doctor.doctor.avatar.url}}" alt="doctor-img" class="segment__doctor-img" >
+                <a href="{% url 'doctorDetail' doctor.id %}">
+                    {% if doctor.doctor.avatar %}
+                        <img loading="lazy" data-lazy="{{doctor.doctor.avatar.url}}" alt="doctor-img" class="segment__doctor-img" >
+                    {% else %}
+                        <img loading="lazy" data-lazy="" alt="doctor-img" class="segment__doctor-img" >
+                    {% endif %}
                     <h3>{{doctor.degree}} {{doctor.doctor.last_name}} {{doctor.doctor.first_name}}</h3>
                     {% for specialist in doctor.specialists.all|slice:":1" %}
                         <h4>{{specialist.name}}</h4>

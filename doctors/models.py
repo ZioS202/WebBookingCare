@@ -19,7 +19,7 @@ class Schedule(models.Model):
         db_table = "schedules"
 
     def __str__(self):
-        return self.doctor
+        return self.doctor.username
 
 
 class DetailsDoctor(models.Model):

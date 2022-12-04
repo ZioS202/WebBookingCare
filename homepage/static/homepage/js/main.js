@@ -23,9 +23,18 @@ inputField.addEventListener('focus', function () {
   searchDropdown.classList.add('show-search-dropdown');
 });
 
-inputField.addEventListener('blur', function () {
-  searchDropdown.classList.remove('show-search-dropdown');
+window.addEventListener('click', function (event) {
+  if (
+    !event.target.matches('#banner__search-form-dropdown') &&
+    !event.target.matches('#banner__search-form-input input') &&
+    searchDropdown.classList.contains('show-search-dropdown')
+  )
+    searchDropdown.classList.remove('show-search-dropdown');
 });
+
+// inputField.addEventListener('blur', function () {
+//   searchDropdown.classList.remove('show-search-dropdown');
+// });
 
 /* * Homepage search feature
  */
