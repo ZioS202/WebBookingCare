@@ -61,151 +61,79 @@
         padding: 10px 0px 10px 50px;
 
     }
+    .martor_preview li
+    {
+        margin-left:30px;
+    }
+    .martor_preview h4
+    {
+        font-weight: bolder;
+        font-size:19px;
+    }
     </style>
 {% endblock extra_head %}
-{% block content %}
+{% block content %} 
     <div class="inforDoctor">
         <table>
             <tr>
                 <td>
-                    <img src="https://cdn.bookingcare.vn/fr/w200/2020/03/17/114430-bshung.jpg"
-                         alt="Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng"
+                    <img src="/media/{{doctor.doctor.avatar}}"
+                         alt="{{ doctor.degree }} {{ doctor.doctor.last_name }} {{ doctor.doctor.first_name }}"
                          style="border-radius:50%;width:180px;height:160px">
-                </a>
-            </td>
-            <td>
-                <h1>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h1>
+                </td>
+                <td>
+                    <h1>{{ doctor.degree }} {{ doctor.doctor.last_name }} {{ doctor.doctor.first_name }}</h1>
+                    <hr>
+                    <h6>
+                        {{ doctor.description }}
+                    </h6>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="schedule">
+        <div class="choiceDay">
+            <select class="seleteDay">
+                <option value="">
+                    Hôm nay - 25/10
+                </option>
+                <option value="">
+                    Thứ 4 - 26/10
+                </option>
+                <option value="">
+                    Thứ 5 - 27/10
+                </option>
+                <option value="">
+                    Thứ 6 - 28/10
+                </option>
+            </select>
+        </div>
+        <div class="timeAndAddress">
+            <div class="choiceTime">
+                <h4>LỊCH KHÁM</h4>
+                <a href="">8:30 - 9:00</a>
+                <a href="">9:30 - 10:00</a>
+                <a href="">10:30 - 11:00</a>
+                <a href="">14:30 - 15:00</a>
+                <a href="">15:30 - 16:00</a>
+                <a href="">16:30 - 17:00</a>
+            </div>
+            <div class="address">
+                <h4>ĐỊA CHỈ KHÁM</h4>
+                <h6>{{ doctor.clinic.name }}</h6>
+                <h8>
+                {{ doctor.clinic.address }}
+                </h8>
                 <hr>
-                <h6>
-                    Nguyên Trưởng phòng chỉ đạo tuyến tại Bệnh viện Da liễu Trung ương
-                    <br>
-                    Bác sĩ từng công tác tại Bệnh viện Da liễu Trung ương
-                    <br>
-                    Nguyên Tổng Thư ký Hiệp hội Da liễu Việt Nam
-                </h6>
-            </td>
-        </tr>
-    </table>
-</div>
-<div class="schedule">
-    <div class="choiceDay">
-        <select class="seleteDay">
-            <option value="">
-                Hôm nay - 25/10
-            </option>
-            <option value="">
-                Thứ 4 - 26/10
-            </option>
-            <option value="">
-                Thứ 5 - 27/10
-            </option>
-            <option value="">
-                Thứ 6 - 28/10
-            </option>
-        </select>
-    </div>
-    <div class="timeAndAddress">
-        <div class="choiceTime">
-            <h4>LỊCH KHÁM</h4>
-            <a href="">8:30 - 9:00</a>
-            <a href="">9:30 - 10:00</a>
-            <a href="">10:30 - 11:00</a>
-            <a href="">14:30 - 15:00</a>
-            <a href="">15:30 - 16:00</a>
-            <a href="">16:30 - 17:00</a>
+                <h4>GIÁ KHÁM: {{ doctor.examination_price }}</h4>
+            </div>
         </div>
-        <div class="address">
-            <h4>ĐỊA CHỈ KHÁM</h4>
-            <h6>Phòng khám Chuyên khoa Da Liễu</h6>
-            <h8>
-            207 Phố Huế - Hai Bà Trưng - Hà Nội
-            </h8>
-            <hr>
-            <h4>GIÁ KHÁM: 300.000đ.</h4>
-        </div>
+        <hr style="border-width: 3px;border-style: inset;">
     </div>
-    <hr style="border-width: 3px;border-style: inset;">
-</div>
-<div class="detail">
-    <h4 style="font-weight:bold;">Phó Giáo sư, Tiến sĩ, Bác sĩ Cao cấp Nguyễn Duy Hưng</h4>
-    <ul>
-        <li>Phó giáo sư, Tiến sĩ, Bác sĩ cao cấp chuyên khoa Da liễu</li>
-        <li>Bác sĩ từng công tác tại Bệnh viện Da liễu Trung ương</li>
-        <li>Nguyên Trưởng phòng chỉ đạo tuyến tại Bệnh viện Da liễu Trung ương</li>
-        <li>Đạt chứng chỉ Diploma về Da liễu tại Viện da liễu Băng Cốc - Thái Lan</li>
-        <li>Bác sĩ thường xuyên tham gia các Hội thảo, Hội nghị Quốc tế về Da liễu</li>
-        <li>Hội viên của Hội Da liễu Đông Nam Á, Châu Á và Thế giới</li>
-        <li>Giảng viên bộ môn Da liễu tại Đại Học Y Hà Nội</li>
-        <li>Trưởng Bộ môn Da liễu, Trường Đại học Kinh doanh và Công nghệ</li>
-        <li>Tốt nghiệp Đại học Y Hà Nội (1977)</li>
-        <li>Nguyên Tổng Thư ký Hiệp hội Da liễu Việt Nam</li>
-    </ul>
-    <h4 style="font-weight:bold;">Phó Giáo sư khám và điều trị</h4>
-    <h5>Các bệnh lý về chuyên sâu về da liễu người lớn và trẻ em</h5>
-    <ul>
-        <li>
-            Trứng cá thông thường thanh thiếu niên, người lớn, trứng cá do thuốc, mỹ phẩm, do bôi corticord, các thể bệnh trứng cá nặng, trứng cá đỏ (rosacea)
-        </li>
-        <li>Điều trị da phục hồi da tổn hại do trứng cá, sẹo trứng cá</li>
-        <li>
-            Các bệnh lý da mặt: viêm da dị ứng, tổn hại da do sử dụng mỹ phẩm, do corticord, lão hóa da
-        </li>
-        <li>
-            Nám da, tàn nhang, sạm da, các bệnh da tăng sắc tố sau viêm, sau trứng cá, do mỹ phẩm
-        </li>
-        <li>
-            Viêm da cơ địa trẻ em và người lớn
-        </li>
-        <li>
-            Viêm da dị ứng, viêm da tiếp xúc, viêm da dầu
-        </li>
-        <li>
-            Tổ đỉa
-        </li>
-        <li>
-            Mày đay
-        </li>
-        <li>
-            Bạch biến
-        </li>
-        <li>
-            Vảy nến
-        </li>
-        <li>
-            Các bệnh da do nhiễm khuẩn: Viêm nang lông, chốc, nhọt, viêm da mủ
-        </li>
-        <li>
-            Zona, Thủy đậu, Herpes
-        </li>
-        <li>
-            Ghẻ
-        </li>
-        <li>
-            Các bênh da do nấm: Nấm nông da, nấm da đầu, nấm móng tay, móng chân, lang ben, nấm men niêm mạc
-        </li>
-        <li>
-            Viêm mao mạch dị ứng
-        </li>
-        <li>
-            Các bệnh da: Có bọng nước, bệnh vẩy phấn hồng, á vẩy nến, liken phẳng, các bệnh da dị ứng thuốc
-        </li>
-        <li>
-            U lành tính của da: Đồi mồi, u cổ tuyến mồ hôi, u mềm lây, u mềm treo, u tuyến bã
-        </li>
-        <li>
-            Một số bệnh lông - tóc - móng
-        </li>
-        <li>
-            Chăm sóc da (skincare)  cho viêm da mặt, trứng cá, liệu trình trị nám, lăn kim, huyết tương giàu tiểu cầu, trị sẹo trứng cá, laser, plasma trị u lành da, nám, đồi mồi
-        </li>
-        <li>
-            Tiêm tái sinh nang tóc
-        </li>
-    </ul>
-    <h5 style="font-weight:bold;">
-        Và các bệnh lý chuyên sâu khác về chuyên khoa Da liễu
-    </h5>
-</div>
-<div class="respone">
-</div>
+    <div class="detail">
+        {% load martortags %}
+        <div class="martor_preview" id="content">
+            {{ doctor.background | safe_markdown}}
+        </div>
+    </div> 
 {% endblock content %}
