@@ -1,0 +1,53 @@
+{% comment %} <div id="banner__search-form">
+  <div id="banner__search-form-input">
+    <form id="search_form" action="" method="get">
+      {% csrf_token %}
+      <i id="search_submit" class="search-icon" style='cursor: pointer;'></i>
+      {{form}}
+    </form>
+  </div>
+  <div id="banner__search-form-dropdown">
+    <h3>Chuyên khoa</h3>
+    {% for result in results %}
+      <a href="{% url 'specialistDetail' %}">
+        <i style="background: transparent
+        url(/media/{{result.avatar}}) center center no-repeat;"></i>
+        <h4>{{result.name}}</h4>
+      </a>
+    {% endfor %}
+  </div>
+</div> {% endcomment %}
+<script type="text/javascript">
+  let csrfmiddlewaretoken = document.querySelector("#search_form input:first-child").value
+  let form_input = document.querySelector("#search_form input:last-child")
+
+  async function search(){
+      let query = form_input.value;
+      const res = await fetch(`/?csrfmiddlewaretoken=${csrfmiddlewaretoken}&query=${query}`);
+      const data = await res.json();
+      console.log(data);
+  }
+
+  {% comment %} document.querySelector("#search_submit").onclick = () => {
+      let query = form_input.value;
+      const request = new XMLHttpRequest();
+      request.open("GET", `/?csrfmiddlewaretoken=${csrfmiddlewaretoken}&query=${query}`);
+      request.send();
+  } {% endcomment %}
+
+  form_input.onkeydown = e => {
+      if (e.keyCode === 13){
+          e.preventDefault();
+          let query = form_input.value;
+          $.ajax({
+            method: "GET",
+            url: `/?csrfmiddlewaretoken=${csrfmiddlewaretoken}&query=${query}`,
+            data: {},
+            dataType: 'json',
+            success: function (data) {
+              alert(data)
+            }
+          });
+      }
+  };
+</script>

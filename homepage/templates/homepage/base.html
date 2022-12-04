@@ -49,16 +49,23 @@
                         </li>
                     </ul>
                 </nav>
-                <div id="support-login-lang">
+                <div id="support-lang-user">
                     <a href="#">
                         <i class='support-icon' style='margin-right: 3px;'></i>
                         Hỗ trợ
                     </a>
                     {% comment %} <i class="notify-icon"><span class="notify-badge">99+</span></i> {% endcomment %}
                     <i class="lang-icon"></i>
-                    {% comment %} <i class="user-icon"></i> {% endcomment %}
-                    <a href="{% url 'login' %}">Sign in</a>
-                    <a href="{% url 'signup' %}">Sign up</a>
+                    {% if user.is_authenticated %}
+                        <img src="{{user.avatar.url}}" alt="user-avatar" class="user-icon">
+                        <div id="user-dropdown">
+                            <a href="{% url 'profile' %}">Hồ sơ</a>
+                            <a href="{% url 'signout' %}">Đăng xuất</a>
+                        </div>
+                    {% else %}
+                        <a href="{% url 'signin' %}">Đăng nhập</a>
+                        <a href="{% url 'signup' %}">Đăng ký</a>
+                    {% endif %}
                 </div>
             </header>
             <main>
@@ -174,21 +181,61 @@
         
         {% comment %} Javascript {% endcomment %}
         <script type="text/javascript">
+            //Sidebar modal
             const listIcon = document.querySelector('.list-icon');
             const modal = document.querySelector('.js-modal');
             const modalContainer = document.querySelector('.js-modal-container');
 
             listIcon.onclick = function () {
-            modal.classList.add('show-homepage-modal');
+                modal.classList.add('show-homepage-modal');
             };
 
             modal.onclick = function () {
-            modal.classList.remove('show-homepage-modal');
+                modal.classList.remove('show-homepage-modal');
             };
 
             modalContainer.onclick = function (event) {
-            event.stopPropagation();
+                event.stopPropagation();
             };
+
+            //User dropdown
+            const usericon = document.querySelector('.user-icon');
+            const userDropdown = document.querySelector('#user-dropdown');
+
+            if (usericon && userDropdown) {
+                usericon.addEventListener('click', function () {
+                    if (!userDropdown.classList.contains('show-user-dropdown'))
+                    userDropdown.classList.add('show-user-dropdown');
+                    else userDropdown.classList.remove('show-user-dropdown');
+                });
+            };
+
+            //Search
+            async function get_search_result(url){
+                const res = await fetch(url);
+                const data = await res.json();
+                return data
+            };
+
+            async function search_specialist(csrfmiddlewaretoken, query){
+                const data = await get_search_result(`search-specialist/?csrfmiddlewaretoken=${csrfmiddlewaretoken}&query=${query}`);
+                return data;
+            };
+
+            async function search_clinic(csrfmiddlewaretoken, query) {
+                const data = await get_search_result(
+                  `search-clinic/?csrfmiddlewaretoken=${csrfmiddlewaretoken}&query=${query}`
+                );
+                return data;
+              }
+              
+              async function search_doctor(csrfmiddlewaretoken, query) {
+                const data = await get_search_result(
+                  `search-doctor/?csrfmiddlewaretoken=${csrfmiddlewaretoken}&query=${query}`
+                );
+                return data;
+              }
+
         </script>
         {% block extra_script %}
         {% endblock extra_script %}

@@ -16,9 +16,10 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.views.generic.base import TemplateView
 from custom_MatorMarkdownEditor.views import markdown_uploader
+from homepage.views import search_specialist, search_clinic, search_doctor
 
 urlpatterns = [
     path("doctor/", include("doctors.urls")),
@@ -35,4 +36,11 @@ urlpatterns = [
     # path('logout/', LogoutForm.as_view(), name='logout'),
     path("martor/", include("martor.urls")),
     path("api/uploader/", markdown_uploader, name="markdown_uploader_page"),
+    re_path(
+        r"^[\w\/]*search-specialist/$",
+        search_specialist,
+        name="search_specialist",
+    ),
+    re_path(r"^[\w\/]*search-clinic/$", search_clinic, name="search_clinic"),
+    re_path(r"^[\w\/]*search-doctor/$", search_doctor, name="search_doctor"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

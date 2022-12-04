@@ -1,4 +1,5 @@
 {% extends 'homepage/base.html' %}
+{% load homepage_tags %}
 {% load static %}
 {% block extra_head %}
     <link rel="stylesheet"
@@ -20,52 +21,14 @@
             </h1>
             <div id="banner__search-form">
                 <div id="banner__search-form-input">
-                    <i class="search-icon" style='cursor: pointer;'></i>
-                    <input type="search" placeholder='Tìm kiếm'>
+                  <form id="search_form" action="" method="get">
+                    {% csrf_token %}
+                    <i id="search_submit" class="search-icon" style='cursor: pointer;'></i>
+                    {{form}}
+                    <input type="submit" id="submit-btn" value="Submit" style="display: none;"/>
+                  </form>
                 </div>
                 <div id="banner__search-form-dropdown">
-                    <h3>Chuyên khoa</h3>
-                        <a href="{% url 'findSpecialist' %}">
-                            <i class='coxuongkhop-img'></i>
-                            <h4>Cơ xương khớp</h4>
-                        </a>
-                        <a href="#">
-                            <i class="thankinh-img"></i>
-                            <h4>Thần kinh</h4>
-                        </a>
-                        <a href="#">
-                            <i class="tieuhoa-img"></i>
-                            <h4>Tiêu hoá</h4>
-                        </a>
-                    <h3>Cơ sở y tế</h3>
-                        <a href="#">
-                            <i class="coxuongkhop-img"></i>
-                            <h4>Bệnh viện Hữu nghị Việt Đức</h4>
-                        </a>
-                        <a href="#">
-                            <i class="coxuongkhop-img"></i>
-                            <h4>Bệnh viện Chợ Rẫy</h4>
-                        </a>
-                        <a href="#">
-                            <i class="coxuongkhop-img"></i>
-                            <h4>Phòng khám Bệnh viện Đại học Y Dược 1</h4>
-                        </a>
-                    <h3>Bác sĩ</h3>
-                        <a href="#">
-                            <i class="coxuongkhop-img"></i>
-                            <h4>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h4>
-                            <h5>Da liễu</h5>
-                        </a>
-                        <a href="#">
-                            <i class="coxuongkhop-img"></i>
-                            <h4>Phó Giáo sư, Tiến sĩ, Bác sĩ Nguyễn Thị Hoài An</h4>
-                            <h5>Tai Mũi Họng - Nhi khoa</h5>
-                        </a>
-                        <a href="#">
-                            <i class="coxuongkhop-img"></i>
-                            <h4>PGS, TS, Giảng viên cao cấp Trần Hữu Bình</h4>
-                            <h5>Sức khỏe tâm thần</h5>
-                        </a>
                 </div>
             </div>
             <div id="banner__shorcut-download">
@@ -156,39 +119,13 @@
             <h2>Chuyên khoa phổ biến</h2>
             <a href="{% url 'findSpecialist' %}">Xem thêm</a>
         </div>
-        <div class="segment__content segment__chuyenkhoa slick-4">
-            <a href="#">
-                <i class="segment__chuyenkhoa-img coxuongkhop-img"></i>
-                Cơ xương khớp
-            </a>
-            <a href="#">
-                <i class="segment__chuyenkhoa-img thankinh-img"></i>
-                Thần kinh
-            </a>
-            <a href="#">
-                <i class="segment__chuyenkhoa-img tieuhoa-img"></i>
-                Tiêu hoá
-            </a>
-            <a href="#">
-                <i class="segment__chuyenkhoa-img timmach-img"></i>
-                Tim mạch
-            </a>
-            <a href="#">
-                <i class="segment__chuyenkhoa-img taimuihong-img"></i>
-                Tai mũi họng
-            </a>
-            <a href="#">
-                <i class="segment__chuyenkhoa-img cotsong-img"></i>
-                Cột sống
-            </a>
-            <a href="#">
-                <i class="segment__chuyenkhoa-img yhoccotruyen-img"></i>
-                Y học cổ truyền
-            </a>
-            <a href="#">
-                <i class="segment__chuyenkhoa-img chamcuu-img"></i>
-                Châm cứu
-            </a>
+        <div class="segment__content segment__specialist slick-4">
+            {% for specialist in specialists %}
+                <a href="{% url 'specialistDetail' specialist.id %}">
+                    <img data-lazy="{{specialist.avatar.url}}" alt="specialist-img" class="segment__specialist-img" loading="lazy">
+                    {{specialist.name}}
+                </a>
+            {% endfor %}
         </div>
     </section>
     <section class="segment background--white">
@@ -197,38 +134,12 @@
             <a href="{% url 'findClinic' %}">Xem thêm</a>
         </div>
         <div class="segment__content segment__clinic slick-4">
-            <a href="#">
-                <i class="segment__clinic-img bv-vietduc-img"></i>
-                Bệnh viện Hữu nghị Việt Đức
-            </a>
-            <a href="#">
-                <i class="segment__clinic-img bv-vietduc-img"></i>
-                Bệnh viện Hữu nghị Việt Đức
-            </a>
-            <a href="#">
-                <i class="segment__clinic-img bv-vietduc-img"></i>
-                Bệnh viện Hữu nghị Việt Đức
-            </a>
-            <a href="#">
-                <i class="segment__clinic-img bv-vietduc-img"></i>
-                Bệnh viện Hữu nghị Việt Đức
-            </a>
-            <a href="#">
-                <i class="segment__clinic-img bv-vietduc-img"></i>
-                Bệnh viện Hữu nghị Việt Đức
-            </a>
-            <a href="#">
-                <i class="segment__clinic-img bv-vietduc-img"></i>
-                Bệnh viện Hữu nghị Việt Đức
-            </a>
-            <a href="#">
-                <i class="segment__clinic-img bv-vietduc-img"></i>
-                Bệnh viện Hữu nghị Việt Đức
-            </a>
-            <a href="#">
-                <i class="segment__clinic-img bv-vietduc-img"></i>
-                Bệnh viện Hữu nghị Việt Đức
-            </a>
+            {% for clinic in clinics %}
+                <a href="{% url 'clinicDetail' clinic.id %}">
+                    <img data-lazy="{{clinic.Cover_photo.url}}" alt="clinic-img" class="segment__clinic-img" loading="lazy">
+                    {{clinic.name}}
+                </a>
+            {% endfor %}
         </div>
     </section>
     <section class="segment background--gray">
@@ -237,46 +148,15 @@
             <a href="{% url 'findDoctor' %}">Xem thêm</a>
         </div>
         <div class="segment__content segment__doctor slick-4">
-            <a href="#">
-                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
-                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
-                <h4>Da liễu</h4>
-            </a>
-            <a href="#">
-                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
-                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
-                <h4>Da liễu</h4>
-            </a>
-            <a href="#">
-                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
-                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
-                <h4>Da liễu</h4>
-            </a>
-            <a href="#">
-                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
-                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
-                <h4>Da liễu</h4>
-            </a>
-            <a href="#">
-                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
-                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
-                <h4>Da liễu</h4>
-            </a>
-            <a href="#">
-                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
-                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
-                <h4>Da liễu</h4>
-            </a>
-            <a href="#">
-                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
-                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
-                <h4>Da liễu</h4>
-            </a>
-            <a href="#">
-                <i class="segment__doctor-img bs-nguyenduyhung-img"></i>
-                <h3>Phó Giáo sư, Tiến sĩ, Bác sĩ cao cấp Nguyễn Duy Hưng</h3>
-                <h4>Da liễu</h4>
-            </a>
+            {% for doctor in doctors %}
+                <a href="{% url 'doctorDetail' %}">
+                    <img loading="lazy" data-lazy="{{doctor.doctor.avatar.url}}" alt="doctor-img" class="segment__doctor-img" >
+                    <h3>{{doctor.degree}} {{doctor.doctor.last_name}} {{doctor.doctor.first_name}}</h3>
+                    {% for specialist in doctor.specialists.all|slice:":1" %}
+                        <h4>{{specialist.name}}</h4>
+                    {% endfor %}
+                </a>
+            {% endfor %}
         </div>
     </section>
     <section class="segment background--white">
@@ -290,31 +170,36 @@
                     title="BookingCare trên VTV1 ngày 21/02/2018 - Chương trình Cà phê khởi nghiệp"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                    allowfullscreen
+                    loading="lazy"
+                    ></iframe>
             <ul>
                 <li>
-                    <i class="segment__truyenthong-img suckhoedoisong-img"><a href="#">&af;</a></i>
+                    <a href="#"><img loading="lazy" src="{% static 'homepage/images/segment-communication/suckhoedoisong.png' %}" alt="suckhoedoisong-img" class="segment__truyenthong-img suckhoedoisong-img">&af;</a>
                 </li>
                 <li>
-                    <i class="segment__truyenthong-img vtv1-img"><a href="#">&af;</a></i>
+                    <a href="#"><img loading="lazy" src="{% static 'homepage/images/segment-communication/vtv1.png' %}" alt="vtv1-img" class="segment__truyenthong-img vtv1-img">&af;</a>
                 </li>
                 <li>
-                    <i class="segment__truyenthong-img ictnews-img "><a href="#">&af;</a></i>
+                    <a href="#"><img loading="lazy" src="{% static 'homepage/images/segment-communication/ictnews.png' %}" alt="ictnews-img" class="segment__truyenthong-img ictnews-img">&af;</a>
+                    
                 </li>
                 <li>
-                    <i class="segment__truyenthong-img vnexpress-img"><a href="#">&af;</a></i>
+                    <a href="#"><img loading="lazy" src="{% static 'homepage/images/segment-communication/vnexpress.png' %}" alt="vnexpress-img" class="segment__truyenthong-img vnexpress-img">&af;</a>
+                    
                 </li>
                 <li>
-                    <i class="segment__truyenthong-img vtcnews-img"><a href="#">&af;</a></i>
+                    <a href="#"><img loading="lazy" src="{% static 'homepage/images/segment-communication/vtcnews.png' %}" alt="vtcnews-img" class="segment__truyenthong-img vtcnews-img">&af;</a>
                 </li>
                 <li>
-                    <i class="segment__truyenthong-img cuccntt-img"><a href="#">&af;</a></i>
+                    <a href="#"><img loading="lazy" src="{% static 'homepage/images/segment-communication/cuc-cong-nghe-thong-tin-bo-y-te-2.png' %}" alt="cuccntt-img" class="segment__truyenthong-img cuccntt-img">&af;</a>
                 </li>
                 <li>
-                    <i class="segment__truyenthong-img infonet-img"><a href="#">&af;</a></i>
+                    <a href="#"><img loading="lazy" src="{% static 'homepage/images/segment-communication/infonet.png' %}" alt="infonet-img" class="segment__truyenthong-img infonet-img">&af;</a>
                 </li>
                 <li>
-                    <i class="segment__truyenthong-img vtc-img"><a href="#">&af;</a></i>
+                    <a href="#"><img loading="lazy" src="{% static 'homepage/images/segment-communication/vtcgo.png' %}" alt="vtc-img" class="segment__truyenthong-img vtc-img">&af;</a>
+                    
                 </li>
             </ul>
         </div>
