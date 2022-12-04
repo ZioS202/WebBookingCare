@@ -310,7 +310,6 @@
                 <div class="abstract_doctor">
                     <div class="image_scope">
                         <img class="image_doctor" src="/media/{{doctor.doctor.avatar}}" width="80px" height="80">
-                        <div class="see_more"><a href="{% url 'doctorDetail' %}">Xem thêm</a></div>
                     </div>
                     <div class="info_doctor">
                         <div class="name">
@@ -327,7 +326,7 @@
                         <h3><i class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Thông tin</h3>
                     </div>
                     <div class="register_scope2">
-                        <a href="{% url 'doctorDetail' %}">Đăng ký khám</a>
+                        <a href="{% url 'doctorDetail' doctor.id %}">Đăng ký khám</a>
                         <p>Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ</p>
                         <p>Giá khám: {{doctor.examination_price}}</p>
                     </div>
