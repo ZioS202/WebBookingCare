@@ -127,7 +127,7 @@
     <div class="container-1">     
         <div class="doctor-info">
             <div class="doctor-image">
-                <img style="border-radius: 50%;" src="https://cdn.bookingcare.vn/fr/w100/2020/03/17/114430-bshung.jpg" alt="Doctor" width="100px" height="100px">
+                <img style="border-radius: 50%;" src="/media/{{ doctor.doctor.avatar }}" alt="Doctor" width="100px" height="100px">
             </div>
             <div class="doctor-quickview">
                 <h1 style="text-transform: uppercase;";>Đặt lịch khám</h1>
@@ -156,7 +156,9 @@
                     <input style="height: 15px; width: auto;" type="radio" checked="checked" name="gender" id="male" value="0">
                     <p style="display: inline;">Nam</p>  
                     <input style="height: 15px; width: auto; display: inline;" type="radio" checked="checked" name="gender" id="female" value="1">
-                    <p style="display: inline;">Nữ</p>   
+                    <p style="display: inline;">Nữ</p>
+                    <input style="height: 15px; width: auto; display: inline;" type="radio" checked="checked" name="gender" id="others" value="2">
+                    <p style="display: inline;">Khác</p>
                 </div>
                 <div class="input-form">
                     <i class="glyphicon glyphicon-earphone"></i>

@@ -21,7 +21,7 @@
         padding : 20px 0px;
         margin-left: 20px;
     }
-    .seleteDay{
+    .selectDay{
         height: 30px;
         width: 15%;
         text-align: center;
@@ -93,7 +93,7 @@
     </div>
     <div class="schedule">
         <div class="choiceDay">
-            <select class="seleteDay">
+            <select class="selectDay">
                 <option value="">
                     Hôm nay - 25/10
                 </option>
@@ -111,12 +111,12 @@
         <div class="timeAndAddress">
             <div class="choiceTime">
                 <h4>LỊCH KHÁM</h4>
-                <a href="">8:30 - 9:00</a>
-                <a href="">9:30 - 10:00</a>
-                <a href="">10:30 - 11:00</a>
-                <a href="">14:30 - 15:00</a>
-                <a href="">15:30 - 16:00</a>
-                <a href="">16:30 - 17:00</a>
+                <a href="{% url 'bookings' %}">8:30 - 9:00</a>
+                <a href="{% url 'bookings' %}">9:30 - 10:00</a>
+                <a href="{% url 'bookings' %}">10:30 - 11:00</a>
+                <a href="{% url 'bookings' %}">14:30 - 15:00</a>
+                <a href="{% url 'bookings' %}">15:30 - 16:00</a>
+                <a href="{% url 'bookings' %}">16:30 - 17:00</a>
             </div>
             <div class="address">
                 <h4>ĐỊA CHỈ KHÁM</h4>
