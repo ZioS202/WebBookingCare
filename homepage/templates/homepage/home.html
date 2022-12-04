@@ -149,7 +149,7 @@
         </div>
         <div class="segment__content segment__doctor slick-4">
             {% for doctor in doctors %}
-                <a href="{% url 'doctorDetail' %}">
+                <a href="{% url 'doctorDetail' doctor.doctor.id %}">
                     <img loading="lazy" data-lazy="{{doctor.doctor.avatar.url}}" alt="doctor-img" class="segment__doctor-img" >
                     <h3>{{doctor.degree}} {{doctor.doctor.last_name}} {{doctor.doctor.first_name}}</h3>
                     {% for specialist in doctor.specialists.all|slice:":1" %}
