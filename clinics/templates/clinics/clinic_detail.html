@@ -396,33 +396,29 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                     <li>Giảm thiểu thời gian chờ đợi</li>
                 </ul>
             </div>
+            {% for doctor in clinics.clinic_doctors.all %}
             <!--Each doctor scope-->
             <div class="eachDoctor" id="datlichkham">
-                <!--Abstract doctor-->
+                <!--Abstract doctor--> 
                 <div class="abstract_doctor">
                     <div class="image_scope">
                         <img class="image_doctor"
-                             src="https://cdn.bookingcare.vn/fr/w200/2016/08/29/120727gs-ts-nguyen-lan-viet.jpg"
+                             src="/media/{{ doctor.doctor.avatar }}"
                              width="80px"
                              height="80">
                         <div style="margin-top:5px;
-                                    font-size: 14px;
+                                    font-size: 12px;
                                     text-align: left;
-                                    padding-left:7px;">Xem thêm</div>
+                                    padding-left:7px;">
+                        </div>
                     </div>
                     <div class="infoAbstract">
-                        <h2 style="color:#45c3d2;font-size:18px">Giáo sư, Tiến sĩ Nguyễn Lân Việt</h2>
+                        <h2 style="color:#45c3d2;font-size:18px">{{ doctor.degree }} {{ doctor.doctor.last_name }} {{ doctor.doctor.first_name }}</h2>
                         <p>
-                            Nguyên Viện trưởng Viện Tim Mạch Quốc Gia
-                            <br>
-                            Nguyên Hiệu trưởng trường Đại học Y Hà Nội
-                            <br>
-                            Chủ tịch Hội Tim mạch Việt Nam
-                            <br>
-                            Địa chỉ: Hà Nội
+                            {{ doctor.descriptions }}
                         </p>
                     </div>
-                </div>
+                </div>  
                 <!--End Abstract doctor-->
                 <!--Register Info-->
                 <div class="infoRegister">
@@ -444,7 +440,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                                       display: block;
                                       margin-left: 15px;
                                       text-align: center;"
-                               href="#">Đăng ký khám (Chiều)</a>
+                               href="#">Đăng ký khám</a>
                             <p style="margin-left:10px;margin-top:10px;">Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ</p>
                         </div>
                         <div class="address"
@@ -459,9 +455,9 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                                 Địa chỉ khám
                             </h3>
                             <p style="margin-bottom:0px;">
-                                Bệnh viện Đa khoa Đông Đô
+                                {{ doctor.clinic }}
                                 <br>
-                                Số 5 phố Xã Đàn - Đống Đa - Hà Nội
+                                {{ doctor.clinic.address }}
                             </p>
                         </div>
                         <div class="cost">
@@ -470,177 +466,14 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                                        color: #666;
                                        font-weight: bold;
                                        display:inline;">Giá khám:</h3>
-                            <span>500.000<sup>đ</sup></span>
+                            <span id="doctor_exam_price">{{ doctor.examination_price }}</span>
                         </div>
                     </div>
                 </div>
                 <!--End Register Info-->
             </div>
             <!--End Each doctor scope-->
-            <!--Each doctor scope-->
-            <div class="eachDoctor">
-                <!--Abstract doctor-->
-                <div class="abstract_doctor">
-                    <div class="image_scope">
-                        <img class="image_doctor"
-                             src="https://cdn.bookingcare.vn/fr/w200/2019/12/31/161245-pgs-vu-thi-thanh-thuy.jpg"
-                             width="80px"
-                             height="80">
-                        <div style="margin-top:5px;
-                                    font-size: 14px;
-                                    text-align: left;
-                                    padding-left:7px;">Xem thêm</div>
-                    </div>
-                    <div class="infoAbstract">
-                        <h2 style="color:#45c3d2;font-size:18px">Phó Giáo sư, Tiến sĩ Vũ Thị Thanh Thủy</h2>
-                        <p>
-                            Nguyên Trưởng khoa Cơ - Xương - Khớp, Bệnh viện Bạch Mai
-                            <br>
-                            Chủ tịch Hội loãng xương Hà Nội
-                            <br>
-                            Bác sĩ nhận bệnh nhân từ 18 tuổi trở lên
-                            <br>
-                            Địa chỉ: Hà Nội
-                        </p>
-                    </div>
-                </div>
-                <!--End Abstract doctor-->
-                <!--Register Info-->
-                <div class="infoRegister">
-                    <div class="infoRegister_modifyScope">
-                        <div class="register_scope1">
-                            <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static">
-                                <i style="position:static"
-                                   class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám
-                            </h3>
-                        </div>
-                        <div class="register_scope2">
-                            <a style="display: block;
-                                      overflow-x: visible;
-                                      white-space: normal;
-                                      padding: 10px;
-                                      width: 200px;
-                                      font-size: 14px;
-                                      border-style: solid;
-                                      display: block;
-                                      margin-left: 15px;
-                                      text-align: center;"
-                               href="#">Đăng ký khám (Sáng)</a>
-                            <p style="margin-left:10px;margin-top:10px;">Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ</p>
-                        </div>
-                        <div class="address"
-                             style="border-top: 1px solid #eee;
-                                    padding-top: 10px;
-                                    margin-top: 10px;">
-                            <h3 style="text-transform: uppercase;
-                                       font-size: 14px;
-                                       color: #666;
-                                       font-weight: bold;
-                                       margin-top:10px;">
-                                Địa chỉ khám
-                            </h3>
-                            <p style="margin-bottom:0px;">
-                                Bệnh viện Đa khoa Đông Đô
-                                <br>
-                                Số 5 phố Xã Đàn - Đống Đa - Hà Nội
-                            </p>
-                        </div>
-                        <div class="cost">
-                            <h3 style="text-transform: uppercase;
-                                       font-size: 14px;
-                                       color: #666;
-                                       font-weight: bold;
-                                       display:inline;">Giá khám:</h3>
-                            <span>400.000<sup>đ</sup></span>
-                        </div>
-                    </div>
-                </div>
-                <!--End Register Info-->
-            </div>
-            <!--End Each doctor scope-->
-            <!--Each doctor scope-->
-            <div class="eachDoctor">
-                <!--Abstract doctor-->
-                <div class="abstract_doctor">
-                    <div class="image_scope">
-                        <img class="image_doctor"
-                             src="https://cdn.bookingcare.vn/fr/w200/2020/01/03/085845-bscki-hua-thi-ngoc-ha.jpg"
-                             width="80px"
-                             height="80">
-                        <div style="margin-top:5px;
-                                    font-size: 14px;
-                                    text-align: left;
-                                    padding-left:7px;">Xem thêm</div>
-                    </div>
-                    <div class="infoAbstract">
-                        <h2 style="color:#45c3d2;font-size:18px">Bác sĩ chuyên khoa I Hứa Thị Ngọc Hà</h2>
-                        <p>
-                            Nguyên Trưởng khoa Nội tim mạch, Bệnh viện 198 - Bộ Công An
-                            <br>
-                            Hiện là Trưởng khoa Khám bệnh, Bệnh viện Đông Đô
-                            <br>
-                            Địa chỉ: Thành phố Hồ Chí Minh
-                        </p>
-                    </div>
-                </div>
-                <!--End Abstract doctor-->
-                <!--Register Info-->
-                <div class="infoRegister">
-                    <div class="infoRegister_modifyScope">
-                        <div class="register_scope1">
-                            <h3 style="text-transform: uppercase;font-size: 14px;color: #333;font-weight: bold;padding: 0;margin: 0 0 5px 0;position:static">
-                                <i style="position:static"
-                                   class="icon-dichvu bt-g bt-g-lich glyphicon glyphicon-calendar"></i>Lịch khám
-                            </h3>
-                        </div>
-                        <div class="register_scope2">
-                            <a style="display: block;
-                                      overflow-x: visible;
-                                      white-space: normal;
-                                      padding: 10px;
-                                      width: 200px;
-                                      font-size: 14px;
-                                      border-style: solid;
-                                      display: block;
-                                      margin-left: 15px;
-                                      text-align: center;"
-                               href="#">Đăng ký khám (Tối)</a>
-                            <p style="margin-left:10px;margin-top:10px;">
-                                Chọn và đặt ngay, phí dịch vụ đặt lịch 0đ
-                            </p>
-                        </div>
-                        <div class="address"
-                             style="border-top: 1px solid #eee;
-                                    padding-top: 10px;
-                                    margin-top: 10px;">
-                            <h3 style="text-transform: uppercase;
-                                       font-size: 14px;
-                                       color: #666;
-                                       font-weight: bold;
-                                       margin-top:10px;">
-                                Địa chỉ khám
-                            </h3>
-                            <p style="margin-bottom:0px;">
-                                Bệnh viện Đa khoa Đông Đô
-                                <br>
-                                Số 5 phố Xã Đàn - Đống Đa - Hà Nội
-                            </p>
-                        </div>
-                        <div class="cost">
-                            <h3 style="text-transform: uppercase;
-                                       font-size: 14px;
-                                       color: #666;
-                                       font-weight: bold;
-                                       display:inline;">
-                                Giá khám:
-                            </h3>
-                            <span>350.000<sup>đ</sup></span>
-                        </div>
-                    </div>
-                </div>
-                <!--End Register Info-->
-            </div>
-            <!--End Each doctor scope-->
+            {% endfor %}
             <div class="intro_clinic" id="gioithieu">
                 <hr style="margin-bottom:10px;margin-top:10px">
                 {% load martortags %}
@@ -666,6 +499,8 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                 document.getElementById("content").style.display = 'none'
             }
         }
+
+
     </script>
 {% endblock extra_script %}
 {% comment %} <!DOCTYPE html>
