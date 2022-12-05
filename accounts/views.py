@@ -1,11 +1,8 @@
-from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import  UserRegistrationForm
 from .forms import SigninForm, UpdateProfileForm, UpdateUserForm
 from django.shortcuts import redirect, render
-from django.contrib import messages
-from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.conf import settings
 from django.core.mail import send_mail
@@ -13,13 +10,6 @@ from django.core.mail import send_mail
 
 # Create your views here.
 
-
-# class LoginForm(TemplateView):
-#     template_name = "accounts/loginForm.html"
-
-
-# class RegisterForm(TemplateView):
-#     template_name = "accounts/registerForm.html"
 @login_required(login_url='/accounts/signin')
 def user_signout(request):
     logout(request)

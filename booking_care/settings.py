@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-72m2*dz(&36#b)#od18thtn8z(k44k$p)%g((wap+97o()8jy_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["bookingcare.pythonanywhere.com",]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -88,10 +88,10 @@ WSGI_APPLICATION = "booking_care.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "bookingcare$booking_care",
-        "USER": "bookingcare",
-        "PASSWORD": "djangopass",
-        "HOST": "bookingcare.mysql.pythonanywhere-services.com",
+        "NAME": "booking_care",
+        "USER": "root",
+        "PASSWORD": "",
+        "HOST": "127.0.0.1",
         "PORT": "3306",
         "OPTIONS": {
             "sql_mode": "STRICT_TRANS_TABLES",
@@ -376,5 +376,5 @@ MAX_IMAGE_UPLOAD_SIZE = 5242880  # 5MB
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = '20521964@gm.uit.edu.vn'
-EMAIL_HOST_PASSWORD = 'xagvgilvqrflreho'
+EMAIL_HOST_USER = 'bookingcaregroup124c41'
+EMAIL_HOST_PASSWORD = 'zvalfqqypstryfky'
