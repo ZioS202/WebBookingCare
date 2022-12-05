@@ -1,16 +1,14 @@
-from django.views.generic import TemplateView
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
-from .forms import  UserRegistrationForm #,CustomUserCreationForm,
+from .forms import  UserRegistrationForm
 from .forms import SigninForm, UpdateProfileForm, UpdateUserForm
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
+from django.conf import settings
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -22,7 +20,7 @@ from django.contrib.auth.decorators import login_required
 
 # class RegisterForm(TemplateView):
 #     template_name = "accounts/registerForm.html"
-
+@login_required(login_url='/accounts/signin')
 def user_signout(request):
     logout(request)
     return render(request, 'accounts/signoutForm.html')
@@ -59,6 +57,11 @@ def signup(request):
             # Save the User object
             new_user.save()
             messages.info(request, "You created a new account!")
+            subject = 'Welcom to "Booking Care"!'
+            message = f'Hi {new_user.username}, thank you for registering in "Booking Care". Good a happy day!'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = [new_user.email, ]
+            send_mail( subject, message, email_from, recipient_list )
             return redirect('signin')
         else:
             messages.error(request, "Can not create your account! May be username is used or 2 passwords are not the same! Please try again!")
@@ -66,6 +69,7 @@ def signup(request):
         user_form = UserRegistrationForm()
     return render(request, 'accounts/signupForm.html', {'user_form': user_form})
 
+@login_required(login_url='/accounts/signin')
 def profile(request):
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)

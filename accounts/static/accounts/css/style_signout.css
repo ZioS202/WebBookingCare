@@ -30,26 +30,29 @@
     position: relative;
   }
   
-  a,
-  a:link,
-  a:visited,
-  a:active {
-    color: #3ca9e2;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-  }
-  a:focus,
-  a:hover,
-  a:link:focus,
-  a:link:hover,
-  a:visited:focus,
-  a:visited:hover,
-  a:active:focus,
-  a:active:hover {
-    color: #329dd5;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-  }
+  a
+{text-decoration: none;}
+a:link,
+a:visited,
+a:active 
+{
+  color: #3ca9e2;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+a:hover, a:link:hover, a:active:hover ,a:visited:hover
+{color:red}
+
+a:focus,
+a:link:focus,
+a:visited:focus,
+a:active:focus
+{
+  color: #329dd5;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
   
   #logout-form-wrap {
     background-color: #fff;

@@ -34,7 +34,8 @@ p
   position: relative;
 }
 
-a,
+a
+{text-decoration:underline;}
 a:link,
 a:visited,
 a:active 
@@ -43,14 +44,14 @@ a:active
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+
+a:hover, a:link:hover, a:active:hover ,a:visited:hover
+{color:red}
+
 a:focus,
-a:hover,
 a:link:focus,
-a:link:hover,
 a:visited:focus,
-a:visited:hover,
-a:active:focus,
-a:active:hover 
+a:active:focus
 {
   color: #329dd5;
   -webkit-transition: all 0.2s ease;

@@ -2,16 +2,10 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth import get_user_model
 from phonenumber_field.phonenumber import PhoneNumber
 from django import forms
-from django.contrib.auth.models import User
 from .models import CustomUser
-
 from django import forms  
-from django.contrib.auth.models import User  
 from django.contrib.auth.forms import UserCreationForm  
-from django.core.exceptions import ValidationError  
-from django.forms.fields import EmailField  
-from django.forms.forms import Form  
-from phonenumber_field.modelfields import PhoneNumberField
+
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta:

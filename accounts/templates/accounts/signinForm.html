@@ -3,6 +3,9 @@
 {% block extra_head %}
 {% block title %}<title>Sign in</title>{% endblock %}
     <link href="{% static 'accounts/css/style_signin.css' %}" rel="stylesheet">
+    <style>
+
+    </style>
 {% endblock extra_head %}
 {% block content %}
 <div id="login-form-wrap">
@@ -41,21 +44,12 @@
         <p style="color:rgb(255, 255, 255);font-size:15px;font-weight: bold;padding:10px 0px; ">Error: {{ msg }}</p>   
       </div>
       {% endif %}
-
-    <!-- <div>
-      <p style="color:rgb(197, 46, 46);font-size:15px;display: inline-block;font-weight: bold;">Error: {{ msg }}</p>   
-    </div> -->
-        <!-- {% if msg.tags == "info" %}
-          <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js">
-            alertify.set('notifier', 'position', 'top-right')
-            alertify.success('{{msg}}');
-          </script>
-        {% endif %} -->
     {% endfor %}
   </form>
 
   <div id="footer_login_form">
     <p>Not a member? <a href="{% url 'signup' %}">Create Account</a><p>
+      <p>Do you forget your password, <a href="{% url 'password_reset' %}">Click here!</a></p>
   </div>
 </div>
 {% endblock content %}
