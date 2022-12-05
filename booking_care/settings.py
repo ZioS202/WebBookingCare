@@ -372,3 +372,9 @@ MARTOR_UPLOAD_URL = "/api/uploader/"  # change to local uploader
 # 500MB - 429916160
 
 MAX_IMAGE_UPLOAD_SIZE = 5242880  # 5MB
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = '20521964@gm.uit.edu.vn'
+EMAIL_HOST_PASSWORD = 'xagvgilvqrflreho'

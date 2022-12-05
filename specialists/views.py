@@ -1,11 +1,6 @@
-from http.client import ImproperConnectionState
-from operator import imod
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Specialist
-from doctors.models import DetailsDoctor
-from clinics.models import Clinic
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import DetailView
 from homepage.forms import SearchForm
 
 # Create your views here.
