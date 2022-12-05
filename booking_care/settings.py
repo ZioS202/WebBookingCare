@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-72m2*dz(&36#b)#od18thtn8z(k44k$p)%g((wap+97o()8jy_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["bookingcare.pythonanywhere.com",]
 
 
 # Application definition
@@ -88,10 +88,10 @@ WSGI_APPLICATION = "booking_care.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "booking_care",
-        "USER": "root",
-        "PASSWORD": "",
-        "HOST": "127.0.0.1",
+        "NAME": "bookingcare$booking_care",
+        "USER": "bookingcare",
+        "PASSWORD": "djangopass",
+        "HOST": "bookingcare.mysql.pythonanywhere-services.com",
         "PORT": "3306",
         "OPTIONS": {
             "sql_mode": "STRICT_TRANS_TABLES",
