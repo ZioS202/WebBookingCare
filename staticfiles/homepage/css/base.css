@@ -63,11 +63,10 @@ a {
 }
 
 .user-icon {
-  background: transparent url('../icons/icons8-user.svg') center center
-    no-repeat;
-  background-size: contain;
+  object-fit: cover;
   width: 29px;
   height: 36px;
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -209,7 +208,7 @@ nav a {
 }
 
 nav a:hover,
-#support-login-lang a:hover {
+#support-lang-user a:hover {
   color: var(--mau-bc-16);
   text-decoration: none;
 }
@@ -220,18 +219,38 @@ nav span {
   font-size: 11px;
 }
 
-#support-login-lang {
+#support-lang-user {
   display: flex;
   justify-content: end;
   gap: 30px;
 }
 
-#support-login-lang a {
+#support-lang-user a {
   display: flex;
   align-items: center;
   font-size: 14px;
   font-weight: bold;
   color: #969495;
+}
+
+.show-user-dropdown {
+  display: block !important;
+}
+
+#user-dropdown {
+  position: absolute;
+  top: 70px;
+  right: 13px;
+  background: #fff;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  width: 10%;
+  font-size: 14px;
+  display: none;
+}
+
+#user-dropdown a {
+  padding: 4px 6px;
 }
 
 /**

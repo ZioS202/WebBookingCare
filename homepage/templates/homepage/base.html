@@ -240,6 +240,39 @@
                 return data;
               }
 
+              async function search_schedule(csrfmiddlewaretoken, query, doctor_id) {
+                const data = await get_search_result(
+                  `search-schedule/?csrfmiddlewaretoken=${csrfmiddlewaretoken}&query=${query}&doctor_id=${doctor_id}`
+                );
+                return data;
+              }
+
+              //Format date
+              function get_day_of_week(day) {
+                switch (day) {
+                  case 1:
+                    return 'Thứ hai';
+                    break;
+                  case 2:
+                    return 'Thứ ba';
+                    break;
+                  case 3:
+                    return 'Thứ tư';
+                    break;
+                  case 4:
+                    return 'Thứ năm';
+                    break;
+                  case 5:
+                    return 'Thứ sáu';
+                    break;
+                  case 6:
+                    return 'Thứ bảy';
+                    break;
+                  default:
+                    return 'Chủ nhật';
+                }
+              }
+
         </script>
         {% block extra_script %}
         {% endblock extra_script %}

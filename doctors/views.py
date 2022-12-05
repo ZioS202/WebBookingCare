@@ -4,10 +4,12 @@ from operator import imod
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import DetailsDoctor, Schedule
-from clinics.models import Clinic
-from specialists.models import Specialist
+from django.contrib.auth import get_user_model
 from homepage.views import SearchForm
+from django.http import JsonResponse
+from icecream import ic
 
+CustomUser = get_user_model()
 
 # Create your views here.
 
@@ -24,22 +26,22 @@ def findDoctor(request):
     )
 
 
-# def detailDoctor(request):
-#     return render(request,'doctors/DetailDoctor.html')
-
-
 class DoctorDetail(DetailView):
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["specialists"] = Specialist.objects.all()
-        context["clinic"] = Clinic.objects.all()
-        context["schedule"] = Schedule.objects.all()
-        return context
-
     template_name = "doctors/DetailDoctor.html"
     model = DetailsDoctor
     context_object_name = "doctor"
 
 
-# def manageClinic(request):
-#     return render(request, 'doctors/manageClinic.html')
+def search_schedule(request):
+    query = None
+    doctor_id = None
+    data = {}
+    results = []
+    if "query" in request.GET and "doctor_id" in request.GET:
+        query = request.GET.get("query")
+        doctor_id = request.GET.get("doctor_id")
+        doctor = CustomUser.objects.get(id=doctor_id)
+        results = doctor.schedules.filter(date=query)
+    for result in results:
+        data.update({result.id: {"time_slot": result.time_slot.value}})
+    return JsonResponse(data)

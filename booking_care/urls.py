@@ -20,6 +20,7 @@ from django.urls import path, include, re_path
 from django.views.generic.base import TemplateView
 from custom_MatorMarkdownEditor.views import markdown_uploader
 from homepage.views import search_specialist, search_clinic, search_doctor
+from doctors.views import search_schedule
 
 urlpatterns = [
     path("doctor/", include("doctors.urls")),
@@ -30,10 +31,6 @@ urlpatterns = [
     path("clinic/", include("clinics.urls")),
     path("accounts/", include("accounts.urls")),
     path("bookings/", include("bookings.urls")),
-    # path("notification/", include("notifications.urls")),
-    # path("login/", LoginForm.as_view(), name="login"),
-    # path("signup/", RegisterForm.as_view(), name="signup"),
-    # path('logout/', LogoutForm.as_view(), name='logout'),
     path("martor/", include("martor.urls")),
     path("api/uploader/", markdown_uploader, name="markdown_uploader_page"),
     re_path(
@@ -43,4 +40,5 @@ urlpatterns = [
     ),
     re_path(r"^[\w\/]*search-clinic/$", search_clinic, name="search_clinic"),
     re_path(r"^[\w\/]*search-doctor/$", search_doctor, name="search_doctor"),
+    re_path(r"^[\w\/]*search-schedule/$", search_schedule, name="search_schedule"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

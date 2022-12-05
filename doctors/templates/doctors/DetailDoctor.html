@@ -1,4 +1,5 @@
 {% extends 'homepage/base.html' %}
+{% load static %}
 {% block extra_head %}
     <style>
     td h1{
@@ -21,6 +22,9 @@
         padding : 20px 0px;
         margin-left: 20px;
     }
+    .choiceDay label {
+        display: none;
+    }
     .selectDay{
         height: 30px;
         width: 15%;
@@ -40,7 +44,7 @@
     
     .choiceTime a{
         margin: 10px;
-        min-width: 26%;
+        min-width: 157px;
         background: #fff04b;
         line-height: 5;
         display: inline-block;
@@ -93,30 +97,16 @@
     </div>
     <div class="schedule">
         <div class="choiceDay">
-            <select class="selectDay">
-                <option value="">
-                    Hôm nay - 25/10
-                </option>
-                <option value="">
-                    Thứ 4 - 26/10
-                </option>
-                <option value="">
-                    Thứ 5 - 27/10
-                </option>
-                <option value="">
-                    Thứ 6 - 28/10
-                </option>
-            </select>
+            <form id="search_schedule" action="" method="get">
+                {% csrf_token %}
+                <label for="selectDate">Choose a pet:</label>
+                <select class="selectDay" name="dateChoices" id="selectDate" onchange="showTimeslot();">
+                </select>
+                <input type="submit" id="submit-btn" value="Submit" style="display: none;"/>
+            </form>
         </div>
         <div class="timeAndAddress">
             <div class="choiceTime">
-                <h4>LỊCH KHÁM</h4>
-                <a href="{% url 'bookings' %}">8:30 - 9:00</a>
-                <a href="{% url 'bookings' %}">9:30 - 10:00</a>
-                <a href="{% url 'bookings' %}">10:30 - 11:00</a>
-                <a href="{% url 'bookings' %}">14:30 - 15:00</a>
-                <a href="{% url 'bookings' %}">15:30 - 16:00</a>
-                <a href="{% url 'bookings' %}">16:30 - 17:00</a>
             </div>
             <div class="address">
                 <h4>ĐỊA CHỈ KHÁM</h4>
@@ -137,3 +127,28 @@
         </div>
     </div> 
 {% endblock content %}
+{% block extra_script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.6/dayjs.min.js" integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.6/locale/vi.min.js" integrity="sha512-z+cfgsx3y2byh1WqQA03XQHxtM48Km+N1tRoJGX4xWBa29cD8du/Imistc6DY7rzcMw5YLMereWcvzZw5uNB6g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="{% static 'doctors/js/detailDoctor.js' %} "></script>
+
+    {% comment %} Search schedule {% endcomment %}
+    <script type="text/javascript" >
+        searchScheduleForm.onsubmit = async function (e) {
+            e.preventDefault();
+
+            if(choiceTime.innerHTML) choiceTime.innerHTML = `<h4>LỊCH KHÁM</h4>`;
+
+            const query = select.value;
+            const doctor_id = {{doctor.doctor.id}};
+            const schedules = await search_schedule(csrfmiddlewaretoken, query, doctor_id);
+
+            const detailDoctor_id = {{doctor.id}}
+            show_schedule(`/bookings/${detailDoctor_id}/`, schedules);
+          };
+
+        window.onload = (e) => {
+            submitBtn.click();
+        };
+    </script>
+{% endblock extra_script %}

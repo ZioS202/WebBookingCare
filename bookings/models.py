@@ -28,7 +28,7 @@ class Booking(models.Model):
         db_table = "bookings"
 
     def __str__(self):
-        return self.patient
+        return self.patient.username + " - " + self.doctor.username
 
 
 class Payment(models.Model):
@@ -49,4 +49,4 @@ class Payment(models.Model):
         db_table = "payments"
 
     def __str__(self):
-        return self.booking
+        return self.booking.patient.username + " - " + self.booking.doctor.username

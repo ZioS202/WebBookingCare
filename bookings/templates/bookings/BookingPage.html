@@ -131,8 +131,7 @@
             </div>
             <div class="doctor-quickview">
                 <h1 style="text-transform: uppercase;";>Đặt lịch khám</h1>
-                <h2><a href="https://link_to_doctor_detail.com" style="color: rgb(10, 139, 253);">Phó giáo sư, tiến sĩ, Nguyễn Duy Hưng</a></h2>
-                <h3 style="font-size: 14px;">14:45 - Thứ 5, ngày 24/11/2022</h3>
+                <h2><a href="{% url 'doctorDetail' doctor.id %}" style="color: rgb(10, 139, 253);">{{doctor.degree}} {{doctor.doctor.last_name}} {{doctor.doctor.first_name}}</a></h2>
             </div>
         </div>
     </div>
@@ -143,34 +142,36 @@
                 <label class="price-label">
                     <input type="radio" checked="checked" name="price" id="price">
                     <span>Giá khám</span>
-                    <div style="text-align: center;">300.000đ</div>
+                    <div style="text-align: center;">{{doctor.examination_price}}</div>
                 </label>
             </div>
 
             <div class="personal-info">
                 <div class="input-form">
                     <i class="glyphicon glyphicon-user"></i>
-                    <input type="text" placeholder="Họ tên của bệnh nhân" name="name" id="name" value="{{ user.first_name }} {{ user.last_name }}">
+                    <input type="text" placeholder="Họ tên của bệnh nhân" name="name" id="name" value="{{ user.last_name }} {{ user.first_name }}" disabled>
                 </div>
+
                 <div class="check-form">
-                    <input style="height: 15px; width: auto;" type="radio" checked="checked" name="gender" id="male" value="0">
+                    <input style="height: 15px; width: auto;" type="radio"name="gender" id="male" value="0" disabled>
                     <p style="display: inline;">Nam</p>  
-                    <input style="height: 15px; width: auto; display: inline;" type="radio" checked="checked" name="gender" id="female" value="1">
+                    <input style="height: 15px; width: auto; display: inline;" type="radio" name="gender" id="female" value="1" disabled>
                     <p style="display: inline;">Nữ</p>
-                    <input style="height: 15px; width: auto; display: inline;" type="radio" checked="checked" name="gender" id="others" value="2">
+                    <input style="height: 15px; width: auto; display: inline;" type="radio"  name="gender" id="others" value="2" disabled>
                     <p style="display: inline;">Khác</p>
                 </div>
+
                 <div class="input-form">
                     <i class="glyphicon glyphicon-earphone"></i>
-                    <input type="text" placeholder="Số điện thoại" name="phone" id="phone" value="{{ user.phone_number }}">
+                    <input type="text" placeholder="Số điện thoại" name="phone" id="phone" value="{{ user.phone_number }}" disabled>
                 </div>  
                 <div class="input-form">
                     <i class="glyphicon glyphicon-calendar"></i>
-                    <input type="text" placeholder="Năm sinh" name="birthyear" id="birthyear" value="{{ user.birthdate }}">
+                    <input type="text" placeholder="Năm sinh" name="birthyear" id="birthyear" value="" disabled>
                 </div>
                 <div class="input-form">
                     <i class="glyphicon glyphicon-map-marker"></i>
-                    <input type="text" placeholder="Địa chỉ" name="address" id="address" value="{{ user.address }}">
+                    <input type="text" placeholder="Địa chỉ" name="address" id="address" value="{{ user.address }}" disabled>
                 </div>
                 <div class="input-form">
                     <i style="vertical-align: top;" class="glyphicon glyphicon-plus-sign"></i>
@@ -186,7 +187,7 @@
                 <div class="payment">
                     <div class="content">
                         <p>Giá khám<p>
-                        <p name="price" id="price">300.000đ</p>
+                        <p name="price" id="price">{{doctor.examination_price}}</p>
                     </div>
                     <div class="content">
                         <p>Phí đặt lịch<p>
@@ -195,7 +196,7 @@
                     <hr style="border: 1px solid #ccc; margin: 10px 0px;">
                     <div class="content">
                         <p>Tổng cộng</p>
-                        <p style="color: rgb(195, 56, 56);">300.000đ</p>
+                        <p style="color: rgb(195, 56, 56);">{{doctor.examination_price}}</p>
                     </div>
                 </div>
                 <p style="text-align: center; margin: 10px 0px; font-size: small">Quý khách vui lòng điền đầy đủ thông tin để tiết kiệm thời gian làm thủ tục khám</p>
@@ -216,14 +217,75 @@
             </div>
 
             <div class="button-claim">
-                <button type="submit">Xác nhận đặt khám</button>
-                <p style="text-align: center; margin: 5px 0px; font-size: small">
-                    Bằng việc xác nhận đặt khám, bạn đã hoàn toàn đồng ý với 
-                    <a href="https://link_to_term_of_service.com">Điều khoản sử dụng </a>
-                    dịch vụ của chúng tôi
-                </p>
+                <form action="" method="post" id="booking-form">
+                    {% csrf_token %}
+                    <button id="submit-btn" type="submit">Xác nhận đặt khám</button>
+                    <p style="text-align: center; margin: 5px 0px; font-size: small">
+                        Bằng việc xác nhận đặt khám, bạn đã hoàn toàn đồng ý với 
+                        <a href="https://link_to_term_of_service.com">Điều khoản sử dụng </a>
+                        dịch vụ của chúng tôi
+                    </p>
+                </form>
             </div>
         </div>
     </div>
     <script></script>
 {% endblock content %}
+{% block extra_script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.6/dayjs.min.js" integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.6/locale/vi.min.js" integrity="sha512-z+cfgsx3y2byh1WqQA03XQHxtM48Km+N1tRoJGX4xWBa29cD8du/Imistc6DY7rzcMw5YLMereWcvzZw5uNB6g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    {% comment %} Show selected time slot {% endcomment %}
+    <script type="text/javascript" >
+        const doctorQuickview = document.querySelector(".doctor-quickview");
+
+        const obj = dayjs("{{schedule.date|date:'Y M d'}}");
+        const html = `<h3 style="font-size: 14px;">{{schedule.time_slot.value}} - ${get_day_of_week(obj.day())} - ${obj.format('DD/MM')} </h3>`;
+        doctorQuickview.insertAdjacentHTML('beforeend', html);
+    </script>
+    {% comment %} Select gender {% endcomment %}
+    <script type="text/javascript" >
+        const checkForm = document.querySelectorAll(".check-form input");
+        const gender = "{{user.gender.value}}";
+        switch (gender) {
+            case "Nam":
+                checkForm[0].checked = true;
+                 break;
+            case "Nữ":
+                checkForm[1].checked = true;
+                break;
+            default:
+                checkForm[2].checked = true;
+        }
+    </script>
+    {% comment %} Format birthdate {% endcomment %}
+    <script type="text/javascript">
+        const birthyear_input = document.querySelector("#birthyear");
+        const birthdate = dayjs("{{user.birthdate|date:'Y M d'}}").format("DD-MM-YYYY");
+        birthyear_input.value = birthdate;
+    </script>
+    {% comment %} Submit bookings {% endcomment %}
+    <script type="text/javascript">
+        const examReason = document.querySelector("#reason");
+        const csrfmiddlewaretoken = document.querySelector('.button-claim input').value;
+
+        $(document).on('submit', '#booking-form', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type:"POST",
+                url: "{% url 'saveBooking' %}",
+                data:{
+                    csrfmiddlewaretoken: csrfmiddlewaretoken,
+                    examination_reason: examReason.value,
+                    doctor_id: {{doctor.doctor.id}},
+                    schedule_id: {{schedule.id}},
+                    patient_id: {{user.id}},
+                },
+                success: function( data ) {
+                   $(location).attr('href', "{% url 'paymentInfo' %}");
+                }
+            });
+        });
+    </script>
+{% endblock extra_script %}
