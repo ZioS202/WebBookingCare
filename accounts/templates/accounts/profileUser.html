@@ -34,8 +34,8 @@
     .user-info img
     {
         display: block;
-        width: 150px;
-        height: 150px;
+        width: 100%;
+        height: 100%;
         border: 3px solid rgb(9, 138, 174);
     }
 
@@ -219,7 +219,7 @@
     <div class="user-info">
         <div class="user-image">
             <div class="frame-image">
-                <img style="border-radius: 50%;" src="/media/{{user.avatar}}" alt="Ảnh đại diện">
+                <img style="border-radius: 100%;" src="/media/{{user.avatar}}" alt="Ảnh đại diện">
             </div>
         </div>
         <div class="user-quickview">
@@ -362,60 +362,30 @@
         <h1>LỊCH SỬ KHÁM BỆNH</h1>
         <table id="customers">
             <tr>
-              <th>Company</th>
-              <th>Contact</th>
-              <th>Country</th>
+              <th>Bác sĩ đặt khám</th>
+              <th>Khung ngày - giờ</th>
+              <th>Giá tiền</th>
+              <th>Trạng thái</th>
+              <th>Phương thức thanh toán</th>
             </tr>
+            {% for bookings in user.patient_bookings.all %}
             <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
+              <td>{{bookings.doctor.last_name}} {{bookings.doctor.first_name}}</td>
+              <td>{{bookings.schedule.time_slot.value}}</td>
+              <td>{{bookings.payment.total}}</td>
+              <td>{{bookings.status.value}}</td>
+              <td>{% if bookings.payment.method.value == "Cash" %}
+                    Thanh toán bằng tiền mặt
+                {% elif bookings.payment.method.value == "Momo" %}
+                    Thanh toán bằng Momo
+                {% elif bookings.payment.method.value == "Visa" %}
+                    Thanh toán bằng Visa
+                {% elif bookings.payment.method.value == "ATM" %}
+                    Thanh toán bằng ATM
+                {% endif %}
+              </td>
             </tr>
-            <tr>
-              <td>Berglunds snabbköp</td>
-              <td>Christina Berglund</td>
-              <td>Sweden</td>
-            </tr>
-            <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-            </tr>
-            <tr>
-              <td>Ernst Handel</td>
-              <td>Roland Mendel</td>
-              <td>Austria</td>
-            </tr>
-            <tr>
-              <td>Island Trading</td>
-              <td>Helen Bennett</td>
-              <td>UK</td>
-            </tr>
-            <tr>
-              <td>Königlich Essen</td>
-              <td>Philip Cramer</td>
-              <td>Germany</td>
-            </tr>
-            <tr>
-              <td>Laughing Bacchus Winecellars</td>
-              <td>Yoshi Tannamuri</td>
-              <td>Canada</td>
-            </tr>
-            <tr>
-              <td>Magazzini Alimentari Riuniti</td>
-              <td>Giovanni Rovelli</td>
-              <td>Italy</td>
-            </tr>
-            <tr>
-              <td>North/South</td>
-              <td>Simon Crowther</td>
-              <td>UK</td>
-            </tr>
-            <tr>
-              <td>Paris spécialités</td>
-              <td>Marie Bertrand</td>
-              <td>France</td>
-            </tr>
+            {% endfor %}
           </table>
     </div>
 </div>
