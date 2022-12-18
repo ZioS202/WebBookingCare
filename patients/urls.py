@@ -1,6 +1,4 @@
 from django.urls import path
-
-import doctors
 from . import views
 
 urlpatterns = [
