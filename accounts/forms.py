@@ -1,6 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth import get_user_model
-from phonenumber_field.phonenumber import PhoneNumber
 from django import forms
 from .models import CustomUser
 from django import forms  
@@ -39,12 +38,6 @@ class UserRegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError('Passwords don\'t match.')
         return cd['password2']
-
-# class UpdateUser(forms.ModelForm):
-#     avatar = forms.ImageField()
-#     class Meta:
-#         model = get_user_model()
-#         fields = ['username', 'last_name', 'first_name', 'birthdate', 'gender', 'phone_number', 'email', 'address', 'avatar']
 
 class UpdateUserForm(forms.ModelForm):
     username = forms.CharField(max_length=100,

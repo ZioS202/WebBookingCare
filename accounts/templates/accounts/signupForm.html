@@ -5,9 +5,6 @@
 <link href="{% static 'accounts/css/style_signup.css' %}" rel="stylesheet">
 {% endblock extra_head %}
 {% block content %}
-<!-- {% if user.is_authenticated %}
-<h2>wellcome {{user.username}}</h2>
-{% endif %} -->
 <div id="register-form-wrap">
   <div class='bookingcare-logo'>
     <a href="{% url 'homepage' %}">&af;</a>
@@ -32,23 +29,11 @@
       <input type="submit" id="register" value="Register now!">
     </p>
 
-  <!-- {% if form.errors %}
-    <div class="alert alert-danger">
-    {{ form.errors }}
-    </div>
-  {% endif %} -->
-
     {% for message in messages %}
     <div id="notification" style="background-color: rgb(222, 99, 99); margin-left: -60px; margin-right: -60px; padding-left: 10px; padding-right: 10px;">
       <p style="color:rgb(255, 255, 255);font-size:15px;font-weight: bold;padding:10px 0px;">Error: {{ message }}</p>   
     </div>
     {% endfor %}
-
-    <!-- {% for error in form.errors %}
-    <div>
-      <p style="color:rgb(197, 46, 46);font-size:15px;display: inline-block;font-weight: bold;">Error: {{ error }}</p>   
-    </div>
-    {% endfor %} -->
 
     <a style="font-size: 20px" href="{% url 'signin' %}">Back to login!</a>
   </form>
