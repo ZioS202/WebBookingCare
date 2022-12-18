@@ -1,6 +1,5 @@
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import DetailView
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Clinic
 from doctors.models import DetailsDoctor
 from clinics.models import Clinic
@@ -16,11 +15,6 @@ def list_clinics(request):
     return render(
         request, "clinics/find_clinic.html", {"clinic_list": clinic_list, "form": form}
     )
-
-
-# class FindClinic(TemplateView):
-#     template_name = "clinics/find_clinic.html"
-
 
 class ClinicDetail(DetailView):
     def get_context_data(self, **kwargs):
