@@ -18,19 +18,9 @@ def list_specialists(request):
         },
     )
 
-
-# def specialist_detail(request, name):
-#     specialist = Specialist.objects.get(name=name)
-#     return render(request,'specialists/specialist_detail.html', {'specialist': specialist})
-
-
 class Specialist_Detail(DetailView):
     def get_context_data(self, **kwargs):
-        # name=self.request.GET.get("name")
         context = super().get_context_data(**kwargs)
-        # context['specialist'] = Specialist.objects.get(name=name)
-        # context["doctors"] = DetailsDoctor.objects.all()
-        # context["clinic"] = Clinic.objects.all()
         return context
 
     template_name = "specialists/specialist_detail.html"
