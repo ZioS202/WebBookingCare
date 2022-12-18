@@ -1,13 +1,9 @@
-from django.views.generic import TemplateView, DetailView
-from http.client import ImproperConnectionState
-from operator import imod
+from django.views.generic import DetailView
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import DetailsDoctor, Schedule
 from django.contrib.auth import get_user_model
 from homepage.views import SearchForm
 from django.http import JsonResponse
-from icecream import ic
 
 CustomUser = get_user_model()
 
